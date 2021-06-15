@@ -1,12 +1,13 @@
 #' DF Cosmology: Solar System Objects
 #'
-#' A table with solar system objects:
-#' the Sun and the Planets.
+#' A table with solar system objects.
 #'
-#' @format A tibble with 8 columns and 10 rows
+#' @format A tibble with 10 columns and 10 rows
 #' \describe{
 #'   \item{english}{The english name of the object}
 #'   \item{french}{The french name of the object}
+#'   \item{type_en}{Type of object in english}
+#'   \item{type_fr}{Type of object in french}
 #'   \item{distance}{The distance to the Sun in AU}
 #'   \item{mass}{The masse in kilogram}
 #'   \item{radius}{The radius in meter}
