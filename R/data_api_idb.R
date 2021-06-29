@@ -15,8 +15,7 @@ gdt_idb_pyramid_1y <- function(country, year) {
       idbr::get_idb(country = country, year = year, sex = "female") |>
         dplyr::select(age, female = pop),
       by = "age"
-    ) |>
-    dplyr::arrange(age)
+    )
 }
 
 #' Five year population pyramid data (legacy function)
