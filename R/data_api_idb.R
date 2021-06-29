@@ -8,17 +8,15 @@
 gdt_idb_pyramid_1y <- function(country, year) {
   util_chk_idb_api_key()
 
-  male <- idbr::idb1(country, toString(year), sex = 'male') %>%
-    dplyr::rename(MalePop = POP)
-
-  female <- idbr::idb1(country, toString(year), sex = 'female') %>%
-    dplyr::rename(FemalePop = POP)
-
-  population <- dplyr::left_join(male, female, by = "AGE") %>%
-    dplyr::select(age = AGE, male = MalePop, female = FemalePop) %>%
+  idbr::get_idb(country = country, year = year, sex = "male") |>
+    dplyr::mutate(pop = pop * -1) |>
+    dplyr::select(age, male = pop) |>
+    dplyr::left_join(
+      idbr::get_idb(country = country, year = year, sex = "female") |>
+        dplyr::select(age, female = pop),
+      by = "age"
+    ) |>
     dplyr::arrange(dplyr::desc(age))
-
-  return(population)
 }
 
 #' Five year population pyramid data (legacy function)
