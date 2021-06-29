@@ -8,11 +8,13 @@
 gdt_idb_pyramid_1y <- function(country, year) {
   util_chk_idb_api_key()
 
-  idbr::get_idb(country = country, year = year, sex = "male") |>
+  country_code <- countrycode::countrycode(country, origin = "fips", destination = "iso2c")
+
+  idbr::get_idb(country = country_code, year = year, sex = "male") |>
     dplyr::mutate(pop = pop * -1) |>
     dplyr::select(age, male = pop) |>
     dplyr::left_join(
-      idbr::get_idb(country = country, year = year, sex = "female") |>
+      idbr::get_idb(country = country_code, year = year, sex = "female") |>
         dplyr::select(age, female = pop),
       by = "age"
     ) |>
@@ -63,7 +65,7 @@ gdt_idb_pyramid_5y<- function(country, year) {
 gdt_idb_pyramid <- function(country, year) {
   util_chk_idb_api_key()
 
-  country_code <- countrycode::countrycode(country, origin = "country.name", destination = "fips")
+  country_code <- countrycode::countrycode(country, origin = "country.name", destination = "iso2c")
 
   idbr::get_idb(country = country_code, year = year, sex = "male") %>%
     dplyr::mutate(pop = pop * -1) %>%
