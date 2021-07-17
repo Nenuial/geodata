@@ -2,18 +2,13 @@
 % Please edit documentation in R/data_api_idb.R
 \name{gdt_idb_pyramid_5y}
 \alias{gdt_idb_pyramid_5y}
-\title{Five year population pyramid data (legacy function)}
+\title{Return 5y population data}
 \usage{
 gdt_idb_pyramid_5y(country, year)
 }
-\arguments{
-\item{country}{A FIPS code for the country}
-
-\item{year}{An integer with the year}
-}
 \value{
-A dataframe with age, female, and male population
+
 }
 \description{
-Five year population pyramid data (legacy function)
+Return 5y population data
 }
