@@ -8,7 +8,7 @@
 #'   \item{year}{The year}
 #'   \item{growth}{The growth rate in percent}
 #' }
-#' @source \url{https://www.census.gov/data-tools/demo/idb/}
+#' @source <https://www.census.gov/data-tools/demo/idb/>
 "df_demography_population_growth"
 
 #' DF Demography: Historical world population
@@ -20,7 +20,7 @@
 #'   \item{year}{The year}
 #'   \item{growth}{The world population estimate}
 #' }
-#' @source \url{https://www.census.gov/data/tables/time-series/demo/international-programs/historical-est-worldpop.html}
+#' @source <https://www.census.gov/data/tables/time-series/demo/international-programs/historical-est-worldpop.html>
 "df_demography_population_historical"
 
 #' DF Demography: World population projections

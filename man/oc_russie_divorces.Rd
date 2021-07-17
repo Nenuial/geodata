@@ -7,11 +7,11 @@
 \format{
 Un tibble avec 5 colonnes et 84 lignes
 \describe{
-  \item{region}{Nom de la région en anglais}
-  \item{oktmo}{OKTMO Codes}
-  \item{year}{Année}
-  \item{divorces}{Taux de divorce pour 1000 habitants}
-  \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+\item{region}{Nom de la région en anglais}
+\item{oktmo}{OKTMO Codes}
+\item{year}{Année}
+\item{divorces}{Taux de divorce pour 1000 habitants}
+\item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
 }
 }
 \source{

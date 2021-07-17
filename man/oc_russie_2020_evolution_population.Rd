@@ -7,12 +7,12 @@
 \format{
 Un tibble avec 2 colonnes et 30 lignes
 \describe{
-  \item{region}{Nom de la région en anglais}
-  \item{oktmo}{OKTMO Code}
-  \item{adm1_code}{Identifian ADM1 (pour NaturalEarth)}
-  \item{`2020`}{Population en 2020}
-  \item{`1990`}{Population en 1990}
-  \item{solde}{Pourcentage d'évolution sur ces 30 dernières anneés}
+\item{region}{Nom de la région en anglais}
+\item{oktmo}{OKTMO Code}
+\item{adm1_code}{Identifian ADM1 (pour NaturalEarth)}
+\item{\code{2020}}{Population en 2020}
+\item{\code{1990}}{Population en 1990}
+\item{solde}{Pourcentage d'évolution sur ces 30 dernières anneés}
 }
 }
 \source{

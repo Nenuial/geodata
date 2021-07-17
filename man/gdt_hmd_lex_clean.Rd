@@ -11,7 +11,7 @@ gdt_hmd_lex_clean(country, age, type)
 
 \item{age}{The life expectancy age}
 
-\item{type}{The type (one of `male`, `female` or `total`)}
+\item{type}{The type (one of \code{male}, \code{female} or \code{total})}
 }
 \value{
 A tibble

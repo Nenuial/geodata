@@ -7,10 +7,10 @@
 \format{
 Un tibble avec 4 colonnes et 170 lignes
 \describe{
-  \item{region}{Nom de la région en russe}
-  \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
-  \item{year}{Année}
-  \item{tfr}{Indice de fécondité}
+\item{region}{Nom de la région en russe}
+\item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+\item{year}{Année}
+\item{tfr}{Indice de fécondité}
 }
 }
 \source{

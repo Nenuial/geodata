@@ -7,8 +7,8 @@
 \format{
 Un tibble avec 2 colonnes et 21 lignes
 \describe{
-  \item{year}{Année}
-  \item{abortions}{Nombre d'avortements pour 100 naissances}
+\item{year}{Année}
+\item{abortions}{Nombre d'avortements pour 100 naissances}
 }
 }
 \source{

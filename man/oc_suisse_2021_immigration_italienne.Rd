@@ -7,9 +7,9 @@
 \format{
 Un tibble avec 3 colonnes et 39 lignes
 \describe{
-  \item{year}{Année d'observation}
-  \item{population}{Population résidante italienne en Suisse au 1er janvier}
-  \item{immigration}{Immigration italienne en Suisse}
+\item{year}{Année d'observation}
+\item{population}{Population résidante italienne en Suisse au 1er janvier}
+\item{immigration}{Immigration italienne en Suisse}
 }
 }
 \source{

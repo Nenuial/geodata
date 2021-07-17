@@ -7,11 +7,11 @@
 \format{
 Un tibble avec 5 colonnes et 174 lignes
 \describe{
-  \item{region}{Nom de la région en russe}
-  \item{type}{Type de mesure: absolute ou per1000}
-  \item{indicator}{Indicateur: cbr, cdr ou rni}
-  \item{data}{Donnée}
-  \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+\item{region}{Nom de la région en russe}
+\item{type}{Type de mesure: absolute ou per1000}
+\item{indicator}{Indicateur: cbr, cdr ou rni}
+\item{data}{Donnée}
+\item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
 }
 }
 \source{

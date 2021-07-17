@@ -7,11 +7,11 @@
 \format{
 Un tibble avec 2 colonnes et 30 lignes
 \describe{
-  \item{adm1_code}{Identifian ADM1 (pour NaturalEarth)}
-  \item{country}{Country name}
-  \item{year}{Year of data observation}
-  \item{type}{One of `arrival` or `departure`}
-  \item{migration}{Number of people migrating}
+\item{adm1_code}{Identifian ADM1 (pour NaturalEarth)}
+\item{country}{Country name}
+\item{year}{Year of data observation}
+\item{type}{One of \code{arrival} or \code{departure}}
+\item{migration}{Number of people migrating}
 }
 }
 \source{

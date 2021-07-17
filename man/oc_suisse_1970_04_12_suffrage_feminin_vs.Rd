@@ -7,9 +7,9 @@
 \format{
 Un tibble avec 3 colonnes et 13 lignes
 \describe{
-  \item{id}{Identifiant OFS du district}
-  \item{vote_oui}{Nombre de vote oui}
-  \item{vote_non}{Nombre de vote non}
+\item{id}{Identifiant OFS du district}
+\item{vote_oui}{Nombre de vote oui}
+\item{vote_non}{Nombre de vote non}
 }
 }
 \source{

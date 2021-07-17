@@ -9,7 +9,7 @@
 #'   \item{lex}{Espérance de vie}
 #'   \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
 #' }
-#' @source \url{https://rosstat.gov.ru/storage/mediabank/IeUTMwMW/prodolzhitelnost.xlsx}
+#' @source <https://rosstat.gov.ru/storage/mediabank/IeUTMwMW/prodolzhitelnost.xlsx>
 "oc_russie_2019_esperance_vie"
 
 #' OC Russie: Indice de fécondité
@@ -24,7 +24,7 @@
 #'   \item{year}{Année}
 #'   \item{tfr}{Indice de fécondité}
 #' }
-#' @source \url{https://rosstat.gov.ru/storage/mediabank/7-1(2).xlsx}
+#' @source <https://rosstat.gov.ru/storage/mediabank/7-1(2).xlsx>
 "oc_russie_2019_fecondite"
 
 #' OC Russie: Mortalité et natalité
@@ -40,7 +40,7 @@
 #'   \item{data}{Donnée}
 #'   \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
 #' }
-#' @source \url{https://rosstat.gov.ru/storage/mediabank/EDN(1).xlsx}
+#' @source <https://rosstat.gov.ru/storage/mediabank/EDN(1).xlsx>
 "oc_russie_2019_natalite_mortalite"
 
 #' OC Russie: Suicides
@@ -56,7 +56,7 @@
 #'   \item{year}{Année}
 #'   \item{suicides}{Nombre de suicides}
 #' }
-#' @source \url{https://showdata.gks.ru/olap2/descr/report/297886/}
+#' @source <https://showdata.gks.ru/olap2/descr/report/297886/>
 "oc_russie_suicides"
 
 #' OC Russie: Mariages
@@ -72,7 +72,7 @@
 #'   \item{mariages}{Taux de mariage pour 1000 habitants}
 #'   \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
 #' }
-#' @source \url{https://showdata.gks.ru/olap2/descr/report/297890/}
+#' @source <https://showdata.gks.ru/olap2/descr/report/297890/>
 "oc_russie_mariages"
 
 #' OC Russie: Divorces
@@ -88,7 +88,7 @@
 #'   \item{divorces}{Taux de divorce pour 1000 habitants}
 #'   \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
 #' }
-#' @source \url{https://showdata.gks.ru/olap2/descr/report/297890/}
+#' @source <https://showdata.gks.ru/olap2/descr/report/297890/>
 "oc_russie_divorces"
 
 #' OC Russie: Mariages et divorces national
@@ -102,8 +102,8 @@
 #'   \item{indicator}{L'îndicateur (mariages ou divorces)}
 #'   \item{data}{La donnée numérique}
 #' }
-#' @source \url{https://showdata.gks.ru/olap2/descr/report/297882/}
-#' \url{https://showdata.gks.ru/olap2/descr/report/297880/}
+#' @source <https://showdata.gks.ru/olap2/descr/report/297882/>
+#' <https://showdata.gks.ru/olap2/descr/report/297880/>
 "oc_russie_mariages_divorces_national"
 
 #' OC Russie: Suicides national
@@ -116,7 +116,7 @@
 #'   \item{year}{Année}
 #'   \item{suicides}{Nombre de suicides}
 #' }
-#' @source \url{https://showdata.gks.ru/olap2/descr/report/297886/}
+#' @source <https://showdata.gks.ru/olap2/descr/report/297886/>
 "oc_russie_suicides_national"
 
 
@@ -130,7 +130,7 @@
 #'   \item{year}{Année}
 #'   \item{abortions}{Nombre d'avortements pour 100 naissances}
 #' }
-#' @source \url{https://showdata.gks.ru/olap2/descr/report/297822/}
+#' @source <https://showdata.gks.ru/olap2/descr/report/297822/>
 "oc_russie_avortements_national"
 
 #' OC Russie: avortements national
@@ -143,7 +143,7 @@
 #'   \item{year}{Année}
 #'   \item{abortions}{Nombre d'avortements pour 100 naissances}
 #' }
-#' @source \url{https://showdata.gks.ru/olap2/descr/report/297822/}
+#' @source <https://showdata.gks.ru/olap2/descr/report/297822/>
 "oc_russie_naissances_national"
 
 
@@ -161,7 +161,7 @@
 #'   \item{`1990`}{Population en 1990}
 #'   \item{solde}{Pourcentage d'évolution sur ces 30 dernières anneés}
 #' }
-#' @source \url{https://showdata.gks.ru/olap2/descr/report/278928/}
+#' @source <https://showdata.gks.ru/olap2/descr/report/278928/>
 "oc_russie_2020_evolution_population"
 
 #' OC Russie: Évolution de la population
@@ -177,5 +177,5 @@
 #'   \item{type}{One of `arrival` or `departure`}
 #'   \item{migration}{Number of people migrating}
 #' }
-#' @source \url{https://rosstat.gov.ru/storage/mediabank/migr2.xls} with additional Google Translate
+#' @source <https://rosstat.gov.ru/storage/mediabank/migr2.xls> with additional Google Translate
 "oc_russie_2019_migration"

@@ -7,9 +7,9 @@
 \format{
 Un tibble avec 5 colonnes et 560 lignes
 \describe{
-  \item{region}{Nom de la région en russe}
-  \item{lex}{Espérance de vie}
-  \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+\item{region}{Nom de la région en russe}
+\item{lex}{Espérance de vie}
+\item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
 }
 }
 \source{

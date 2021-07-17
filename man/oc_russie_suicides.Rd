@@ -7,11 +7,11 @@
 \format{
 Un tibble avec 5 colonnes et 1858 lignes
 \describe{
-  \item{codes}{OKTMO Codes}
-  \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
-  \item{region}{Nom de la région en anglais}
-  \item{year}{Année}
-  \item{suicides}{Nombre de suicides}
+\item{codes}{OKTMO Codes}
+\item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+\item{region}{Nom de la région en anglais}
+\item{year}{Année}
+\item{suicides}{Nombre de suicides}
 }
 }
 \source{

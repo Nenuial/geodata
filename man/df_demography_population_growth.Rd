@@ -7,8 +7,8 @@
 \format{
 A tibble with 2 columns and 66 rows
 \describe{
-  \item{year}{The year}
-  \item{growth}{The growth rate in percent}
+\item{year}{The year}
+\item{growth}{The growth rate in percent}
 }
 }
 \source{

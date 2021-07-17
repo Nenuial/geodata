@@ -8,7 +8,7 @@
 #'   \item{Canton}{Nom du canton}
 #'   \item{Année}{Année de l'obtention du suffrage féminin}
 #' }
-#' @source \url{https://fr.wikipedia.org/wiki/Suffrage_féminin_en_Suisse}
+#' @source <https://fr.wikipedia.org/wiki/Suffrage_féminin_en_Suisse>
 "oc_suisse_suffrage_feminin"
 
 #' OC Suisse: Votation sur le suffrage féminin au Valais
@@ -22,7 +22,7 @@
 #'   \item{vote_oui}{Nombre de vote oui}
 #'   \item{vote_non}{Nombre de vote non}
 #' }
-#' @source \url{https://www.letempsarchives.ch/page/GDL_1970_04_13/9}
+#' @source <https://www.letempsarchives.ch/page/GDL_1970_04_13/9>
 "oc_suisse_1970_04_12_suffrage_feminin_vs"
 
 #' OC Suisse: Immigration italienne
@@ -36,5 +36,5 @@
 #'   \item{population}{Population résidante italienne en Suisse au 1er janvier}
 #'   \item{immigration}{Immigration italienne en Suisse}
 #' }
-#' @source \url{https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-0103010000_151/-/px-x-0103010000_151.px/}
+#' @source <https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-0103010000_151/-/px-x-0103010000_151.px/>
 "oc_suisse_2021_immigration_italienne"

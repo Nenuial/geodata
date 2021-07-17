@@ -7,8 +7,8 @@
 \format{
 A tibble with 2 columns and 105 rows
 \describe{
-  \item{year}{The year}
-  \item{growth}{The world population estimate}
+\item{year}{The year}
+\item{growth}{The world population estimate}
 }
 }
 \source{

@@ -7,8 +7,8 @@
 \format{
 Un tibble avec 2 colonnes et 30 lignes
 \describe{
-  \item{year}{Année}
-  \item{suicides}{Nombre de suicides}
+\item{year}{Année}
+\item{suicides}{Nombre de suicides}
 }
 }
 \source{

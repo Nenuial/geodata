@@ -7,9 +7,9 @@
 \format{
 A tibble with 3 columns and 258 rows
 \describe{
-  \item{year}{The year}
-  \item{growth}{The UN WPP scenario (one of `low`, `medium` or `high`)}
-  \item{population}{The population estimate}
+\item{year}{The year}
+\item{growth}{The UN WPP scenario (one of \code{low}, \code{medium} or \code{high})}
+\item{population}{The population estimate}
 }
 }
 \source{

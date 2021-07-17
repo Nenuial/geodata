@@ -11,10 +11,10 @@ gdt_hmd_lex(countries, age, type = c("male", "female", "total"))
 
 \item{age}{The life expectancy age}
 
-\item{type}{The type (one of `male`, `female` or `total`)}
+\item{type}{The type (one of \code{male}, \code{female} or \code{total})}
 }
 \value{
-A tibble with 3 columns: `year`, `country` and `lex`
+A tibble with 3 columns: \code{year}, \code{country} and \code{lex}
 }
 \description{
 Get life expectancy from the Human Mortality Database

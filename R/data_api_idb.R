@@ -46,10 +46,11 @@ gdt_idb_pyramid <- function(country, year) {
 
 #' Return 5y population data
 #'
-#' @return
-#' @export
+#' @param country A string with the country name
+#' @param year An integer with the year
 #'
-#' @examples
+#' @return A dataframe
+#' @export
 gdt_idb_pyramid_5y <- function(country, year) {
   util_chk_idb_api_key()
 

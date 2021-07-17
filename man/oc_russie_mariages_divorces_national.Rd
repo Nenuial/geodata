@@ -7,9 +7,9 @@
 \format{
 Un tibble avec 3 colonnes et 60 lignes
 \describe{
-  \item{year}{Année}
-  \item{indicator}{L'îndicateur (mariages ou divorces)}
-  \item{data}{La donnée numérique}
+\item{year}{Année}
+\item{indicator}{L'îndicateur (mariages ou divorces)}
+\item{data}{La donnée numérique}
 }
 }
 \source{

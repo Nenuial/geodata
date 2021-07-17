@@ -7,8 +7,8 @@
 \format{
 Un tibble avec 2 colonnes et 26 lignes
 \describe{
-  \item{Canton}{Nom du canton}
-  \item{Année}{Année de l'obtention du suffrage féminin}
+\item{Canton}{Nom du canton}
+\item{Année}{Année de l'obtention du suffrage féminin}
 }
 }
 \source{

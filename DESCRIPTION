@@ -31,7 +31,9 @@ Imports:
     demography,
     memoise,
     readxl,
-    stringr
+    stringr,
+    lifecycle
 RoxygenNote: 7.1.1
 Depends: 
     R (>= 4.1)
+Roxygen: list(markdown = TRUE)
