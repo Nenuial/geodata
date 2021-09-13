@@ -1,3 +1,5 @@
+stop("This file should not be sourced!")
+
 # UN WPP Period estimates -------------------------------------------------
 
 readr::read_csv("inst/extdata/unwpp/WPP2019_Period_Indicators_Medium.csv") -> un_wpp_2019_period_estimates

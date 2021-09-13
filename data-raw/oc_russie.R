@@ -1,3 +1,5 @@
+stop("This file should not be sourced!")
+
 # Regional life expectancy ------------------------------------------------
 
 xls <- here::here("inst/extdata/oc_russie/rosstat/population/2021_life_expectancy.xlsx")

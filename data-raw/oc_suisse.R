@@ -1,3 +1,5 @@
+stop("This file should not be sourced!")
+
 # Suffrage féminin --------------------------------------------------------
 
 oc_suisse_suffrage_feminin <- readr::read_csv(here::here("inst/extdata/oc_suisse/misc/suffrage_feminin.csv"))

@@ -1,3 +1,5 @@
+stop("This file should not be sourced!")
+
 # CAREFUL DO NOT RUN CARELESSLY !! EXPENSIVE COMPUTATION TIME (WikiData informations)
 
 osmextract::oe_read("inst/extdata/oc_russie/osm/boundaries-russia.osm.pbf", layer="multipolygons") -> russia
