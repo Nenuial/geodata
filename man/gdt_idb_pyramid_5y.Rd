@@ -6,8 +6,13 @@
 \usage{
 gdt_idb_pyramid_5y(country, year)
 }
-\value{
+\arguments{
+\item{country}{A string with the country name}
 
+\item{year}{An integer with the year}
+}
+\value{
+A dataframe
 }
 \description{
 Return 5y population data
