@@ -1,4 +1,4 @@
-#' Get general demographic informations
+#' G#' #' #' l deet general demographic informations
 #'
 #' @param country A country code
 #' @param years The year for which the information is needed
@@ -89,3 +89,56 @@ gdt_hmd_lex_clean <- function(country, age, type) {
     dplyr::mutate(year = readr::parse_number(year))
 }
 
+#' HMD raw births data
+#'
+#' @param country Country code
+#'
+#' @return A dataframe
+#' @export
+gdt_hmd_birth_raw <- function(country) {
+  gdt_hmd_download(country, "Births")
+}
+
+#' HMD raw population data
+#'
+#' @param country Country code
+#'
+#' @return A dataframe
+#' @export
+gdt_hmd_population_raw <- function(country) {
+  gdt_hmd_download(country, "Population")
+}
+
+#' HMD raw death data
+#'
+#' @param country Country code
+#'
+#' @return A dataframe
+#' @export
+gdt_hmd_death_raw <- function(country) {
+  gdt_hmd_download(country, "Deaths_1x1")
+}
+
+#' Download HMD data
+#' Function to download and read HDM data into a dataframe
+#'
+#' @param country Country code
+#' @param indicator String indicating the indicator to dowload (usually one of `Population`, `Births` or `Death_1x1`)
+#'
+#' @return A dataframe
+#'
+#' @keywords internal
+gdt_hmd_download <- function(country, indicator) {
+  url <- paste0("https://www.mortality.org/hmd/",
+                country, "/STATS/", indicator, ".txt")
+  credentials <- paste0(keyring::key_list('mortality.org')[['username']],
+                        ":", keyring::key_get('mortality.org'))
+
+  RCurl::getURL(
+    url = url,
+    userpwd = credentials
+  ) |>
+    textConnection() |>
+    utils::read.table(skip = 2, header = TRUE,
+                      na.strings = ".")
+}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_demography.R
 \name{gdt_table_demography}
 \alias{gdt_table_demography}
-\title{Get general demographic informations}
+\title{G#' #' #' l deet general demographic informations}
 \usage{
 gdt_table_demography(country, years)
 }
@@ -15,5 +15,5 @@ gdt_table_demography(country, years)
 A tibble
 }
 \description{
-Get general demographic informations
+G#' #' #' l deet general demographic informations
 }

@@ -32,8 +32,10 @@ Imports:
     memoise,
     readxl,
     stringr,
-    lifecycle
-RoxygenNote: 7.1.1
+    lifecycle,
+    RCurl,
+    glue
+RoxygenNote: 7.1.2
 Depends: 
     R (>= 4.1)
 Roxygen: list(markdown = TRUE)
