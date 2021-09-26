@@ -25,6 +25,14 @@ util_chk_api_call <- function(call) {
     stop("The API does not respond properly. Do you have an internet connection and an open proxy?")
 }
 
+
+#' Download API data
+#'
+#' @param call An API url
+#'
+#' @return Returns API content
+#'
+#' @keywords internal
 util_dwnl_api_json <- function(call) {
   call %>%
     httr::GET() %>%
