@@ -34,7 +34,8 @@ Imports:
     stringr,
     lifecycle,
     RCurl,
-    glue
+    glue,
+    geojsonsf
 RoxygenNote: 7.1.2
 Depends: 
     R (>= 4.1)

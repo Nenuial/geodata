@@ -122,3 +122,15 @@ gdt_opendata_swiss_geodata <- function(geolevel = c("national", "canton", "distr
   return(gd)
 
 }
+
+#' Get swiss geodata in geojson format
+#'
+#' @inherit gdt_opendata_swiss_geodata
+#' @inheritDotParams gdt_opendata_swiss_geodata
+#'
+#' @return A geojson map
+#' @export
+gdt_opendata_swiss_geodata_json <- function(...) {
+  gdt_opendata_swiss_geodata(...) |>
+    geojsonsf::sf_geojson()
+}
