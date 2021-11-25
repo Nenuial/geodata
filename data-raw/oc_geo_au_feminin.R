@@ -39,6 +39,60 @@ e0F_2019 |>
 
 usethis::use_data(oc_geo_au_feminin_wpp2019_lex, overwrite = T)
 
+
+# Population mondiale -----------------------------------------------------
+popF_2019 <- read.delim(file=here::here('inst/extdata/unwpp/2019/popF.txt'),
+                        comment.char='#', check.names=FALSE)
+popM_2019 <- read.delim(file=here::here('inst/extdata/unwpp/2019/popM.txt'),
+                        comment.char='#', check.names=FALSE)
+
+popF_2019 |>
+  dplyr::rename(un_code = country_code) |>
+  tidyr::pivot_longer(-c("un_code", "name", "age"),
+                      names_to = "year", values_to = "female") |>
+  dplyr::left_join(
+    popM_2019 |>
+      dplyr::rename(un_code = country_code) |>
+      tidyr::pivot_longer(-c("un_code", "name", "age"),
+                          names_to = "year", values_to = "male"),
+    by = c("un_code", "name", "age", "year")
+  ) |>
+  dplyr::mutate(ratio = male/female) -> oc_geo_au_feminin_wpp2019_sex_ratio
+
+usethis::use_data(oc_geo_au_feminin_wpp2019_sex_ratio, overwrite = T)
+
+
+# Avortements en Suisse ---------------------------------------------------
+
+readxl::read_excel(here::here("inst/extdata/ofs/14_Health/14_03_abortions.xlsx")) |>
+  tidyr::pivot_longer(-c("year"), names_to = "type", values_to = "rate") -> oc_geo_au_feminin_2021_ofs_avortements
+
+usethis::use_data(oc_geo_au_feminin_2021_ofs_avortements, overwrite = T)
+
+
+# FGM indirect data -------------------------------------------------------
+
+readxl::read_excel(here::here("inst/extdata/equalitynow/FGM_indirect_data.xlsx")) |>
+  dplyr::mutate(iso = countrycode::countrycode(Country, "country.name", "iso3c")) -> oc_geo_au_feminin_2020_fgm_indirect_data
+
+usethis::use_data(oc_geo_au_feminin_2020_fgm_indirect_data, overwrite = T)
+
+
+# Violence domestique en Suisse
+
+readxl::read_excel(here::here("inst/extdata/gfs_bern/2019_violences_sexuelles.xlsx"),
+                   sheet = "Expériences") -> oc_geo_au_feminin_2019_gfs_violences_sexuelles_experiences
+
+readxl::read_excel(here::here("inst/extdata/gfs_bern/2019_violences_sexuelles.xlsx"),
+                   sheet = "Actes") -> oc_geo_au_feminin_2019_gfs_violences_sexuelles_actes
+
+readxl::read_excel(here::here("inst/extdata/gfs_bern/2019_violences_sexuelles.xlsx"),
+                   sheet = "Police") -> oc_geo_au_feminin_2019_gfs_violences_sexuelles_police
+
+usethis::use_data(oc_geo_au_feminin_2019_gfs_violences_sexuelles_experiences, overwrite = T)
+usethis::use_data(oc_geo_au_feminin_2019_gfs_violences_sexuelles_actes, overwrite = T)
+usethis::use_data(oc_geo_au_feminin_2019_gfs_violences_sexuelles_police, overwrite = T)
+
 # Open documentation file -------------------------------------------------
 
 usethis::edit_file(here::here("R/data_doc_oc_geo_au_feminin.R"))
