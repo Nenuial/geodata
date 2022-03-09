@@ -31,7 +31,14 @@ gdt_idb_pyramid_1y <- function(country, year) {
 gdt_idb_pyramid <- function(country, year) {
   util_chk_idb_api_key()
 
-  country_code <- countrycode::countrycode(country, origin = "country.name", destination = "iso2c")
+  country_code <- countrycode::countrycode(
+    country, origin = "country.name", destination = "iso2c",
+    custom_match = c(
+      "Gaza" = "XG",
+      "Kosovo" = "XK",
+      "West Bank" = "XW"
+    )
+  )
 
   idbr::get_idb(country = country_code, year = year, sex = "male") %>%
     dplyr::mutate(pop = pop * -1) %>%
