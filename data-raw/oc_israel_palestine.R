@@ -27,7 +27,7 @@ fbp |>
   dplyr::mutate(population = population * 100) |>
   dplyr::mutate(
     country = dplyr::case_when(
-      country == "United States of America" ~ "United States of America and Puerto Rico",
+      country == "United States of America" ~ "USA and Puerto Rico",
       country == "India, Pakistan " ~ "India, Pakistan and Sri Lanka",
       TRUE ~ country
     )
