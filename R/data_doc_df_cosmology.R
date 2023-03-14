@@ -15,5 +15,4 @@
 #'   \item{rotation}{The rotation period in hours or days}
 #'   \item{revolution}{The revolution period compared to Earth}
 #' }
-#' @source
 "df_cosmology_solar_system_objects"

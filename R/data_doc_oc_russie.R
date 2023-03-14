@@ -179,3 +179,31 @@
 #' }
 #' @source <https://rosstat.gov.ru/storage/mediabank/migr2.xls> with additional Google Translate
 "oc_russie_2019_migration"
+
+#' OC Russie: Attitude de la Russie vis-à-vis des USA
+#'
+#' Un tableau de l'évolution de l'attitude de la population
+#' russe vis-à-vis des USA. Sondage Levada.
+#'
+#' @format Un tibble avec 3 colonnes et 516 lignes
+#' \describe{
+#'   \item{attitude}{Positive, Negative ou Difficile à dire}
+#'   \item{date}{Date du sondage}
+#'   \item{percentage}{Pourcentage de l'observation}
+#' }
+#' @source <https://www.levada.ru/en/ratings/attitudes-towards-countries/>
+"oc_russie_levada_attitude_us"
+
+#' OC Russie: Attitude de la Russie vis-à-vis de l'Europe
+#'
+#' Un tableau de l'évolution de l'attitude de la population
+#' russe vis-à-vis de l'Union Européenne. Sondage Levada.
+#'
+#' @format Un tibble avec 3 colonnes et 363 lignes
+#' \describe{
+#'   \item{attitude}{Positive, Negative ou Difficile à dire}
+#'   \item{date}{Date du sondage}
+#'   \item{percentage}{Pourcentage de l'observation}
+#' }
+#' @source <https://www.levada.ru/en/ratings/attitudes-towards-countries/>
+"oc_russie_levada_attitude_eu"

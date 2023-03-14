@@ -5,8 +5,8 @@
 \title{Get swiss geodata}
 \usage{
 gdt_opendata_swiss_geodata(
-  geolevel = c("national", "canton", "district", "municipality",
-    "zh_counting_districts", "lakes"),
+  geolevel = c("national", "canton", "district", "municipality", "zh_counting_districts",
+    "lakes"),
   latest = T,
   verbose = F
 )

@@ -482,6 +482,35 @@ xml2::read_html("inst/extdata/oc_russie/rosstat/population/2021_migration.html")
 
 usethis::use_data(oc_russie_2019_migration, overwrite = T)
 
+
+# Levada : attitude toward countries --------------------------------------
+
+rvest::read_html("https://www.levada.ru/en/ratings/attitudes-towards-countries/") |>
+  rvest::html_table(header = T) -> levada_attitudes_tables
+
+levada_attitudes_tables |>
+  purrr::pluck(1) |>
+  dplyr::rename("attitude" = 1) |>
+  dplyr::bind_cols(levada_attitudes_tables |> purrr::pluck(2)) |>
+  dplyr::rename("03.2003" = "03.2003...35", "05.2003" = "05.2003...38") |>
+  dplyr::select(-c("03.2003...36", "05.2003...39")) -> levada_attitude_us
+
+levada_attitudes_tables |>
+  purrr::pluck(3) |>
+  dplyr::rename("attitude" = 1) |>
+  dplyr::bind_cols(levada_attitudes_tables |> purrr::pluck(4)) -> levada_attitude_eu
+
+levada_attitude_us |>
+  tidyr::pivot_longer(-c("attitude"), names_to = "date", values_to = "percentage") |>
+  dplyr::mutate(date = lubridate::parse_date_time(date, "m.Y")) -> oc_russie_levada_attitude_us
+
+levada_attitude_eu |>
+  tidyr::pivot_longer(-c("attitude"), names_to = "date", values_to = "percentage") |>
+  dplyr::mutate(date = lubridate::parse_date_time(date, "m.Y")) -> oc_russie_levada_attitude_eu
+
+usethis::use_data(oc_russie_levada_attitude_us, overwrite = T)
+usethis::use_data(oc_russie_levada_attitude_eu, overwrite = T)
+
 # Open documentation file -------------------------------------------------
 
 usethis::edit_file(here::here("R/data_doc_oc_russie.R"))

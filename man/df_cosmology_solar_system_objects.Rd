@@ -19,9 +19,6 @@ A tibble with 10 columns and 10 rows
 \item{revolution}{The revolution period compared to Earth}
 }
 }
-\source{
-
-}
 \usage{
 df_cosmology_solar_system_objects
 }
