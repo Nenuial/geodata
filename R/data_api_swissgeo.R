@@ -88,8 +88,8 @@ gdt_opendata_swiss_geodata <- function(geolevel = c("national", "canton", "distr
 
     # Load
     gd <- sf::st_read(gdUrl, layer = gdLayers[stringr::str_detect(gdLayers, "kant_")], quiet = T) %>%
-      dplyr::rename(canton_id = id) %>%
-      dplyr::rename(canton_name = name) %>%
+      dplyr::rename(canton_id = kantId) %>%
+      dplyr::rename(canton_name = kantName) %>%
       dplyr::mutate(canton_id = as.character(canton_id)) %>%
       dplyr::select(canton_id, geometry)
 
