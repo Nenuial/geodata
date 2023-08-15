@@ -3,6 +3,7 @@
 export("%>%")
 export(gdt_hmd_birth_raw)
 export(gdt_hmd_death_raw)
+export(gdt_hmd_e0_table)
 export(gdt_hmd_lex)
 export(gdt_hmd_mortality)
 export(gdt_hmd_population_raw)
