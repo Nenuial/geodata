@@ -207,3 +207,18 @@
 #' }
 #' @source <https://www.levada.ru/en/ratings/attitudes-towards-countries/>
 "oc_russie_levada_attitude_eu"
+
+#' OC Russie: Dépenses militaires
+#'
+#' Un tableau de l'évolution de l'attitude de la population
+#' russe vis-à-vis de l'Union Européenne. Sondage Levada.
+#'
+#' @format Un tibble avec 4 colonnes et 3411 lignes
+#' \describe{
+#'   \item{country}{Pays}
+#'   \item{year}{Année}
+#'   \item{military_expenditure}{Dépense militaire en mio $ US}
+#'   \item{iso3c}{Identifiant ISO3c}
+#' }
+#' @source <https://milex.sipri.org/sipri>
+"oc_russie_depenses_militaires"

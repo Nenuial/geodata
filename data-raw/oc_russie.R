@@ -511,6 +511,33 @@ levada_attitude_eu |>
 usethis::use_data(oc_russie_levada_attitude_us, overwrite = T)
 usethis::use_data(oc_russie_levada_attitude_eu, overwrite = T)
 
+
+# SIPRI Military expenditure ----------------------------------------------
+
+sipri_milexpd_excel <- here::here("inst/extdata/oc_russie/sipri/SIPRI-Milex-data-2000-2022.xlsx")
+cells <- tidyxl::xlsx_cells(sipri_milexpd_excel)
+formats <- tidyxl::xlsx_formats(sipri_milexpd_excel)
+
+cells |>
+  dplyr::filter(sheet == "Current US$") |>
+  dplyr::filter(row >= 6) |>
+  unpivotr::behead(direction = "up", name = "year") |>
+  unpivotr::behead_if(formats$local$font$bold[local_format_id],
+                      direction = "left-up", name = "region") |>
+  unpivotr::behead(direction = "left", name = "country") |>
+  dplyr::filter(!is.na(numeric)) |>
+  dplyr::select(country, year, military_expenditure = numeric) |>
+  dplyr::filter(country != "Kosovo") |>
+  dplyr::mutate(iso3c = countrycode::countrycode(
+    country,
+    origin = "country.name",
+    destination = "iso3c"
+  )) |>
+  dplyr::mutate(year = as.numeric(year)) -> oc_russie_depenses_militaires
+
+usethis::use_data(oc_russie_depenses_militaires, overwrite = T)
+
+
 # Open documentation file -------------------------------------------------
 
 usethis::edit_file(here::here("R/data_doc_oc_russie.R"))
