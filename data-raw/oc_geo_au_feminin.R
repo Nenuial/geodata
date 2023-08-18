@@ -93,6 +93,15 @@ usethis::use_data(oc_geo_au_feminin_2019_gfs_violences_sexuelles_experiences, ov
 usethis::use_data(oc_geo_au_feminin_2019_gfs_violences_sexuelles_actes, overwrite = T)
 usethis::use_data(oc_geo_au_feminin_2019_gfs_violences_sexuelles_police, overwrite = T)
 
+# Suffrage des femmes dans le monde
+
+readr::read_csv("inst/extdata/owid/universal-suffrage-women-lexical.csv") |>
+  dplyr::filter(female_suffrage_lied == 1) |>
+  dplyr::slice(1, .by = c("Entity", "Code")) |>
+  dplyr::select(-female_suffrage_lied) -> oc_geo_au_feminin_owid_suffrage_feminin
+
+usethis::use_data(oc_geo_au_feminin_owid_suffrage_feminin, overwrite = T)
+
 # Open documentation file -------------------------------------------------
 
 usethis::edit_file(here::here("R/data_doc_oc_geo_au_feminin.R"))

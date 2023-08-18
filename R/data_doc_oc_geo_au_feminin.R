@@ -127,3 +127,17 @@
 #' }
 #' @source <https://cockpit.gfsbern.ch/fr/cockpit/violence-sexuelles-en-suisse/>
 "oc_geo_au_feminin_2019_gfs_violences_sexuelles_police"
+
+#' OC Géo au féminin: Suffrage féminin
+#'
+#' Un tableau avec l'année à laquelle les femmes ont obtenus le droit de vote
+#' dans les différents pays du monde.
+#'
+#' @format Un tibble avec 3 colonnes et 206 lignes
+#' \describe{
+#'   \item{Entity}{Le pays}
+#'   \item{Code}{Code ISO3c}
+#'   \item{Year}{Année d'accès au suffrage féminin}
+#' }
+#' @source <https://ourworldindata.org/grapher/universal-suffrage-women-lexical>
+"oc_geo_au_feminin_owid_suffrage_feminin"

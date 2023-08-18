@@ -35,7 +35,10 @@ Imports:
     lifecycle,
     RCurl,
     glue,
-    geojsonsf
+    geojsonsf,
+    owidR
+Remotes:
+    piersyork/owidR
 RoxygenNote: 7.2.3
 Depends: 
     R (>= 4.1)
