@@ -141,3 +141,42 @@
 #' }
 #' @source <https://ourworldindata.org/grapher/universal-suffrage-women-lexical>
 "oc_geo_au_feminin_owid_suffrage_feminin"
+
+#' OC Géo au féminin: Femmes au Conseil National
+#'
+#' Un tableau avec le pourcentage de femmes au Conseil National
+#' en fonction de l'année
+#'
+#' @format Un tibble avec 2 colonnes et 13 lignes
+#' \describe{
+#'   \item{year}{L'année}
+#'   \item{percentage}{Le pourcentage}
+#' }
+#' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/politique/elections/femmes-elues.html>
+"oc_geo_au_feminin_ofs_election_femmes_conseil_national"
+
+#' OC Géo au féminin: Femmes au Conseil des Etats
+#'
+#' Un tableau avec le pourcentage de femmes au Conseil des Etats
+#' en fonction de l'année
+#'
+#' @format Un tibble avec 2 colonnes et 13 lignes
+#' \describe{
+#'   \item{year}{L'année}
+#'   \item{percentage}{Le pourcentage}
+#' }
+#' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/politique/elections/femmes-elues.html>
+"oc_geo_au_feminin_ofs_election_femmes_conseil_etats"
+
+#' OC Géo au féminin: Femmes au Conseil Fédéral
+#'
+#' Un tableau avec le pourcentage de femmes au Conseil Fédéral
+#' en fonction de l'année
+#'
+#' @format Un tibble avec 2 colonnes et 12 lignes
+#' \describe{
+#'   \item{year}{L'année}
+#'   \item{percentage}{Le pourcentage}
+#' }
+#' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/politique/elections/femmes-elues.html>
+"oc_geo_au_feminin_ofs_election_femmes_conseil_federal"
