@@ -9,7 +9,7 @@
 gdt_opendata_swiss_geodata <- function(geolevel = c("national", "canton", "district", "municipality", "zh_counting_districts", "lakes"), latest = T, verbose = F) {
 
   # Address of data API
-  data_source <- "https://opendata.swiss/api/3/action/package_show?id=geodaten-zu-den-eidgenoessischen-abstimmungsvorlagen"
+  data_source <- "https://ckan.opendata.swiss/api/3/action/package_show?id=geodaten-zu-den-eidgenoessischen-abstimmungsvorlagen"
 
   # Check input
   geolevel <- match.arg(geolevel)
@@ -131,6 +131,7 @@ gdt_opendata_swiss_geodata <- function(geolevel = c("national", "canton", "distr
 #' @return A geojson map
 #' @export
 gdt_opendata_swiss_geodata_json <- function(...) {
-  swissdd::get_geodata(...) |>
+  gdt_opendata_swiss_geodata(...) |>
+  #swissdd::get_geodata(...) |>
     geojsonsf::sf_geojson()
 }
