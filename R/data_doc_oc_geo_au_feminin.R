@@ -180,3 +180,34 @@
 #' }
 #' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/politique/elections/femmes-elues.html>
 "oc_geo_au_feminin_ofs_election_femmes_conseil_federal"
+
+#' OC Géo au féminin: Femmes en politique fédérale
+#'
+#' Un tableau avec le pourcentage de femmes dans les différentes
+#' instances fédérale (Conseil National, Conseil des États et
+#' Conseil Fédéral) en fonction de l'année
+#'
+#' @format Un tibble avec 3 colonnes et 38 lignes
+#' \describe{
+#'   \item{year}{L'année}
+#'   \item{percentage}{Le pourcentage}
+#'   \item{council}{L'instance}
+#' }
+#' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/politique/elections/femmes-elues.html>
+"oc_geo_au_feminin_ofs_election_femmes"
+
+#' OC Géo au féminin: Pourcentage de jeunes entre 16 et 24 ans qui savent programmer
+#'
+#' Un tableau avec le pourcentage de jeunes (16 à 24 ans)  qui savent
+#' programmer pour les différents pays de l'OECD.
+#'
+#' @format Un tibble avec 5 colonnes et 818 lignes
+#' \describe{
+#'   \item{ISO}{Code pays ISO3c}
+#'   \item{Country}{Le pays}
+#'   \item{Scope}{Hommes, femmes, ou tous}
+#'   \item{Time}{L'année}
+#'   \item{Value}{La valeur en pourcent}
+#' }
+#' @source <https://goingdigital.oecd.org/indicator/54>
+"oc_geo_au_feminin_oecd_programmation_16_24_ans"

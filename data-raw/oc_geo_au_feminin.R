@@ -133,9 +133,29 @@ elect_cf |>
   dplyr::select(year, percentage = numeric) |>
   dplyr::mutate(percentage = percentage / 7 * 100) -> oc_geo_au_feminin_ofs_election_femmes_conseil_federal
 
+dplyr::bind_rows(
+  oc_geo_au_feminin_ofs_election_femmes_conseil_national |>
+    dplyr::mutate(council = "Conseil National"),
+  oc_geo_au_feminin_ofs_election_femmes_conseil_etats |>
+    dplyr::mutate(council = "Conseil des États"),
+  oc_geo_au_feminin_ofs_election_femmes_conseil_federal |>
+    dplyr::mutate(council = "Conseil Fédéral")
+) -> oc_geo_au_feminin_ofs_election_femmes
+
+
 usethis::use_data(oc_geo_au_feminin_ofs_election_femmes_conseil_national, overwrite = T)
 usethis::use_data(oc_geo_au_feminin_ofs_election_femmes_conseil_etats, overwrite = T)
 usethis::use_data(oc_geo_au_feminin_ofs_election_femmes_conseil_federal, overwrite = T)
+usethis::use_data(oc_geo_au_feminin_ofs_election_femmes, overwrite = T)
+
+
+
+# Jeunes qui apprennent à coder -------------------------------------------
+
+readr::read_csv(here::here("inst/extdata/oecd/going_digital/indicator_54_20231016_all.csv")) |>
+  dplyr::select(ISO, Country, Scope, Time, Value) -> oc_geo_au_feminin_oecd_programmation_16_24_ans
+
+usethis::use_data(oc_geo_au_feminin_oecd_programmation_16_24_ans, overwrite = T)
 
 # Open documentation file -------------------------------------------------
 
