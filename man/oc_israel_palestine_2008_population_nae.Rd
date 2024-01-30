@@ -5,7 +5,7 @@
 \alias{oc_israel_palestine_2008_population_nae}
 \title{OC Israël-Palestine: Population née à l'étranger}
 \format{
-Un tibble avec 2 colonnes et 5 lignes
+Un tibble avec 3 colonnes et 5 lignes
 \describe{
 \item{country}{Le pays de naissance}
 \item{continent}{Le continent de naissance}

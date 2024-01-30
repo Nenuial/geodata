@@ -148,15 +148,137 @@ usethis::use_data(oc_geo_au_feminin_ofs_election_femmes_conseil_etats, overwrite
 usethis::use_data(oc_geo_au_feminin_ofs_election_femmes_conseil_federal, overwrite = T)
 usethis::use_data(oc_geo_au_feminin_ofs_election_femmes, overwrite = T)
 
-
-
 # Jeunes qui apprennent à coder -------------------------------------------
 
 readr::read_csv(here::here("inst/extdata/oecd/going_digital/indicator_54_20231016_all.csv")) |>
-  dplyr::select(ISO, Country, Scope, Time, Value) -> oc_geo_au_feminin_oecd_programmation_16_24_ans
+  dplyr::select(ISO, Country, Scope, Time, Value) |>
+  tidyr::separate_wider_delim(Scope, " aged ", names = c("Gender", "Age")) ->
+  oc_geo_au_feminin_oecd_programmation_16_24_ans
 
 usethis::use_data(oc_geo_au_feminin_oecd_programmation_16_24_ans, overwrite = T)
 
-# Open documentation file -------------------------------------------------
+
+# Social Institutions and Gender Index ------------------------------------
+
+readr::read_csv(here::here("inst/extdata/oecd/SIGI2023.csv")) |>
+  dplyr::select(-c(`Flag Codes`, Flags, TIME)) ->
+  oc_geo_au_feminin_2023_oecd_sigi
+
+usethis::use_data(oc_geo_au_feminin_2023_oecd_sigi, overwrite = T)
+
+
+# Gender Inequality Index -------------------------------------------------
+
+xls <- here::here("inst/extdata/unhdr/HDR21-22_Statistical_Annex_GII_Table.xlsx")
+un_gii <- tidyxl::xlsx_cells(xls)
+un_gii_format <- tidyxl::xlsx_formats(xls)
+
+un_gii |>
+  dplyr::filter(col > 1 & col < 4) |>
+  dplyr::filter(row > 3 & row <= 203) |>
+  dplyr::mutate(bold = un_gii_format$local$font$bold[local_format_id]) |>
+  unpivotr::behead(direction = "up", name = "indicator") |>
+  unpivotr::behead(direction = "up", name = "measure") |>
+  unpivotr::behead(direction = "up", name = "header") |>
+  unpivotr::behead_if(bold, direction = "left-up", name = "category") |>
+  unpivotr::behead(direction = "left", name = "country") |>
+  dplyr::select(country, gii = numeric) |>
+  tidyr::drop_na() |>
+  dplyr::mutate(iso = countrycode::countrycode(country,
+                                               origin = "country.name",
+                                               destination = "iso3c")) ->
+  oc_geo_au_feminin_2021_unhdr_gii
+
+usethis::use_data(oc_geo_au_feminin_2021_unhdr_gii, overwrite = T)
+
+
+# Déséquilibre filles/garçons à la naissance - WPP2022 --------------------
+
+readr::read_csv("inst/extdata/unwpp/WPP2022_Demographic_Indicators_Medium.csv") |>
+  dplyr::select(UN_Code = LocID, Region = LocTypeName, Location, Year = Time, SRB) |>
+  dplyr::mutate(
+    iso = countrycode::countrycode(UN_Code, origin = "un", destination = "iso3c")
+  ) -> oc_geo_au_feminin_sex_ratio
+
+usethis::use_data(oc_geo_au_feminin_sex_ratio, overwrite = T)
+
+
+
+# Avortement par cantons ----------------------------------------------------------------------
+
+xls <- here::here("inst/extdata/ofs/14_Health/je-f-14.03.07.02.23.xlsx")
+ofs_abortion <- tidyxl::xlsx_cells(xls)
+ofs_abortion_format <- tidyxl::xlsx_formats(xls)
+
+ofs_abortion |>
+  dplyr::filter(row > 3 & row <= 40 & sheet == 2022) |>
+  dplyr::mutate(bold = ofs_abortion_format$local$font$bold[local_format_id]) |>
+  unpivotr::behead(direction = "up-left", name = "age_group") |>
+  unpivotr::behead(direction = "up", name = "unit") |>
+  unpivotr::behead_if(bold, direction = "left-up", name = "region") |>
+  unpivotr::behead(direction = "left", name = "canton") |>
+  dplyr::mutate(canton = dplyr::if_else(region == "Zurich", "Zurich", canton)) |>
+  dplyr::mutate(canton = dplyr::if_else(region == "Tessin", "Tessin", canton)) |>
+  dplyr::select(age_group, unit, region, canton, abortion = numeric) |>
+  tidyr::drop_na(canton) -> oc_geo_au_feminin_2022_ofs_avortements_par_canton
+
+usethis::use_data(oc_geo_au_feminin_2022_ofs_avortements_par_canton, overwrite = T)
+
+
+
+# Avortement par tranche d'âges ---------------------------------------------------------------
+
+xls <- here::here("inst/extdata/ofs/14_Health/je-f-14.03.07.02.23.xlsx")
+ofs_abortion <- tidyxl::xlsx_cells(xls)
+ofs_abortion_format <- tidyxl::xlsx_formats(xls)
+
+ofs_abortion |>
+  dplyr::filter(row > 3 & row <= 6 & sheet == 2022) |>
+  dplyr::mutate(bold = ofs_abortion_format$local$font$bold[local_format_id]) |>
+  unpivotr::behead(direction = "up-left", name = "age_group") |>
+  unpivotr::behead(direction = "up", name = "unit") |>
+  unpivotr::behead_if(bold, direction = "left-up", name = "region") |>
+  dplyr::filter(age_group != "Total") |>
+  dplyr::select(age_group, unit, abortion = numeric) -> oc_geo_au_feminin_2022_ofs_avortements_par_ages
+
+usethis::use_data(oc_geo_au_feminin_2022_ofs_avortements_par_ages, overwrite = T)
+
+
+
+# Avortement par régions ----------------------------------------------------------------------
+
+xls <- here::here("inst/extdata/ofs/14_Health/je-f-14.03.07.02.20.xlsx")
+ofs_abortion <- tidyxl::xlsx_cells(xls)
+ofs_abortion_format <- tidyxl::xlsx_formats(xls)
+
+ofs_abortion |>
+  dplyr::filter(row >= 4 & row <= 37 & sheet == "Taux pour mille femmes") |>
+  dplyr::mutate(bold = ofs_abortion_format$local$font$bold[local_format_id]) |>
+  unpivotr::behead(direction = "up", name = "annee") |>
+  dplyr::filter(bold == TRUE) |>
+  unpivotr::behead(direction = "left", name = "region") |>
+  dplyr::select(annee, region, avortement = numeric) |>
+  dplyr::filter(region != "Total ") -> oc_geo_au_feminin_ofs_avortements_par_region
+
+usethis::use_data(oc_geo_au_feminin_ofs_avortements_par_region, overwrite = T)
+
+
+
+# Votations sur l'avortement ------------------------------------------------------------------
+
+tibble::tribble(
+  ~Votation, ~Oui, ~Non,
+  "février 2014 - initiative pour radier les coûts de l'interruption de grossesse de l'assurance de base", 30.2, 69.8,
+  "juin 2002 - initiative «pour la protection de l'enfant à naître et l'aide à sa mère dans la détresse»", 18.2, 81.8,
+  "juin 2002 - inscription du régime du délai dans le Code pénal", 72.2, 27.8,
+  "juin 1985 - initiative «pour le droit à la vie»", 31, 69,
+  "mai 1978 - loi fédérale sur la protection de la grossesse et le caractère punissable de son interruption", 31.2, 68.8,
+  "septembre 1977 - initiative «pour la solution du délai»", 48.3, 51.7
+) -> oc_geo_au_feminin_votations_avortement
+
+usethis::use_data(oc_geo_au_feminin_votations_avortement, overwrite = T)
+
+
+# Open documentation file ---------------------------------------------------------------------
 
 usethis::edit_file(here::here("R/data_doc_oc_geo_au_feminin.R"))

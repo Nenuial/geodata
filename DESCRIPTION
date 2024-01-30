@@ -36,10 +36,11 @@ Imports:
     tidyxl,
     unpivotr,
     wbstats,
-    WikidataR
+    WikidataR,
+    httr2
 Remotes:
     piersyork/owidR
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Depends: 
     R (>= 4.1)
 Roxygen: list(markdown = TRUE)

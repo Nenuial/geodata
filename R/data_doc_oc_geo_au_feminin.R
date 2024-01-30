@@ -211,3 +211,110 @@
 #' }
 #' @source <https://goingdigital.oecd.org/indicator/54>
 "oc_geo_au_feminin_oecd_programmation_16_24_ans"
+
+#' OC Géo au féminin: Indicateur SIGI
+#'
+#' Un tableau avec l'indicateur SIGI (Social Institutions and Gender Index)
+#' pour l'année 2023
+#'
+#' @format Un tibble avec 8 colonnes et 1635 lignes
+#' \describe{
+#'   \item{REGION}{Code région}
+#'   \item{Region}{Intitulé région}
+#'   \item{LOCATION}{Code pays ISO3c}
+#'   \item{Country}{Pays}
+#'   \item{VAR}{Code variable}
+#'   \item{Variables}{Intitulé variable}
+#'   \item{Time}{Année}
+#'   \item{Value}{Valeur}
+#' }
+#' @source <https://stats.oecd.org/Index.aspx?DataSetCode=SIGI2023>
+"oc_geo_au_feminin_2023_oecd_sigi"
+
+#' OC Géo au féminin: Indicateur GII
+#'
+#' Un tableau avec l'indicateur GII (Gender Inequality Index)
+#' pour l'année 2021
+#'
+#' @format Un tibble avec 3 colonnes et 170 lignes
+#' \describe{
+#'   \item{country}{Pays}
+#'   \item{gii}{Indicateur GII}
+#'   \item{iso}{Code pays ISO3c}
+#' }
+#' @source <https://hdr.undp.org/data-center/thematic-composite-indices/gender-inequality-index#/indicies/GII>
+"oc_geo_au_feminin_2021_unhdr_gii"
+
+#' OC Géo au féminin: Sex-ratio à la naissance
+#'
+#' Un tableau avec le sex ratio à la naissance tiré des données
+#' WPP 2022
+#'
+#' @format Un tibble avec 6 colonnes et 43472 lignes
+#' \describe{
+#'   \item{UN_Code}{Code UN}
+#'   \item{Region}{Type de région UN}
+#'   \item{Location}{Nom du pays/région}
+#'   \item{Year}{L'année}
+#'   \item{SRB}{Sex-ration à la naissance}
+#'   \item{iso}{Code pays ISO3c}
+#' }
+#' @source <https://population.un.org/wpp/>
+"oc_geo_au_feminin_sex_ratio"
+
+#' OC Géo au féminin: Avortement par canton
+#'
+#' Un tableau avec les avortements par canton en Suisse
+#' en 2022
+#'
+#' @format Un tibble avec 5 colonnes et 494 lignes
+#' \describe{
+#'   \item{age_group}{Tranche d'âge}
+#'   \item{unit}{Unité (n ou %)}
+#'   \item{region}{Région du pays}
+#'   \item{canton}{Le canton}
+#'   \item{abortion}{Mesure de l'avortement}
+#' }
+#' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/catalogues-banques-donnees/tableaux.assetdetail.26386394.html>
+"oc_geo_au_feminin_2022_ofs_avortements_par_canton"
+
+#' OC Géo au féminin: Avortements par canton
+#'
+#' Un tableau avec les avortements par tranche d'âge
+#' en Suisse en 2022
+#'
+#' @format Un tibble avec 3 colonnes et 18 lignes
+#' \describe{
+#'   \item{age_group}{Tranche d'âge}
+#'   \item{unit}{Unité (n ou %)}
+#'   \item{abortion}{Mesure de l'avortement}
+#' }
+"oc_geo_au_feminin_2022_ofs_avortements_par_ages"
+
+
+#' OC Géo au féminin: Avortements par région
+#'
+#' Un tableau avec les avortements par régions
+#' en Suisse entre 2007 et 2022
+#'
+#' @format Un tibble avec 3 colonnes et 18 lignes
+#' \describe{
+#'   \item{annee}{Année}
+#'   \item{region}{Région}
+#'   \item{avortement}{Taux d'avortement}
+#' }
+"oc_geo_au_feminin_ofs_avortements_par_region"
+
+#' OC Géo au féminin: Votations sur l'avortement
+#'
+#' Un tableau avec les résultats au niveau fédéral
+#' de différentes votations en rapport avec
+#' l'avortement
+#'
+#' @format Un tibble avec 3 colonnes et 6 lignes
+#' \describe{
+#'   \item{Votation}{Le titre de la votation}
+#'   \item{Oui}{Pourcentage de voix pour le oui}
+#'   \item{Non}{Pourcentage de voix pour le non}
+#' }
+"oc_geo_au_feminin_votations_avortement"
