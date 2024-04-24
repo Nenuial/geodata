@@ -1,4 +1,4 @@
-#' G#' #' #' l deet general demographic informations
+#' General demographic informations
 #'
 #' @param country A country code
 #' @param years The year for which the information is needed
@@ -35,16 +35,17 @@ gdt_table_demography <- function(country, years) {
     country = country,
     start_date = start,
     end_date = end
-  ) %>%
-    dplyr::filter(date %in% years) %>%
-    dplyr::mutate("4-rni" = `2-cbr` - `3-cdr`) %>%
-    dplyr::select(-c(iso2c, iso3c, country)) %>%
-    tidyr::pivot_longer(-date, names_to = "indicator", values_to = "data") %>%
-    tidyr::pivot_wider(tidyselect::everything(), names_from = "date", values_from = "data") %>%
-    dplyr::arrange(indicator) %>%
-    dplyr::mutate(indicator = stringr::str_remove(indicator, "\\d-")) %>%
+  ) |>
+    dplyr::filter(date %in% years) |>
+    dplyr::mutate("4-rni" = `2-cbr` - `3-cdr`) |>
+    dplyr::select(-c(iso2c, iso3c, country)) |>
+    tidyr::pivot_longer(-date, names_to = "indicator", values_to = "data") |>
+    tidyr::pivot_wider(id_cols = tidyselect::everything(),
+                       names_from = "date", values_from = "data") |>
+    dplyr::arrange(indicator) |>
+    dplyr::mutate(indicator = stringr::str_remove(indicator, "\\d-")) |>
     dplyr::mutate(indicator = stringr::str_replace_all(indicator, pattern = names(indicator_values),
-                                                       replacement = indicator_values)) %>%
+                                                       replacement = indicator_values)) |>
     dplyr::rename({{ indicator_name }} := indicator)
 }
 

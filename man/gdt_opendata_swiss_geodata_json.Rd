@@ -6,28 +6,9 @@
 \usage{
 gdt_opendata_swiss_geodata_json(...)
 }
-\arguments{
-\item{...}{
-  Arguments passed on to \code{\link[swissdd:get_geodata]{swissdd::get_geodata}}
-  \describe{
-    \item{\code{geolevel}}{geographical level. Options: "national", "canton", "district", "municipality", "zh_counting_districts" or "lakes".}
-    \item{\code{latest}}{if \code{TRUE}, the latest data is retrieved. If \code{FALSE}, geo data from the beginning of the year is retrieved. 
-The API does not support finer distinctions. For more detailed information on the exact status of the data, please use 
-\code{verbode = TRUE}.}
-    \item{\code{verbose}}{if \code{TRUE}, the date from which the data originates is displayed.}
-    \item{\code{call_res}}{result of a previous call to the geodata API. Optional argument.}
-  }}
-}
 \value{
 A geojson map
 }
 \description{
-\code{get_geodata} retrieves the latest geodata provided by the Federal Statistical Office in connection with federal votes.
-}
-\examples{
-# Get latest geodata at municipal level
-get_geodata()
-
-# Get latest geodata at cantonal level
-get_geodata(geolevel = "canton")
+Get swiss geodata in geojson format
 }
