@@ -6,7 +6,7 @@
 #' @format Un tibble avec 2 colonnes et 26 lignes
 #' \describe{
 #'   \item{Canton}{Nom du canton}
-#'   \item{Année}{Année de l'obtention du suffrage féminin}
+#'   \item{Annee}{Année de l'obtention du suffrage féminin}
 #' }
 #' @source <https://fr.wikipedia.org/wiki/Suffrage_féminin_en_Suisse>
 "oc_suisse_suffrage_feminin"
