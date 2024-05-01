@@ -18,6 +18,9 @@ A dataframe
 Return 5y population data
 }
 \examples{
-gdt_idb_pyramid_5y("Switzerland", 2020)
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# Not run: needn a valid IDB API key
 
+gdt_idb_pyramid_5y("Switzerland", 2020)
+\dontshow{\}) # examplesIf}
 }

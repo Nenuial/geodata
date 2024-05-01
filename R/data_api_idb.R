@@ -5,7 +5,9 @@
 #' @return A dataframe with age, female, and male population
 #'
 #' @export
-#' @examples
+#' @examplesIf interactive()
+#' # Not run: needn a valid IDB API key
+#'
 #' gdt_idb_pyramid_1y("Switzerland", 2020)
 #'
 gdt_idb_pyramid_1y <- function(country, year) {
@@ -38,7 +40,9 @@ gdt_idb_pyramid_1y <- function(country, year) {
 #' @return A dataframe with age, gender, and population
 #'
 #' @export
-#' @examples
+#' @examplesIf interactive()
+#' # Not run: needn a valid IDB API key
+#'
 #' gdt_idb_pyramid("Switzerland", 2020)
 #'
 gdt_idb_pyramid <- function(country, year) {
@@ -71,7 +75,9 @@ gdt_idb_pyramid <- function(country, year) {
 #'
 #' @return A dataframe
 #' @export
-#' @examples
+#' @examplesIf interactive()
+#' # Not run: needn a valid IDB API key
+#'
 #' gdt_idb_pyramid_5y("Switzerland", 2020)
 #'
 gdt_idb_pyramid_5y <- function(country, year) {
