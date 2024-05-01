@@ -1,3 +1,13 @@
+#' Get the swiss vote list
+#'
+#' This function fetches the list of votes in Switzerland
+#' from [OpenData.swiss](https://opendata.swiss/)
+#'
+#' @return A tibble
+#' @export
+#'
+#' @examples
+#' gdt_ofs_vote_list()
 gdt_ofs_vote_list <- function() {
   api_call <- "https://opendata.swiss/api/3/action/package_show?id=echtzeitdaten-am-abstimmungstag-zu-eidgenoessischen-abstimmungsvorlagen"
   util_chk_api_call(api_call)

@@ -15,3 +15,9 @@ A tibble
 \description{
 Get life expectancy table from Human Mortality Database
 }
+\examples{
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# This function uses caching so it isn't run here
+gdt_hmd_e0_table("Switzerland")
+\dontshow{\}) # examplesIf}
+}

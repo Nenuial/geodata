@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_api_guttmacher.R
 \name{gdt_gutt_get_abortion_rates}
 \alias{gdt_gutt_get_abortion_rates}
-\title{Get abortion rate from Guttmacher API}
+\title{Get abortion rate from the Guttmacher API}
 \usage{
 gdt_gutt_get_abortion_rates()
 }
@@ -10,5 +10,10 @@ gdt_gutt_get_abortion_rates()
 A tibble
 }
 \description{
-Get abortion rate from Guttmacher API
+Get abortion rate from the Guttmacher API
+}
+\examples{
+gdt_gutt_get_abortion_rates() |>
+  head(5)
+
 }

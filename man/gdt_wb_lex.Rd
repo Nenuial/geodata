@@ -20,3 +20,7 @@ A tibble with the requested data:
 \description{
 This function downloads the data for \emph{total life expectancy}, \emph{male life expectancy} and \emph{female life expectancy}
 }
+\examples{
+gdt_wb_lex("Switzerland")
+
+}

@@ -7,7 +7,7 @@
 gdt_idb_pyramid_1y(country, year)
 }
 \arguments{
-\item{country}{A FIPS code for the country}
+\item{country}{A string with the country name}
 
 \item{year}{An integer with the year}
 }
@@ -16,4 +16,8 @@ A dataframe with age, female, and male population
 }
 \description{
 One year population pyramid data (legacy function)
+}
+\examples{
+gdt_idb_pyramid_1y("Switzerland", 2020)
+
 }

@@ -24,3 +24,7 @@ An sf object
 \description{
 Get swiss geodata
 }
+\examples{
+gdt_opendata_swiss_geodata("national")
+
+}

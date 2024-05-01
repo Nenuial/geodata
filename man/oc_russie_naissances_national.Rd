@@ -3,12 +3,12 @@
 \docType{data}
 \name{oc_russie_naissances_national}
 \alias{oc_russie_naissances_national}
-\title{OC Russie: avortements national}
+\title{OC Russie: naissances national}
 \format{
 Un tibble avec 2 colonnes et 21 lignes
 \describe{
 \item{year}{Année}
-\item{abortions}{Nombre d'avortements pour 100 naissances}
+\item{births}{Nombre de naissances}
 }
 }
 \source{

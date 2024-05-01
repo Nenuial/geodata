@@ -16,3 +16,10 @@ Get abortion data from CRR
 Get the data for every country from the Center
 for Reproductive Rights.
 }
+\examples{
+gdt_crr_get_data() -> reproductive_rights
+
+reproductive_rights |>
+  head(5)
+
+}

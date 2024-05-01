@@ -5,21 +5,24 @@
 #'
 #' @return A tibble
 #' @export
+#' @examples
+#' gdt_table_demography("Switzerland", 2020)
+#'
 gdt_table_demography <- function(country, years) {
   start <- min(years)
   end <- max(years)
   indicator_values <- c(
     pop = "Population (total)",
-    cbr = geotools::translate_enfr("Crude birth rate (‰)", "Taux de natalité (‰)"),
-    cdr = geotools::translate_enfr("Crude death rate (‰)", "Taux de mortalité (‰)"),
-    rni = geotools::translate_enfr("Rate of natural increase (‰)", "Taux d'accroissement (‰)"),
-    imr = geotools::translate_enfr("Infant mortality rate (‰)", "Taux de mortalité infantile (‰)"),
-    tfr = geotools::translate_enfr("Total fertility rate", "Indice de fécondité"),
-    lex = geotools::translate_enfr("Life expectancy", "Espérance de vie"),
-    lem = geotools::translate_enfr("- male", "- hommes"),
-    lef = geotools::translate_enfr("- female", "- femmes")
+    cbr = geotools::gtl_translate_enfr("Crude birth rate (\u2030)", "Taux de natalit\u00e9 (\u2030)"),
+    cdr = geotools::gtl_translate_enfr("Crude death rate (\u2030)", "Taux de mortalit\u00e9 (\u2030)"),
+    rni = geotools::gtl_translate_enfr("Rate of natural increase (\u2030)", "Taux d'accroissement (\u2030)"),
+    imr = geotools::gtl_translate_enfr("Infant mortality rate (\u2030)", "Taux de mortalit\u00e9 infantile (\u2030)"),
+    tfr = geotools::gtl_translate_enfr("Total fertility rate", "Indice de f\u00e9condit\u00e9"),
+    lex = geotools::gtl_translate_enfr("Life expectancy", "Esp\u00e9rance de vie"),
+    lem = geotools::gtl_translate_enfr("- male", "- hommes"),
+    lef = geotools::gtl_translate_enfr("- female", "- femmes")
   )
-  indicator_name <- geotools::translate_enfr("Indicator", "Indicateur")
+  indicator_name <- geotools::gtl_translate_enfr("Indicator", "Indicateur")
 
   wbstats::wb_data(
     indicator = c(
@@ -47,99 +50,4 @@ gdt_table_demography <- function(country, years) {
     dplyr::mutate(indicator = stringr::str_replace_all(indicator, pattern = names(indicator_values),
                                                        replacement = indicator_values)) |>
     dplyr::rename({{ indicator_name }} := indicator)
-}
-
-#' Get life expectancy from the Human Mortality Database
-#'
-#' @param countries A list of country names
-#' @param age The life expectancy age
-#' @param type The type (one of `male`, `female` or `total`)
-#'
-#' @return A tibble with 3 columns: `year`, `country` and `lex`
-#' @export
-gdt_hmd_lex <- function(countries, age, type = c("male", "female", "total")) {
-  type <- match.arg(type)
-
-  countries %>%
-    purrr::map(
-      .f = ~gdt_hmd_lex_clean(.x, age, type)
-    ) %>%
-    purrr::reduce(
-      .f = ~dplyr::inner_join(.x, .y, by = "year")
-    ) %>%
-    tidyr::pivot_longer(-year, names_to = "country", values_to = "lex")
-}
-
-#' Get clean tibble for LEX data
-#'
-#' @param country The country name
-#' @param age The life expectancy age
-#' @param type The type (one of `male`, `female` or `total`)
-#'
-#' @return A tibble
-#' @keywords internal
-gdt_hmd_lex_clean <- function(country, age, type) {
-  demodata <- gdt_hmd_mortality(country)
-  lexdata <- demography::life.expectancy(demodata, age = age, series = type)
-  label <- demodata$label
-
-  lexdata %>%
-    as.data.frame() %>%
-    tibble::as_tibble(rownames = "year") %>%
-    dplyr::rename({{ label }} := x) %>%
-    dplyr::mutate(year = readr::parse_number(year))
-}
-
-#' HMD raw births data
-#'
-#' @param country Country code
-#'
-#' @return A dataframe
-#' @export
-gdt_hmd_birth_raw <- function(country) {
-  gdt_hmd_download(country, "Births")
-}
-
-#' HMD raw population data
-#'
-#' @param country Country code
-#'
-#' @return A dataframe
-#' @export
-gdt_hmd_population_raw <- function(country) {
-  gdt_hmd_download(country, "Population")
-}
-
-#' HMD raw death data
-#'
-#' @param country Country code
-#'
-#' @return A dataframe
-#' @export
-gdt_hmd_death_raw <- function(country) {
-  gdt_hmd_download(country, "Deaths_1x1")
-}
-
-#' Download HMD data
-#' Function to download and read HDM data into a dataframe
-#'
-#' @param country Country code
-#' @param indicator String indicating the indicator to dowload (usually one of `Population`, `Births` or `Death_1x1`)
-#'
-#' @return A dataframe
-#'
-#' @keywords internal
-gdt_hmd_download <- function(country, indicator) {
-  url <- paste0("https://www.mortality.org/hmd/",
-                country, "/STATS/", indicator, ".txt")
-  credentials <- paste0(keyring::key_list('mortality.org')[['username']],
-                        ":", keyring::key_get('mortality.org'))
-
-  RCurl::getURL(
-    url = url,
-    userpwd = credentials
-  ) |>
-    textConnection() |>
-    utils::read.table(skip = 2, header = TRUE,
-                      na.strings = ".")
 }

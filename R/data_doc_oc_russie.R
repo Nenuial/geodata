@@ -133,7 +133,7 @@
 #' @source <https://showdata.gks.ru/olap2/descr/report/297822/>
 "oc_russie_avortements_national"
 
-#' OC Russie: avortements national
+#' OC Russie: naissances national
 #'
 #' Un tableau des naissances en Russie
 #' de 1999 à 2019.
@@ -141,11 +141,25 @@
 #' @format Un tibble avec 2 colonnes et 21 lignes
 #' \describe{
 #'   \item{year}{Année}
-#'   \item{abortions}{Nombre d'avortements pour 100 naissances}
+#'   \item{births}{Nombre de naissances}
 #' }
 #' @source <https://showdata.gks.ru/olap2/descr/report/297822/>
 "oc_russie_naissances_national"
 
+#' OC Russie: population municipale en 2020
+#'
+#' Un tableau de la population municipale en Russie
+#' en 2016 et 2020.
+#'
+#' @format Un tibble avec 4 colonnes et 2539 lignes
+#' \describe{
+#'   \item{name}{Nom de la province}
+#'   \item{oktmo}{Code de la municipalité}
+#'   \item{2016}{Population en 2016}
+#'   \item{2020}{Population en 2020}
+#' }
+#' @source <https://showdata.gks.ru/>
+"oc_russie_2020_population_municipale"
 
 #' OC Russie: Évolution de la population
 #'
@@ -222,3 +236,38 @@
 #' }
 #' @source <https://milex.sipri.org/sipri>
 "oc_russie_depenses_militaires"
+
+#' OC Russie: ADM6 GIS data
+#'
+#' Un tableau geographique des 2338 communes russes.
+#'
+#' @format Un tibble avec 27 colonnes et 2338 lignes
+#' \describe{
+#'   \item{osm_id}{OSM id}
+#'   \item{osm_way_id}{OSM way id}
+#'   \item{name}{Name}
+#'   \item{type}{OSM tourism tag}
+#'   \item{aeroway}{OSM aeroway tag}
+#'   \item{amenity}{OSM amenity tag}
+#'   \item{admin_level}{OSM admin_level}
+#'   \item{boundary}{OSM boundary tag}
+#'   \item{barrier}{OSM barrier tag}
+#'   \item{building}{OSM building tag}
+#'   \item{craft}{OSM craft tag}
+#'   \item{geological}{OSM geological tag}
+#'   \item{land_area}{OSM land_area tag}
+#'   \item{landuse}{OSM landuse tag}
+#'   \item{leisure}{OSM leisure tag}
+#'   \item{man_made}{OSM man_made tag}
+#'   \item{military}{OSM military tag}
+#'   \item{natural}{OSM natural tag}
+#'   \item{office}{OSM office tag}
+#'   \item{place}{OSM place tag}
+#'   \item{shop}{OSM shop tag}
+#'   \item{sport}{OSM sport tag}
+#'   \item{tourism}{OSM tourism tag}
+#'   \item{other_tags}{OSM other tags}
+#'   \item{oktmo}{OKTMO ID}
+#' }
+#' @source Open Street Map and WikiData
+"oc_russie_adm6_gis"

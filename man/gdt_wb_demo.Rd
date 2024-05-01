@@ -20,3 +20,7 @@ A tibble with the requested data:
 \description{
 This function downloads the data for \emph{population}, \emph{crude birth rate} and \emph{crude death rate}
 }
+\examples{
+gdt_wb_demo("Switzerland")
+
+}

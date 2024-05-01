@@ -17,3 +17,7 @@ A tibble
 \description{
 General demographic informations
 }
+\examples{
+gdt_table_demography("Switzerland", 2020)
+
+}

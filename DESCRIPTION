@@ -2,45 +2,46 @@ Package: geodata
 Type: Package
 Title: Provide Data for Geography Vizualisations
 Version: 1.0.0
-Author: Pascal Burkhard <pascal.burkhard@gmail.com>
+Authors@R: 
+    person("Pascal", "Burkhard", , "pascal.burkhard@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0009-0001-5504-5084"))
 Maintainer: Pascal Burkhard <pascal.burkhard@gmail.com>
-Description: Provide a repository of data for the geography vizualisations.
-License: CC0
+Description: Provide a repository of data for geography vizualisations.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+LazyDataCompression: bzip2
 Imports: 
     countrycode,
     dplyr,
     demography,
-    fs,
-    glue,
     geojsonsf,
-    here,
     httr,
+    httr2,
     idbr,
     keyring,
-    lifecycle,
     lubridate,
     magrittr,
     memoise,
-    osmextract,
-    owidR,
     purrr,
     RCurl,
     readr,
-    readxl,
     stringr,
     tibble,
     tidyselect,
     tidyr,
-    tidyxl,
-    unpivotr,
     wbstats,
-    WikidataR,
-    httr2
+    rlang,
+    geotools,
+    sf
+Suggests:
+    lifecycle
 Remotes:
     piersyork/owidR
 RoxygenNote: 7.3.1
 Depends: 
     R (>= 4.1)
 Roxygen: list(markdown = TRUE)
+URL: https://geodata.nenuial.org
+Config/Needs/website: pkgdown,
+  nenuial/geopkg

@@ -17,3 +17,7 @@ A dataframe
 \description{
 Return 5y population data
 }
+\examples{
+gdt_idb_pyramid_5y("Switzerland", 2020)
+
+}

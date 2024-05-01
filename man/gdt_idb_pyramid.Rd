@@ -17,3 +17,7 @@ A dataframe with age, gender, and population
 \description{
 One year population pyramid data (tidy)
 }
+\examples{
+gdt_idb_pyramid("Switzerland", 2020)
+
+}

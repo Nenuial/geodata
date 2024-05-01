@@ -11,7 +11,9 @@
 #'   \item{death_rate}{Crude Death Rate (per mil)}
 #' }
 #' @export
-#' @md
+#' @examples
+#' gdt_wb_demo("Switzerland")
+#'
 gdt_wb_demo <- function(country) {
   wbstats::wb_data(
     country = country,
@@ -38,7 +40,9 @@ gdt_wb_demo <- function(country) {
 #'   \item{lex_female}{Female life expectancy}
 #' }
 #' @export
-#' @md
+#' @examples
+#' gdt_wb_lex("Switzerland")
+#'
 gdt_wb_lex <- function(country) {
   wbstats::wb_data(
     country = country,

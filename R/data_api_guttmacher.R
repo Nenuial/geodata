@@ -1,7 +1,11 @@
-#' Get abortion rate from Guttmacher API
+#' Get abortion rate from the Guttmacher API
 #'
 #' @return A tibble
 #' @export
+#' @examples
+#' gdt_gutt_get_abortion_rates() |>
+#'   head(5)
+#'
 gdt_gutt_get_abortion_rates <- function() {
   url <- "https://api.guttmacher.org/measure/data/729"
 

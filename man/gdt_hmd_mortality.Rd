@@ -13,5 +13,14 @@ gdt_hmd_mortality(country)
 A demogdata object
 }
 \description{
-Get mortality table from Human Mortality Database
+Fetches the mortality table from the HMD database. This function
+needs valid credentials for HMD stored using the
+{\href{https://keyring.r-lib.org}{keyring}} package under a service
+labelled \emph{mortality.org}.
+}
+\examples{
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# This function uses caching so it isn't run here
+gdt_hmd_mortality("France")
+\dontshow{\}) # examplesIf}
 }

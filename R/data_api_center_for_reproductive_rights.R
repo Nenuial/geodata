@@ -4,6 +4,12 @@
 #'
 #' @return A tibble
 #' @export
+#' @examples
+#' gdt_crr_get_data() -> reproductive_rights
+#'
+#' reproductive_rights |>
+#'   head(5)
+#'
 gdt_crr_get_data <- function() {
   url <- "https://reproductiverights.org/wp-json/crr-maps/v1/wal?ver=1.0.17"
 

@@ -6,6 +6,9 @@
 #'
 #' @return An sf object
 #' @export
+#' @examples
+#' gdt_opendata_swiss_geodata("national")
+#'
 gdt_opendata_swiss_geodata <- function(geolevel = c("national", "canton", "district", "municipality", "zh_counting_districts", "lakes"), latest = T, verbose = F) {
 
   # Address of data API
@@ -125,10 +128,13 @@ gdt_opendata_swiss_geodata <- function(geolevel = c("national", "canton", "distr
 
 #' Get swiss geodata in geojson format
 #'
-#' @inherit gdt_opendata_swiss_geodata
+#' @inheritDotParams gdt_opendata_swiss_geodata
 #'
 #' @return A geojson map
 #' @export
+#' @examples
+#' gdt_opendata_swiss_geodata_json(geolevel = "national")
+#'
 gdt_opendata_swiss_geodata_json <- function(...) {
   gdt_opendata_swiss_geodata(...) |>
     geojsonsf::sf_geojson()

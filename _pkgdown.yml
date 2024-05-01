@@ -1,0 +1,128 @@
+url: https://geodata.nenuial.org
+template:
+  package: geopkg
+
+reference:
+- title: API Access
+  description: |
+    These functions provide access to a variety of data API.
+  contents:
+  - gdt_crr_get_data
+  - gdt_gutt_get_abortion_rates
+  - gdt_hmd_birth_raw
+  - gdt_hmd_death_raw
+  - gdt_hmd_e0_table
+  - gdt_hmd_lex
+  - gdt_hmd_mortality
+  - gdt_hmd_population_raw
+  - gdt_idb_pyramid
+  - gdt_idb_pyramid_1y
+  - gdt_idb_pyramid_5y
+  - gdt_ofs_vote_list
+  - gdt_table_demography
+  - gdt_wb_demo
+  - gdt_wb_lex
+
+- title: GIS Data
+  description: |
+    These functions provide GIS data.
+  contents:
+  - gdt_opendata_swiss_geodata
+  - gdt_opendata_swiss_geodata_json
+
+- title: Demography data
+  description: |
+    Datasets with data related to demography.
+  contents:
+  - gdt_hmd_demography
+  - un_wpp_2019_period_estimates
+
+- title: DF Cosmology
+  description: |
+    Dataset for the *DF Cosmology* chapter.
+  contents:
+  - df_cosmology_solar_system_objects
+
+- title: DF Demography
+  description: |
+    Dataset for the *DF Cosmology* chapter.
+  contents:
+  - df_demography_population_growth
+  - df_demography_population_historical
+  - df_demography_population_estimates
+
+- title: OC Chine
+  description: |
+    Dataset for the *OC Chine* chapter.
+  contents:
+  - oc_chine_2018_sex_ratio_par_region
+
+- title: OC Ecocitoyenneté
+  description: |
+    Dataset for the *OC Ecocitoyenneté* chapter.
+  contents:
+  - oc_ecocitoyennete_energy_consumption_per_source
+
+- title: OC Géo au féminin
+  description: |
+    Datasets for the *OC Géo au féminin* chapter.
+  contents:
+  - oc_geo_au_feminin_wpp2012_lex
+  - oc_geo_au_feminin_wpp2019_lex
+  - oc_geo_au_feminin_wpp2019_sex_ratio
+  - oc_geo_au_feminin_2021_ofs_avortements
+  - oc_geo_au_feminin_2020_fgm_indirect_data
+  - oc_geo_au_feminin_2019_gfs_violences_sexuelles_experiences
+  - oc_geo_au_feminin_2019_gfs_violences_sexuelles_actes
+  - oc_geo_au_feminin_2019_gfs_violences_sexuelles_police
+  - oc_geo_au_feminin_owid_suffrage_feminin
+  - oc_geo_au_feminin_ofs_election_femmes_conseil_national
+  - oc_geo_au_feminin_ofs_election_femmes_conseil_etats
+  - oc_geo_au_feminin_ofs_election_femmes_conseil_federal
+  - oc_geo_au_feminin_ofs_election_femmes
+  - oc_geo_au_feminin_oecd_programmation_16_24_ans
+  - oc_geo_au_feminin_2023_oecd_sigi
+  - oc_geo_au_feminin_2021_unhdr_gii
+  - oc_geo_au_feminin_sex_ratio
+  - oc_geo_au_feminin_2022_ofs_avortements_par_canton
+  - oc_geo_au_feminin_2022_ofs_avortements_par_ages
+  - oc_geo_au_feminin_ofs_avortements_par_region
+  - oc_geo_au_feminin_votations_avortement
+
+- title: OC Israël – Palestine
+  description: |
+    Datasets for the *OC Israël – Palestine* chapter.
+  contents:
+  - oc_israel_palestine_immigration_israel
+  - oc_israel_palestine_2008_population_nae
+  - oc_israel_palestine_immigration_juive_avant_1948
+
+- title: OC Géo au féminin
+  description: |
+    Datasets for the *OC Géo au féminin* chapter.
+  contents:
+  - oc_russie_2019_esperance_vie
+  - oc_russie_2019_fecondite
+  - oc_russie_2019_natalite_mortalite
+  - oc_russie_suicides
+  - oc_russie_mariages
+  - oc_russie_divorces
+  - oc_russie_mariages_divorces_national
+  - oc_russie_suicides_national
+  - oc_russie_avortements_national
+  - oc_russie_naissances_national
+  - oc_russie_2020_population_municipale
+  - oc_russie_2020_evolution_population
+  - oc_russie_2019_migration
+  - oc_russie_levada_attitude_us
+  - oc_russie_levada_attitude_eu
+  - oc_russie_depenses_militaires
+  - oc_russie_adm6_gis
+
+- title: OC Suisse
+  description: |
+    Datasets for the *OC Suisse* chapter.
+  contents:
+  - oc_suisse_suffrage_feminin
+  - oc_suisse_1970_04_12_suffrage_feminin_vs
+  - oc_suisse_2021_immigration_italienne
