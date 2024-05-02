@@ -2,6 +2,20 @@ url: https://geodata.nenuial.org
 template:
   package: geopkg
 
+navbar:
+  structure:
+    left: [reference, geoverse]
+  components:
+    geoverse:
+      text: GeoVerse
+      menu:
+      - text: geotool
+        href: https://geotools.nenuial.org
+      - text: geovizr
+        href: https://geovizr.nenuial.org
+      - text: ggeo
+        href: https://ggeo.nenuial.org
+
 reference:
 - title: API Access
   description: |
