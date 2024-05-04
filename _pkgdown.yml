@@ -39,7 +39,15 @@ reference:
   - gdt_wb_demo
   - gdt_wb_lex
 
-- title: GIS Data
+- title: Climate data
+  description: |
+    These functions provide access to NOAA climate data.
+  contents:
+  - gdt_ncdc_city_list
+  - gdt_noaa_climate_data
+  - gdt_update_ncdc_city_list
+
+- title: GIS data
   description: |
     These functions provide GIS data.
   contents:
