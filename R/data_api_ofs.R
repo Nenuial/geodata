@@ -10,9 +10,9 @@
 #' gdt_ofs_vote_list()
 gdt_ofs_vote_list <- function() {
   api_call <- "https://opendata.swiss/api/3/action/package_show?id=echtzeitdaten-am-abstimmungstag-zu-eidgenoessischen-abstimmungsvorlagen"
-  util_chk_api_call(api_call)
+  geotools::gtl_chk_api_call(api_call)
 
-  data <- util_dwnl_api_json(api_call)
+  data <- geotools::gtl_dwnl_api_json(api_call)
 
   data %>%
     purrr::pluck("result", "resources") %>%

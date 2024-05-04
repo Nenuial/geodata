@@ -20,7 +20,9 @@ labelled \emph{mortality.org}.
 }
 \examples{
 \dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-# This function uses caching so it isn't run here
+# This example isn't run because it
+# would need HMD credentials
+
 gdt_hmd_mortality("France")
 \dontshow{\}) # examplesIf}
 }

@@ -11,7 +11,7 @@
 #' gdt_idb_pyramid_1y("Switzerland", 2020)
 #'
 gdt_idb_pyramid_1y <- function(country, year) {
-  util_chk_idb_api_key()
+  geotools::gtl_chk_idb_api_key()
 
   country_code <- countrycode::countrycode(
     country, origin = "country.name", destination = "iso2c",
@@ -46,7 +46,7 @@ gdt_idb_pyramid_1y <- function(country, year) {
 #' gdt_idb_pyramid("Switzerland", 2020)
 #'
 gdt_idb_pyramid <- function(country, year) {
-  util_chk_idb_api_key()
+  geotools::gtl_chk_idb_api_key()
 
   country_code <- countrycode::countrycode(
     country, origin = "country.name", destination = "iso2c",
@@ -81,7 +81,7 @@ gdt_idb_pyramid <- function(country, year) {
 #' gdt_idb_pyramid_5y("Switzerland", 2020)
 #'
 gdt_idb_pyramid_5y <- function(country, year) {
-  util_chk_idb_api_key()
+  geotools::gtl_chk_idb_api_key()
 
   country_code <- countrycode::countrycode(
     country, origin = "country.name", destination = "iso2c",

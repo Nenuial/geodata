@@ -4,7 +4,7 @@
 \name{geodata-package}
 \alias{geodata}
 \alias{geodata-package}
-\title{geodata: Provide Data for Geography Vizualisations}
+\title{geodata: Data for Geography Vizualisations}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
@@ -14,6 +14,7 @@ Provide a repository of data for geography vizualisations.
 Useful links:
 \itemize{
   \item \url{https://geodata.nenuial.org}
+  \item Report bugs at \url{http://github.com/nenuial/geodata/issues/}
 }
 
 }

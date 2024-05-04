@@ -10,13 +10,14 @@
 #' @return A demogdata object
 #' @export
 #' @examplesIf interactive()
-#' # This function uses caching so it isn't run here
-#' gdt_hmd_mortality("France")
+#' # This example isn't run because it
+#' # would need HMD credentials
 #'
+#' gdt_hmd_mortality("France")
 gdt_hmd_mortality <- function(country) {
   destination_code <- geotools::gtl_opt_short_language(valid = c("en", "fr", "ar", "es", "ru", "zh"))
 
-  gdt_hmd_mx_cached(
+  demography::hmd.mx(
     country = countrycode::countrycode(country, "country.name", "iso3c"),
     label = countrycode::countrycode(country, "country.name", paste0("un.name.", destination_code)),
     username = keyring::key_list(service = "mortality.org")[["username"]],
@@ -31,11 +32,12 @@ gdt_hmd_mortality <- function(country) {
 #' @return A tibble
 #' @export
 #' @examplesIf interactive()
-#' # This function uses caching so it isn't run here
-#' gdt_hmd_e0_table("Switzerland")
+#' # This example isn't run because it
+#' # would need HMD credentials
 #'
+#' gdt_hmd_e0_table("Switzerland")
 gdt_hmd_e0_table <- function(country) {
-  gdt_hmd_e0_cached(
+  demography::hmd.e0(
     country = countrycode::countrycode(country, "country.name", "iso3c"),
     username = keyring::key_list(service = "mortality.org")[["username"]],
     password = keyring::key_get(service = "mortality.org")
@@ -67,13 +69,13 @@ gdt_hmd_e0_table <- function(country) {
 gdt_hmd_lex <- function(countries, age, type = c("male", "female", "total")) {
   type <- match.arg(type)
 
-  countries %>%
+  countries |>
     purrr::map(
       .f = ~gdt_hmd_lex_clean(.x, age, type)
-    ) %>%
+    ) |>
     purrr::reduce(
       .f = ~dplyr::inner_join(.x, .y, by = "year")
-    ) %>%
+    ) |>
     tidyr::pivot_longer(-year, names_to = "country", values_to = "lex")
 }
 
@@ -90,10 +92,10 @@ gdt_hmd_lex_clean <- function(country, age, type) {
   lexdata <- demography::life.expectancy(demodata, age = age, series = type)
   label <- demodata$label
 
-  lexdata %>%
-    as.data.frame() %>%
-    tibble::as_tibble(rownames = "year") %>%
-    dplyr::rename({{ label }} := x) %>%
+  lexdata |>
+    as.data.frame() |>
+    tibble::as_tibble(rownames = "year") |>
+    dplyr::rename({{ label }} := x) |>
     dplyr::mutate(year = readr::parse_number(year))
 }
 

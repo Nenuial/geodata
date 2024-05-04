@@ -18,8 +18,8 @@ gdt_opendata_swiss_geodata <- function(geolevel = c("national", "canton", "distr
   geolevel <- match.arg(geolevel)
 
   # Call geodata api
-  util_chk_api_call(data_source)
-  cnt <- util_dwnl_api_json(data_source)
+  geotools::gtl_chk_api_call(data_source)
+  cnt <- geotools::gtl_dwnl_api_json(data_source)
 
   # Get info
   if (latest) {

@@ -18,7 +18,6 @@ Imports:
     dplyr,
     demography,
     geojsonsf,
-    httr,
     httr2,
     idbr,
     keyring,
@@ -35,7 +34,12 @@ Imports:
     wbstats,
     rlang,
     geotools,
-    sf
+    sf,
+    fs,
+    glue,
+    rappdirs,
+    rnoaa,
+    tidygeocoder
 Suggests:
     lifecycle
 Remotes:

@@ -9,6 +9,8 @@ navbar:
     geoverse:
       text: GeoVerse
       menu:
+      - text: geographer
+        href: https://geographer.nenuial.org
       - text: geotool
         href: https://geotools.nenuial.org
       - text: geovizr
