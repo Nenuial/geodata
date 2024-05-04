@@ -20,7 +20,7 @@ Un tibble avec 4 colonnes et 3411 lignes
 oc_russie_depenses_militaires
 }
 \description{
-Un tableau de l'évolution de l'attitude de la population
-russe vis-à-vis de l'Union Européenne. Sondage Levada.
+Un tableau de l'évolution des dépenses militaires pour tous
+les pays du monde de 2000 à 2021.
 }
 \keyword{datasets}
