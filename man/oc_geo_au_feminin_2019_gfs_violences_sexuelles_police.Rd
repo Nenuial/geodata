@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_2019_gfs_violences_sexuelles_police}
 \alias{oc_geo_au_feminin_2019_gfs_violences_sexuelles_police}
-\title{OC Géo au féminin: Violences sexuelles police}
+\title{Violences sexuelles police}
 \format{
 Un tibble avec 4 colonnes et 6 lignes
 \describe{

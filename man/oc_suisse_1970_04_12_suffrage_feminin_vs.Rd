@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_suisse_1970_04_12_suffrage_feminin_vs}
 \alias{oc_suisse_1970_04_12_suffrage_feminin_vs}
-\title{OC Suisse: Votation sur le suffrage féminin au Valais}
+\title{Suffrage féminin au Valais}
 \format{
 Un tibble avec 3 colonnes et 13 lignes
 \describe{

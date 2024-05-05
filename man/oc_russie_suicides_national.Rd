@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_suicides_national}
 \alias{oc_russie_suicides_national}
-\title{OC Russie: Suicides national}
+\title{Suicides en Russie}
 \format{
 Un tibble avec 2 colonnes et 30 lignes
 \describe{

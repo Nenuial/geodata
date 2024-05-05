@@ -3,7 +3,7 @@
 \docType{data}
 \name{df_demography_population_estimates}
 \alias{df_demography_population_estimates}
-\title{DF Demography: World population projections}
+\title{World population projections}
 \format{
 A tibble with 3 columns and 258 rows
 \describe{

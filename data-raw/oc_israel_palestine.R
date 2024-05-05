@@ -4,7 +4,7 @@ stop("This file should not be sourced!")
 
 oc_israel_palestine_immigration_israel <- readr::read_csv(here::here("inst/extdata/cbs_israel/immigration.csv"))
 
-usethis::use_data(oc_israel_palestine_immigration_israel, overwrite = T)
+usethis::use_data(oc_israel_palestine_immigration_israel, overwrite = TRUE)
 
 # Foreign population by origin ---------------------------------------------------------------
 
@@ -36,7 +36,7 @@ fbp |>
     continent = stringr::str_replace(continent, " - total", "")
   ) -> oc_israel_palestine_2008_population_nae
 
-usethis::use_data(oc_israel_palestine_2008_population_nae, overwrite = T)
+usethis::use_data(oc_israel_palestine_2008_population_nae, overwrite = TRUE)
 
 
 # Jewish immigration before 1948 --------------------------------------------------------------
@@ -51,7 +51,7 @@ tibble::tribble(
   "1939 - 1945", 70000
 ) -> oc_israel_palestine_immigration_juive_avant_1948
 
-usethis::use_data(oc_israel_palestine_immigration_juive_avant_1948, overwrite = T)
+usethis::use_data(oc_israel_palestine_immigration_juive_avant_1948, overwrite = TRUE)
 
 # Open documentation file ---------------------------------------------------------------------
 

@@ -3,7 +3,7 @@
 \docType{data}
 \name{un_wpp_2019_period_estimates}
 \alias{un_wpp_2019_period_estimates}
-\title{DF Demography: World population period estimates 2019}
+\title{World population period estimates 2019}
 \format{
 A tibble with 25 columns and 14940 rows
 \describe{

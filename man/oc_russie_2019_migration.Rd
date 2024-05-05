@@ -3,14 +3,14 @@
 \docType{data}
 \name{oc_russie_2019_migration}
 \alias{oc_russie_2019_migration}
-\title{OC Russie: Évolution de la population}
+\title{Migrations en Russie}
 \format{
-Un tibble avec 2 colonnes et 30 lignes
+Un tibble avec 5 colonnes et 2507 lignes
 \describe{
-\item{adm1_code}{Identifian ADM1 (pour NaturalEarth)}
+\item{adm1_code}{ADM1 ID (for NaturalEarth)}
 \item{country}{Country name}
 \item{year}{Year of data observation}
-\item{type}{One of \code{arrival} or \code{departure}}
+\item{type}{One of \emph{arrival} or \emph{departure}}
 \item{migration}{Number of people migrating}
 }
 }
@@ -21,7 +21,7 @@ Un tibble avec 2 colonnes et 30 lignes
 oc_russie_2019_migration
 }
 \description{
-Un tableau de l'évolution de la population en Russie
-par régions à 2019.avec un comparaison 1990 - 2020
+Un tableau des migrations en Russie avec les
+immigration et émigration de 1997 à 2019.
 }
 \keyword{datasets}

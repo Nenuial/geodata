@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_ecocitoyennete_energy_consumption_per_source}
 \alias{oc_ecocitoyennete_energy_consumption_per_source}
-\title{OC Ecocitoyenneté: Consommation par source (kWh par personne)}
+\title{Consommation par source (kWh par personne)}
 \format{
 Un tibble avec 5 colonnes et 38952 lignes
 \describe{

@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_sex_ratio}
 \alias{oc_geo_au_feminin_sex_ratio}
-\title{OC Géo au féminin: Sex-ratio à la naissance}
+\title{Sex-ratio à la naissance}
 \format{
 Un tibble avec 6 colonnes et 43472 lignes
 \describe{

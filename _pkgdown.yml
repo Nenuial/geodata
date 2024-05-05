@@ -65,88 +65,46 @@ reference:
   description: |
     Dataset for the *DF Cosmology* chapter.
   contents:
-  - df_cosmology_solar_system_objects
+  - starts_with("df_cosmology")
 
 - title: DF Demography
   description: |
     Dataset for the *DF Cosmology* chapter.
   contents:
-  - df_demography_population_growth
-  - df_demography_population_historical
-  - df_demography_population_estimates
+  - starts_with("df_demography")
 
 - title: OC Chine
   description: |
     Dataset for the *OC Chine* chapter.
   contents:
-  - oc_chine_2018_sex_ratio_par_region
+  - starts_with("oc_chine")
 
 - title: OC Ecocitoyenneté
   description: |
     Dataset for the *OC Ecocitoyenneté* chapter.
   contents:
-  - oc_ecocitoyennete_energy_consumption_per_source
+  - starts_with("oc_ecocitoyennete")
 
 - title: OC Géo au féminin
   description: |
     Datasets for the *OC Géo au féminin* chapter.
   contents:
-  - oc_geo_au_feminin_wpp2012_lex
-  - oc_geo_au_feminin_wpp2019_lex
-  - oc_geo_au_feminin_wpp2019_sex_ratio
-  - oc_geo_au_feminin_2021_ofs_avortements
-  - oc_geo_au_feminin_2020_fgm_indirect_data
-  - oc_geo_au_feminin_2019_gfs_violences_sexuelles_experiences
-  - oc_geo_au_feminin_2019_gfs_violences_sexuelles_actes
-  - oc_geo_au_feminin_2019_gfs_violences_sexuelles_police
-  - oc_geo_au_feminin_owid_suffrage_feminin
-  - oc_geo_au_feminin_ofs_election_femmes_conseil_national
-  - oc_geo_au_feminin_ofs_election_femmes_conseil_etats
-  - oc_geo_au_feminin_ofs_election_femmes_conseil_federal
-  - oc_geo_au_feminin_ofs_election_femmes
-  - oc_geo_au_feminin_oecd_programmation_16_24_ans
-  - oc_geo_au_feminin_2023_oecd_sigi
-  - oc_geo_au_feminin_2021_unhdr_gii
-  - oc_geo_au_feminin_sex_ratio
-  - oc_geo_au_feminin_2022_ofs_avortements_par_canton
-  - oc_geo_au_feminin_2022_ofs_avortements_par_ages
-  - oc_geo_au_feminin_ofs_avortements_par_region
-  - oc_geo_au_feminin_votations_avortement
+  - starts_with("oc_geo_au_feminin")
 
 - title: OC Israël – Palestine
   description: |
     Datasets for the *OC Israël – Palestine* chapter.
   contents:
-  - oc_israel_palestine_immigration_israel
-  - oc_israel_palestine_2008_population_nae
-  - oc_israel_palestine_immigration_juive_avant_1948
+  - starts_with("oc_israel_palestine")
 
 - title: OC Géo au féminin
   description: |
     Datasets for the *OC Géo au féminin* chapter.
   contents:
-  - oc_russie_2019_esperance_vie
-  - oc_russie_2019_fecondite
-  - oc_russie_2019_natalite_mortalite
-  - oc_russie_suicides
-  - oc_russie_mariages
-  - oc_russie_divorces
-  - oc_russie_mariages_divorces_national
-  - oc_russie_suicides_national
-  - oc_russie_avortements_national
-  - oc_russie_naissances_national
-  - oc_russie_2020_population_municipale
-  - oc_russie_2020_evolution_population
-  - oc_russie_2019_migration
-  - oc_russie_levada_attitude_us
-  - oc_russie_levada_attitude_eu
-  - oc_russie_depenses_militaires
-  - oc_russie_adm6_gis
+  - starts_with("oc_russie")
 
 - title: OC Suisse
   description: |
     Datasets for the *OC Suisse* chapter.
   contents:
-  - oc_suisse_suffrage_feminin
-  - oc_suisse_1970_04_12_suffrage_feminin_vs
-  - oc_suisse_2021_immigration_italienne
+  - starts_with("oc_suisse")

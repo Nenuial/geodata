@@ -1,4 +1,4 @@
-#' OC Chine: Population 2018 par sexe et régions
+#' Population chinoise 2018 par sexe et régions
 #'
 #' Un tableau de la population des régions
 #' de Chine par sexe pour 2018.

@@ -18,14 +18,15 @@ lex |>
     adm1_code = geotools::admincode(
       region,
       origin = "region.name.ru.regex",
-      origin_regex = T,
+      origin_regex = TRUE,
       destination = "adm1",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     )
-  ) |> tidyr::drop_na() -> oc_russie_2019_esperance_vie
+  ) |>
+  tidyr::drop_na() -> oc_russie_2019_esperance_vie
 
-usethis::use_data(oc_russie_2019_esperance_vie, overwrite = T)
+usethis::use_data(oc_russie_2019_esperance_vie, overwrite = TRUE)
 
 
 # Regional fertility rates ------------------------------------------------
@@ -55,14 +56,15 @@ tfr |>
     adm1_code = geotools::admincode(
       region,
       origin = "region.name.ru.regex",
-      origin_regex = T,
+      origin_regex = TRUE,
       destination = "adm1",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     )
-  ) |> tidyr::drop_na() -> oc_russie_2019_fecondite
+  ) |>
+  tidyr::drop_na() -> oc_russie_2019_fecondite
 
-usethis::use_data(oc_russie_2019_fecondite, overwrite = T)
+usethis::use_data(oc_russie_2019_fecondite, overwrite = TRUE)
 
 
 # Regional CBR and CDR ----------------------------------------------------
@@ -83,12 +85,12 @@ nat_chg |>
   dplyr::select(region, type, indicator, data = numeric) |>
   dplyr::mutate(
     type = dplyr::case_when(
-      stringr::str_detect(type, "Всего")      ~ "absolute",
-      stringr::str_detect(type, "населения")  ~ "per1000"
+      stringr::str_detect(type, "Всего") ~ "absolute",
+      stringr::str_detect(type, "населения") ~ "per1000"
     ),
-    indicator = dplyr::case_when (
-      stringr::str_detect(indicator, "родившихся")   ~ "cbr",
-      stringr::str_detect(indicator, "умерших")      ~ "cdr",
+    indicator = dplyr::case_when(
+      stringr::str_detect(indicator, "родившихся") ~ "cbr",
+      stringr::str_detect(indicator, "умерших") ~ "cdr",
       stringr::str_detect(indicator, "естественный") ~ "rni"
     )
   ) |>
@@ -100,14 +102,14 @@ nat_chg |>
     adm1_code = geotools::admincode(
       region,
       origin = "region.name.ru.regex",
-      origin_regex = T,
+      origin_regex = TRUE,
       destination = "adm1",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     )
   ) -> oc_russie_2019_natalite_mortalite
 
-usethis::use_data(oc_russie_2019_natalite_mortalite, overwrite = T)
+usethis::use_data(oc_russie_2019_natalite_mortalite, overwrite = TRUE)
 
 
 # Regional suicide rates --------------------------------------------------
@@ -116,36 +118,40 @@ readr::read_csv(
   here::here("inst/extdata/oc_russie/rosstat/population/2021_suicides.csv"),
   skip = 4L,
   col_names = c("region", "codes", 1990:2019)
-) |> dplyr::select(-region) |>
+) |>
+  dplyr::select(-region) |>
   dplyr::mutate(
     adm1_code = geotools::admincode(
       codes,
       origin = "oktmo",
       destination = "adm1",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     ),
     region = geotools::admincode(
       codes,
       origin = "oktmo",
       destination = "region.name.en",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     )
-  ) |> tidyr::drop_na(region) |>
+  ) |>
+  tidyr::drop_na(region) |>
   tidyr::pivot_longer(
     tidyselect::num_range("", 1990:2019),
     names_to = "year",
     values_to = "suicides"
-  ) |> tidyr::drop_na(suicides) -> oc_russie_suicides
+  ) |>
+  tidyr::drop_na(suicides) -> oc_russie_suicides
 
-usethis::use_data(oc_russie_suicides, overwrite = T)
+usethis::use_data(oc_russie_suicides, overwrite = TRUE)
 
 readr::read_csv(
   here::here("inst/extdata/oc_russie/rosstat/population/2021_suicides.csv"),
   skip = 4L,
   col_names = c("region", "codes", 1990:2019)
-) |> dplyr::select(-region) |>
+) |>
+  dplyr::select(-region) |>
   dplyr::filter(codes == 643) |>
   tidyr::pivot_longer(
     tidyselect::num_range("", 1990:2019),
@@ -154,7 +160,7 @@ readr::read_csv(
   ) |>
   dplyr::select(-codes) -> oc_russie_suicides_national
 
-usethis::use_data(oc_russie_suicides_national, overwrite = T)
+usethis::use_data(oc_russie_suicides_national, overwrite = TRUE)
 
 
 # Abortions ---------------------------------------------------------------
@@ -175,11 +181,11 @@ readr::read_csv(
   dplyr::mutate(
     abortions = dplyr::case_when(
       year == 2003 ~ 121,
-      TRUE         ~ abortions
+      TRUE ~ abortions
     )
   ) -> oc_russie_avortements_national
 
-usethis::use_data(oc_russie_avortements_national, overwrite = T)
+usethis::use_data(oc_russie_avortements_national, overwrite = TRUE)
 
 
 # Births ------------------------------------------------------------------
@@ -197,14 +203,14 @@ readr::read_csv(
     values_to = "births"
   ) -> oc_russie_naissances_national
 
-usethis::use_data(oc_russie_naissances_national, overwrite = T)
+usethis::use_data(oc_russie_naissances_national, overwrite = TRUE)
 
 
 # Municipality population -------------------------------------------------
 
 fs::dir_ls("inst/extdata/oc_russie/rosstat/population_mun/") |>
   purrr::map_dfr(
-    .f = ~readr::read_csv(
+    .f = ~ readr::read_csv(
       .x,
       skip = 4L,
       col_names = c("name", "oktmo", "2016", "2020"),
@@ -215,7 +221,7 @@ fs::dir_ls("inst/extdata/oc_russie/rosstat/population_mun/") |>
   tidyr::drop_na(`2016`:`2020`) |>
   dplyr::mutate(oktmo = stringr::str_sub(oktmo, start = 1L, end = 8L)) -> oc_russie_2020_population_municipale
 
-usethis::use_data(oc_russie_2020_population_municipale, overwrite = T)
+usethis::use_data(oc_russie_2020_population_municipale, overwrite = TRUE)
 
 # Population evolution ----------------------------------------------------
 
@@ -240,13 +246,23 @@ pop_evol |>
 # but it's better than changing the original…
 
 tyu_2020 <-
-  pop_evol_interm |> dplyr::filter(oktmo == "71000000000") |> dplyr::pull(`1990`) -
-  pop_evol_interm |> dplyr::filter(oktmo == "71100000000") |> dplyr::pull(`1990`) -
-  pop_evol_interm |> dplyr::filter(oktmo == "71140000000") |> dplyr::pull(`1990`)
+  pop_evol_interm |>
+  dplyr::filter(oktmo == "71000000000") |>
+  dplyr::pull(`1990`) -
+  pop_evol_interm |>
+  dplyr::filter(oktmo == "71100000000") |>
+  dplyr::pull(`1990`) -
+  pop_evol_interm |>
+  dplyr::filter(oktmo == "71140000000") |>
+  dplyr::pull(`1990`)
 
 arkh_2020 <-
-  pop_evol_interm |> dplyr::filter(oktmo == "11000000000") |> dplyr::pull(`1990`) -
-  pop_evol_interm |> dplyr::filter(oktmo == "11100000000") |> dplyr::pull(`1990`)
+  pop_evol_interm |>
+  dplyr::filter(oktmo == "11000000000") |>
+  dplyr::pull(`1990`) -
+  pop_evol_interm |>
+  dplyr::filter(oktmo == "11100000000") |>
+  dplyr::pull(`1990`)
 
 pop_evol_interm |>
   dplyr::mutate(
@@ -261,21 +277,21 @@ pop_evol_interm |>
       oktmo,
       origin = "oktmo",
       destination = "adm1",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     ),
     region = geotools::admincode(
       oktmo,
       origin = "oktmo",
       destination = "region.name.en",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     )
   ) |>
   tidyr::drop_na(region) |>
   dplyr::mutate(solde = (`2020` - `1990`) / `2020` * 100) -> oc_russie_2020_evolution_population
 
-usethis::use_data(oc_russie_2020_evolution_population, overwrite = T)
+usethis::use_data(oc_russie_2020_evolution_population, overwrite = TRUE)
 
 
 # Mariages ----------------------------------------------------------------
@@ -296,20 +312,20 @@ readr::read_csv(
       oktmo,
       origin = "oktmo",
       destination = "adm1",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     ),
     region = geotools::admincode(
       oktmo,
       origin = "oktmo",
       destination = "region.name.en",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     )
   ) |>
   tidyr::drop_na() -> oc_russie_mariages
 
-usethis::use_data(oc_russie_mariages, overwrite = T)
+usethis::use_data(oc_russie_mariages, overwrite = TRUE)
 
 # Divorces ----------------------------------------------------------------
 
@@ -329,20 +345,20 @@ readr::read_csv(
       oktmo,
       origin = "oktmo",
       destination = "adm1",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     ),
     region = geotools::admincode(
       oktmo,
       origin = "oktmo",
       destination = "region.name.en",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     )
   ) |>
   tidyr::drop_na() -> oc_russie_divorces
 
-usethis::use_data(oc_russie_divorces, overwrite = T)
+usethis::use_data(oc_russie_divorces, overwrite = TRUE)
 
 
 # Divorces et mariages (absolu) -------------------------------------------
@@ -364,14 +380,14 @@ readr::read_csv(
       oktmo,
       origin = "oktmo",
       destination = "adm1",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     ),
     region = geotools::admincode(
       oktmo,
       origin = "oktmo",
       destination = "region.name.en",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     )
   ) -> divorces
@@ -393,14 +409,14 @@ readr::read_csv(
       oktmo,
       origin = "oktmo",
       destination = "adm1",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     ),
     region = geotools::admincode(
       oktmo,
       origin = "oktmo",
       destination = "region.name.en",
-      warn = F,
+      warn = FALSE,
       country = "Russia"
     )
   ) -> mariages
@@ -426,7 +442,7 @@ mariages_divorces |>
     values_to = "data"
   ) -> oc_russie_mariages_divorces_national
 
-usethis::use_data(oc_russie_mariages_divorces_national, overwrite = T)
+usethis::use_data(oc_russie_mariages_divorces_national, overwrite = TRUE)
 
 
 # Ethnic groups -----------------------------------------------------------
@@ -451,47 +467,50 @@ xml2::read_html("inst/extdata/oc_russie/rosstat/population/2021_migration.html")
   dplyr::mutate(data = ifelse(is.na(chr), int, chr)) |>
   dplyr::mutate(
     data = dplyr::case_when(
-      data == "one"           ~ "1",
-      data == "four"          ~ "4",
-      data == "five"          ~ "5",
-      data == "ten"           ~ "10",
-      data == "eleven"        ~ "11",
-      data == "thirteen"      ~ "13",
-      data == "eighteen"      ~ "18",
-      data == "thirty"        ~ "30",
-      data == "fifty"         ~ "50",
-      data == "one hundred"   ~ "100",
-      data == "..."           ~ NA_character_,
-      data == "-"             ~ NA_character_,
-      TRUE                    ~ data
+      data == "one" ~ "1",
+      data == "four" ~ "4",
+      data == "five" ~ "5",
+      data == "ten" ~ "10",
+      data == "eleven" ~ "11",
+      data == "thirteen" ~ "13",
+      data == "eighteen" ~ "18",
+      data == "thirty" ~ "30",
+      data == "fifty" ~ "50",
+      data == "one hundred" ~ "100",
+      data == "..." ~ NA_character_,
+      data == "-" ~ NA_character_,
+      TRUE ~ data
     )
   ) |>
   dplyr::mutate(data = readr::parse_number(data)) |>
   dplyr::mutate(
     type = dplyr::case_when(
-      stringr::str_detect(type, "Arrived")    ~ "arrival",
-      stringr::str_detect(type, "Departed")   ~ "departure"
+      stringr::str_detect(type, "Arrived") ~ "arrival",
+      stringr::str_detect(type, "Departed") ~ "departure"
     )
   ) |>
   dplyr::mutate(adm1_code = countrycode::countrycode(
     country, "country.name", "iso3c",
-    origin_regex = TRUE, warn = F
+    origin_regex = TRUE, warn = FALSE
   )) |>
   tidyr::drop_na(adm1_code) |>
   dplyr::select(adm1_code, country, year, type, migration = data) -> oc_russie_2019_migration
 
-usethis::use_data(oc_russie_2019_migration, overwrite = T)
+usethis::use_data(oc_russie_2019_migration, overwrite = TRUE)
 
 
 # Levada : attitude toward countries --------------------------------------
 
 rvest::read_html("https://www.levada.ru/en/ratings/attitudes-towards-countries/") |>
-  rvest::html_table(header = T) -> levada_attitudes_tables
+  rvest::html_table(header = TRUE) -> levada_attitudes_tables
 
 levada_attitudes_tables |>
   purrr::pluck(1) |>
   dplyr::rename("attitude" = 1) |>
-  dplyr::bind_cols(levada_attitudes_tables |> purrr::pluck(2)) |>
+  dplyr::bind_cols(
+    levada_attitudes_tables |>
+      purrr::pluck(2)
+  ) |>
   dplyr::rename("03.2003" = "03.2003...35", "05.2003" = "05.2003...38") |>
   dplyr::select(-c("03.2003...36", "05.2003...39")) -> levada_attitude_us
 
@@ -508,8 +527,8 @@ levada_attitude_eu |>
   tidyr::pivot_longer(-c("attitude"), names_to = "date", values_to = "percentage") |>
   dplyr::mutate(date = lubridate::parse_date_time(date, "m.Y")) -> oc_russie_levada_attitude_eu
 
-usethis::use_data(oc_russie_levada_attitude_us, overwrite = T)
-usethis::use_data(oc_russie_levada_attitude_eu, overwrite = T)
+usethis::use_data(oc_russie_levada_attitude_us, overwrite = TRUE)
+usethis::use_data(oc_russie_levada_attitude_eu, overwrite = TRUE)
 
 
 # SIPRI Military expenditure ----------------------------------------------
@@ -523,7 +542,8 @@ cells |>
   dplyr::filter(row >= 6) |>
   unpivotr::behead(direction = "up", name = "year") |>
   unpivotr::behead_if(formats$local$font$bold[local_format_id],
-                      direction = "left-up", name = "region") |>
+    direction = "left-up", name = "region"
+  ) |>
   unpivotr::behead(direction = "left", name = "country") |>
   dplyr::filter(!is.na(numeric)) |>
   dplyr::select(country, year, military_expenditure = numeric) |>
@@ -535,7 +555,7 @@ cells |>
   )) |>
   dplyr::mutate(year = as.numeric(year)) -> oc_russie_depenses_militaires
 
-usethis::use_data(oc_russie_depenses_militaires, overwrite = T)
+usethis::use_data(oc_russie_depenses_militaires, overwrite = TRUE)
 
 
 # Open documentation file -------------------------------------------------

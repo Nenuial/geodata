@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_avortements_national}
 \alias{oc_russie_avortements_national}
-\title{OC Russie: avortements national}
+\title{Avortements en Russie}
 \format{
 Un tibble avec 2 colonnes et 25 lignes
 \describe{

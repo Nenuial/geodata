@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_2021_ofs_avortements}
 \alias{oc_geo_au_feminin_2021_ofs_avortements}
-\title{OC Géo au féminin: Avortement en Suisse}
+\title{Taux d'avortement en Suisse}
 \format{
 Un tibble avec 3 colonnes et 34 lignes
 \describe{

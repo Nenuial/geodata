@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_2021_unhdr_gii}
 \alias{oc_geo_au_feminin_2021_unhdr_gii}
-\title{OC Géo au féminin: Indicateur GII}
+\title{Indicateur GII}
 \format{
 Un tibble avec 3 colonnes et 170 lignes
 \describe{

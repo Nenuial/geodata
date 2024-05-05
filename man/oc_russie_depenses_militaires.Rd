@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_depenses_militaires}
 \alias{oc_russie_depenses_militaires}
-\title{OC Russie: Dépenses militaires}
+\title{Dépenses militaires}
 \format{
 Un tibble avec 4 colonnes et 3411 lignes
 \describe{

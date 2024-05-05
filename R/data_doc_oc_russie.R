@@ -1,4 +1,4 @@
-#' OC Russie: Espérance de vie
+#' Espérance de vie en Russie
 #'
 #' Un tableau de l'espérance de vie en Russie
 #' par régions pour 2019.
@@ -12,7 +12,7 @@
 #' @source <https://rosstat.gov.ru/storage/mediabank/IeUTMwMW/prodolzhitelnost.xlsx>
 "oc_russie_2019_esperance_vie"
 
-#' OC Russie: Indice de fécondité
+#' Indice de fécondité en Russie
 #'
 #' Un tableau de l'indice de fécondité en Russie
 #' par régions.
@@ -27,7 +27,7 @@
 #' @source <https://rosstat.gov.ru/storage/mediabank/7-1(2).xlsx>
 "oc_russie_2019_fecondite"
 
-#' OC Russie: Mortalité et natalité
+#' Mortalité et natalité
 #'
 #' Un tableau de l'indice de la natalité et mortalité en Russie
 #' par régions pour 2019.
@@ -43,7 +43,7 @@
 #' @source <https://rosstat.gov.ru/storage/mediabank/EDN(1).xlsx>
 "oc_russie_2019_natalite_mortalite"
 
-#' OC Russie: Suicides
+#' Suicides en Russie
 #'
 #' Un tableau des suicides en Russie
 #' par régions de 1997 à 2019.
@@ -59,7 +59,7 @@
 #' @source <https://showdata.gks.ru/olap2/descr/report/297886/>
 "oc_russie_suicides"
 
-#' OC Russie: Mariages
+#' Mariages en Russie
 #'
 #' Un tableau des mariages en Russie
 #' par régions de 2000 à 2019.
@@ -75,7 +75,7 @@
 #' @source <https://showdata.gks.ru/olap2/descr/report/297890/>
 "oc_russie_mariages"
 
-#' OC Russie: Divorces
+#' Divorces en Russie
 #'
 #' Un tableau des divorces en Russie
 #' par régions de 2000 à 2019.
@@ -91,7 +91,7 @@
 #' @source <https://showdata.gks.ru/olap2/descr/report/297890/>
 "oc_russie_divorces"
 
-#' OC Russie: Mariages et divorces national
+#' Mariages et divorces en Russie
 #'
 #' Un tableau des mariages et divorces en Russie
 #' de 1990 à 2019.
@@ -106,7 +106,7 @@
 #' <https://showdata.gks.ru/olap2/descr/report/297880/>
 "oc_russie_mariages_divorces_national"
 
-#' OC Russie: Suicides national
+#' Suicides en Russie
 #'
 #' Un tableau des suicides en Russie
 #' par régions de 1997 à 2019.
@@ -120,7 +120,7 @@
 "oc_russie_suicides_national"
 
 
-#' OC Russie: avortements national
+#' Avortements en Russie
 #'
 #' Un tableau des avortements en Russie
 #' de 1992 à 2017 pour 100 naissances.
@@ -133,7 +133,7 @@
 #' @source <https://showdata.gks.ru/olap2/descr/report/297822/>
 "oc_russie_avortements_national"
 
-#' OC Russie: naissances national
+#' Naissances en Russie
 #'
 #' Un tableau des naissances en Russie
 #' de 1999 à 2019.
@@ -146,7 +146,7 @@
 #' @source <https://showdata.gks.ru/olap2/descr/report/297822/>
 "oc_russie_naissances_national"
 
-#' OC Russie: population municipale en 2020
+#' Population municipale en Russie
 #'
 #' Un tableau de la population municipale en Russie
 #' en 2016 et 2020.
@@ -161,16 +161,16 @@
 #' @source <https://showdata.gks.ru/>
 "oc_russie_2020_population_municipale"
 
-#' OC Russie: Évolution de la population
+#' Évolution de la population en Russie
 #'
 #' Un tableau de l'évolution de la population en Russie
-#' par régions à 2019.avec un comparaison 1990 - 2020
+#' par régions avec une comparaison entre 1990 et 2020.
 #'
-#' @format Un tibble avec 2 colonnes et 30 lignes
+#' @format Un tibble avec 6 colonnes et 85 lignes
 #' \describe{
 #'   \item{region}{Nom de la région en anglais}
 #'   \item{oktmo}{OKTMO Code}
-#'   \item{adm1_code}{Identifian ADM1 (pour NaturalEarth)}
+#'   \item{adm1_code}{ADM1 ID (for NaturalEarth)}
 #'   \item{`2020`}{Population en 2020}
 #'   \item{`1990`}{Population en 1990}
 #'   \item{solde}{Pourcentage d'évolution sur ces 30 dernières anneés}
@@ -178,23 +178,23 @@
 #' @source <https://showdata.gks.ru/olap2/descr/report/278928/>
 "oc_russie_2020_evolution_population"
 
-#' OC Russie: Évolution de la population
+#' Migrations en Russie
 #'
-#' Un tableau de l'évolution de la population en Russie
-#' par régions à 2019.avec un comparaison 1990 - 2020
+#' Un tableau des migrations en Russie avec les
+#' immigration et émigration de 1997 à 2019.
 #'
-#' @format Un tibble avec 2 colonnes et 30 lignes
+#' @format Un tibble avec 5 colonnes et 2507 lignes
 #' \describe{
-#'   \item{adm1_code}{Identifian ADM1 (pour NaturalEarth)}
+#'   \item{adm1_code}{ADM1 ID (for NaturalEarth)}
 #'   \item{country}{Country name}
 #'   \item{year}{Year of data observation}
-#'   \item{type}{One of `arrival` or `departure`}
+#'   \item{type}{One of *arrival* or *departure*}
 #'   \item{migration}{Number of people migrating}
 #' }
 #' @source <https://rosstat.gov.ru/storage/mediabank/migr2.xls> with additional Google Translate
 "oc_russie_2019_migration"
 
-#' OC Russie: Attitude de la Russie vis-à-vis des USA
+#' Attitude de la Russie vis-à-vis des USA
 #'
 #' Un tableau de l'évolution de l'attitude de la population
 #' russe vis-à-vis des USA. Sondage Levada.
@@ -208,7 +208,7 @@
 #' @source <https://www.levada.ru/en/ratings/attitudes-towards-countries/>
 "oc_russie_levada_attitude_us"
 
-#' OC Russie: Attitude de la Russie vis-à-vis de l'Europe
+#' Attitude de la Russie vis-à-vis de l'Europe
 #'
 #' Un tableau de l'évolution de l'attitude de la population
 #' russe vis-à-vis de l'Union Européenne. Sondage Levada.
@@ -222,7 +222,7 @@
 #' @source <https://www.levada.ru/en/ratings/attitudes-towards-countries/>
 "oc_russie_levada_attitude_eu"
 
-#' OC Russie: Dépenses militaires
+#' Dépenses militaires
 #'
 #' Un tableau de l'évolution des dépenses militaires pour tous
 #' les pays du monde de 2000 à 2021.
@@ -237,7 +237,7 @@
 #' @source <https://milex.sipri.org/sipri>
 "oc_russie_depenses_militaires"
 
-#' OC Russie: ADM6 GIS data
+#' ADM6 GIS
 #'
 #' Un tableau geographique des 2338 communes russes.
 #'

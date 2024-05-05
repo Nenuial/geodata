@@ -1,4 +1,4 @@
-#' OC Ecocitoyenneté: Consommation par source (kWh par personne)
+#' Consommation par source (kWh par personne)
 #'
 #' Un tableau avec la quantité d'énergie consommée par
 #' personne pour tous les pays du monde (y compris des

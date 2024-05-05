@@ -3,7 +3,7 @@
 \docType{data}
 \name{df_demography_population_growth}
 \alias{df_demography_population_growth}
-\title{DF Demography: Population growth}
+\title{Population growth}
 \format{
 A tibble with 2 columns and 66 rows
 \describe{

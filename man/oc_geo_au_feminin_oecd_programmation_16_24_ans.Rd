@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_oecd_programmation_16_24_ans}
 \alias{oc_geo_au_feminin_oecd_programmation_16_24_ans}
-\title{OC Géo au féminin: Pourcentage de jeunes entre 16 et 24 ans qui savent programmer}
+\title{Pourcentage de jeunes entre 16 et 24 ans qui savent programmer}
 \format{
 Un tibble avec 5 colonnes et 818 lignes
 \describe{

@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_owid_suffrage_feminin}
 \alias{oc_geo_au_feminin_owid_suffrage_feminin}
-\title{OC Géo au féminin: Suffrage féminin}
+\title{Suffrage féminin}
 \format{
 Un tibble avec 3 colonnes et 206 lignes
 \describe{

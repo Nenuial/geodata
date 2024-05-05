@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_mariages_divorces_national}
 \alias{oc_russie_mariages_divorces_national}
-\title{OC Russie: Mariages et divorces national}
+\title{Mariages et divorces en Russie}
 \format{
 Un tibble avec 3 colonnes et 60 lignes
 \describe{

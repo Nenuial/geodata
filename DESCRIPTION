@@ -22,7 +22,6 @@ Imports:
     idbr,
     keyring,
     lubridate,
-    magrittr,
     memoise,
     purrr,
     RCurl,

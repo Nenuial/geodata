@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_2019_fecondite}
 \alias{oc_russie_2019_fecondite}
-\title{OC Russie: Indice de fécondité}
+\title{Indice de fécondité en Russie}
 \format{
 Un tibble avec 4 colonnes et 170 lignes
 \describe{

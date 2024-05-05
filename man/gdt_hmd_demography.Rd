@@ -3,7 +3,7 @@
 \docType{data}
 \name{gdt_hmd_demography}
 \alias{gdt_hmd_demography}
-\title{Geodata: HMD Demography indicators}
+\title{HMD Demography indicators}
 \format{
 A tibble with 5 columns and 4729 rows
 \describe{

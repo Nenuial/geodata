@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_levada_attitude_us}
 \alias{oc_russie_levada_attitude_us}
-\title{OC Russie: Attitude de la Russie vis-à-vis des USA}
+\title{Attitude de la Russie vis-à-vis des USA}
 \format{
 Un tibble avec 3 colonnes et 516 lignes
 \describe{

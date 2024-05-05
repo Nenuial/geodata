@@ -1,4 +1,4 @@
-#' OC Géo au féminin: Espérance de vie WPP2012
+#' Espérance de vie WPP2012
 #'
 #' Un tableau de l'espérance de vie selon les données WPP2012
 #' par pays.
@@ -14,7 +14,7 @@
 #' @source <https://population.un.org/wpp/>
 "oc_geo_au_feminin_wpp2012_lex"
 
-#' OC Géo au féminin: Espérance de vie WPP2019
+#' Espérance de vie WPP2019
 #'
 #' Un tableau de l'espérance de vie selon les données WPP2019
 #' par pays.
@@ -30,7 +30,7 @@
 #' @source <https://population.un.org/wpp/>
 "oc_geo_au_feminin_wpp2019_lex"
 
-#' OC Géo au féminin: Rapport des sexes
+#' Sex-ratio
 #'
 #' Un tableau du rapport des sexes pour différentes années
 #' selon les chiffres du WPP2019.
@@ -48,7 +48,7 @@
 #' @source <https://population.un.org/wpp/>
 "oc_geo_au_feminin_wpp2019_sex_ratio"
 
-#' OC Géo au féminin: Avortement en Suisse
+#' Taux d'avortement en Suisse
 #'
 #' Un tableau du taux d'avortement en Suisse
 #' pour les adolescentes et les femmes en général
@@ -63,7 +63,7 @@
 #' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/sante/etat-sante/reproductive/interruptions-grossesses.html>
 "oc_geo_au_feminin_2021_ofs_avortements"
 
-#' OC Géo au féminin: Excision données indirectes
+#' Excision données indirectes
 #'
 #' Un tableau avec le nombre d'excisions dans des
 #' pays ne fournissant pas de données directes (pays
@@ -79,7 +79,7 @@
 #' @source <https://equalitynow.org/fgm-a-global-picture/>
 "oc_geo_au_feminin_2020_fgm_indirect_data"
 
-#' OC Géo au féminin: Violences sexuelles expériences
+#' Violences sexuelles expériences
 #'
 #' Un tableau avec les résultats du sondage gfs.bern de
 #' 2019 en rapport avec les violences sexuelles. Réponses
@@ -97,7 +97,7 @@
 #' @source <https://cockpit.gfsbern.ch/fr/cockpit/violence-sexuelles-en-suisse/>
 "oc_geo_au_feminin_2019_gfs_violences_sexuelles_experiences"
 
-#' OC Géo au féminin: Violences sexuelles actes
+#' Violences sexuelles actes
 #'
 #' Un tableau avec les résultats du sondage gfs.bern de
 #' 2019 en rapport avec les violences sexuelles. Réponses
@@ -112,7 +112,7 @@
 #' @source <https://cockpit.gfsbern.ch/fr/cockpit/violence-sexuelles-en-suisse/>
 "oc_geo_au_feminin_2019_gfs_violences_sexuelles_actes"
 
-#' OC Géo au féminin: Violences sexuelles police
+#' Violences sexuelles police
 #'
 #' Un tableau avec les résultats du sondage gfs.bern de
 #' 2019 en rapport avec les violences sexuelles. Réponses
@@ -128,7 +128,7 @@
 #' @source <https://cockpit.gfsbern.ch/fr/cockpit/violence-sexuelles-en-suisse/>
 "oc_geo_au_feminin_2019_gfs_violences_sexuelles_police"
 
-#' OC Géo au féminin: Suffrage féminin
+#' Suffrage féminin
 #'
 #' Un tableau avec l'année à laquelle les femmes ont obtenus le droit de vote
 #' dans les différents pays du monde.
@@ -142,7 +142,7 @@
 #' @source <https://ourworldindata.org/grapher/universal-suffrage-women-lexical>
 "oc_geo_au_feminin_owid_suffrage_feminin"
 
-#' OC Géo au féminin: Femmes au Conseil National
+#' Femmes au Conseil National
 #'
 #' Un tableau avec le pourcentage de femmes au Conseil National
 #' en fonction de l'année
@@ -155,7 +155,7 @@
 #' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/politique/elections/femmes-elues.html>
 "oc_geo_au_feminin_ofs_election_femmes_conseil_national"
 
-#' OC Géo au féminin: Femmes au Conseil des Etats
+#' Femmes au Conseil des Etats
 #'
 #' Un tableau avec le pourcentage de femmes au Conseil des Etats
 #' en fonction de l'année
@@ -168,7 +168,7 @@
 #' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/politique/elections/femmes-elues.html>
 "oc_geo_au_feminin_ofs_election_femmes_conseil_etats"
 
-#' OC Géo au féminin: Femmes au Conseil Fédéral
+#' Femmes au Conseil Fédéral
 #'
 #' Un tableau avec le pourcentage de femmes au Conseil Fédéral
 #' en fonction de l'année
@@ -181,7 +181,7 @@
 #' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/politique/elections/femmes-elues.html>
 "oc_geo_au_feminin_ofs_election_femmes_conseil_federal"
 
-#' OC Géo au féminin: Femmes en politique fédérale
+#' Femmes en politique fédérale
 #'
 #' Un tableau avec le pourcentage de femmes dans les différentes
 #' instances fédérale (Conseil National, Conseil des États et
@@ -196,7 +196,7 @@
 #' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/politique/elections/femmes-elues.html>
 "oc_geo_au_feminin_ofs_election_femmes"
 
-#' OC Géo au féminin: Pourcentage de jeunes entre 16 et 24 ans qui savent programmer
+#' Pourcentage de jeunes entre 16 et 24 ans qui savent programmer
 #'
 #' Un tableau avec le pourcentage de jeunes (16 à 24 ans)  qui savent
 #' programmer pour les différents pays de l'OECD.
@@ -212,7 +212,7 @@
 #' @source <https://goingdigital.oecd.org/indicator/54>
 "oc_geo_au_feminin_oecd_programmation_16_24_ans"
 
-#' OC Géo au féminin: Indicateur SIGI
+#' Indicateur SIGI
 #'
 #' Un tableau avec l'indicateur SIGI (Social Institutions and Gender Index)
 #' pour l'année 2023
@@ -231,7 +231,7 @@
 #' @source <https://stats.oecd.org/Index.aspx?DataSetCode=SIGI2023>
 "oc_geo_au_feminin_2023_oecd_sigi"
 
-#' OC Géo au féminin: Indicateur GII
+#' Indicateur GII
 #'
 #' Un tableau avec l'indicateur GII (Gender Inequality Index)
 #' pour l'année 2021
@@ -245,7 +245,7 @@
 #' @source <https://hdr.undp.org/data-center/thematic-composite-indices/gender-inequality-index#/indicies/GII>
 "oc_geo_au_feminin_2021_unhdr_gii"
 
-#' OC Géo au féminin: Sex-ratio à la naissance
+#' Sex-ratio à la naissance
 #'
 #' Un tableau avec le sex ratio à la naissance tiré des données
 #' WPP 2022
@@ -262,7 +262,7 @@
 #' @source <https://population.un.org/wpp/>
 "oc_geo_au_feminin_sex_ratio"
 
-#' OC Géo au féminin: Avortement par canton
+#' Avortement suisse par canton
 #'
 #' Un tableau avec les avortements par canton en Suisse
 #' en 2022
@@ -278,7 +278,7 @@
 #' @source <https://www.bfs.admin.ch/bfs/fr/home/statistiques/catalogues-banques-donnees/tableaux.assetdetail.26386394.html>
 "oc_geo_au_feminin_2022_ofs_avortements_par_canton"
 
-#' OC Géo au féminin: Avortements par canton
+#' Avortements suisse par tranche d'age
 #'
 #' Un tableau avec les avortements par tranche d'âge
 #' en Suisse en 2022
@@ -292,7 +292,7 @@
 "oc_geo_au_feminin_2022_ofs_avortements_par_ages"
 
 
-#' OC Géo au féminin: Avortements par région
+#' Avortements par région
 #'
 #' Un tableau avec les avortements par régions
 #' en Suisse entre 2007 et 2022
@@ -305,7 +305,7 @@
 #' }
 "oc_geo_au_feminin_ofs_avortements_par_region"
 
-#' OC Géo au féminin: Votations sur l'avortement
+#' Votations sur l'avortement
 #'
 #' Un tableau avec les résultats au niveau fédéral
 #' de différentes votations en rapport avec

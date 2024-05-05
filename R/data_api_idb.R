@@ -14,7 +14,8 @@ gdt_idb_pyramid_1y <- function(country, year) {
   geotools::gtl_chk_idb_api_key()
 
   country_code <- countrycode::countrycode(
-    country, origin = "country.name", destination = "iso2c",
+    country,
+    origin = "country.name", destination = "iso2c",
     custom_match = c(
       "Gaza" = "XG",
       "Kosovo" = "XK",
@@ -49,7 +50,8 @@ gdt_idb_pyramid <- function(country, year) {
   geotools::gtl_chk_idb_api_key()
 
   country_code <- countrycode::countrycode(
-    country, origin = "country.name", destination = "iso2c",
+    country,
+    origin = "country.name", destination = "iso2c",
     custom_match = c(
       "Gaza" = "XG",
       "Kosovo" = "XK",
@@ -57,14 +59,14 @@ gdt_idb_pyramid <- function(country, year) {
     )
   )
 
-  idbr::get_idb(country = country_code, year = year, sex = "male") %>%
-    dplyr::mutate(pop = pop * -1) %>%
-    dplyr::select(age, male = pop) %>%
+  idbr::get_idb(country = country_code, year = year, sex = "male") |>
+    dplyr::mutate(pop = pop * -1) |>
+    dplyr::select(age, male = pop) |>
     dplyr::left_join(
-      idbr::get_idb(country = country_code, year = year, sex = "female") %>%
+      idbr::get_idb(country = country_code, year = year, sex = "female") |>
         dplyr::select(age, female = pop),
       by = "age"
-    ) %>%
+    ) |>
     tidyr::pivot_longer(-age, names_to = "gender", values_to = "population")
 }
 
@@ -84,7 +86,8 @@ gdt_idb_pyramid_5y <- function(country, year) {
   geotools::gtl_chk_idb_api_key()
 
   country_code <- countrycode::countrycode(
-    country, origin = "country.name", destination = "iso2c",
+    country,
+    origin = "country.name", destination = "iso2c",
     custom_match = c(
       "Gaza" = "XG",
       "Kosovo" = "XK",
@@ -92,12 +95,16 @@ gdt_idb_pyramid_5y <- function(country, year) {
     )
   )
 
-  idbr::get_idb(country = country, year = year,
-                concept = "Male midyear population by 5-year age groups") |>
+  idbr::get_idb(
+    country = country, year = year,
+    concept = "Male midyear population by 5-year age groups"
+  ) |>
     gdt_idb_tidy_5y_pyramid_data() -> male
 
-  idbr::get_idb(country = country, year = year,
-                concept = "Female midyear population by 5-year age groups") |>
+  idbr::get_idb(
+    country = country, year = year,
+    concept = "Female midyear population by 5-year age groups"
+  ) |>
     gdt_idb_tidy_5y_pyramid_data() -> female
 
   dplyr::bind_rows(male, female)
@@ -127,5 +134,4 @@ gdt_idb_tidy_5y_pyramid_data <- function(df) {
       sort = as.integer(stringr::str_extract(cohort, "^\\d{1,3}"))
     ) |>
     dplyr::arrange(sort)
-
 }

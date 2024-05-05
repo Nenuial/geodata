@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_israel_palestine_immigration_israel}
 \alias{oc_israel_palestine_immigration_israel}
-\title{OC Israël-Palestine: Immigration en Israël}
+\title{Immigration en Israël}
 \format{
 Un tibble avec 2 colonnes et 69 lignes
 \describe{

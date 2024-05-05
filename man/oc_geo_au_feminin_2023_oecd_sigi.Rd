@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_2023_oecd_sigi}
 \alias{oc_geo_au_feminin_2023_oecd_sigi}
-\title{OC Géo au féminin: Indicateur SIGI}
+\title{Indicateur SIGI}
 \format{
 Un tibble avec 8 colonnes et 1635 lignes
 \describe{

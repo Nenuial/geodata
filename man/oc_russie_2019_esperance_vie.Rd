@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_2019_esperance_vie}
 \alias{oc_russie_2019_esperance_vie}
-\title{OC Russie: Espérance de vie}
+\title{Espérance de vie en Russie}
 \format{
 Un tibble avec 5 colonnes et 560 lignes
 \describe{

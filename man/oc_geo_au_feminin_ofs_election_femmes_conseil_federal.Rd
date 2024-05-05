@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_ofs_election_femmes_conseil_federal}
 \alias{oc_geo_au_feminin_ofs_election_femmes_conseil_federal}
-\title{OC Géo au féminin: Femmes au Conseil Fédéral}
+\title{Femmes au Conseil Fédéral}
 \format{
 Un tibble avec 2 colonnes et 12 lignes
 \describe{

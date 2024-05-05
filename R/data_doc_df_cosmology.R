@@ -1,4 +1,4 @@
-#' DF Cosmology: Solar System Objects
+#' Solar System Objects
 #'
 #' A table with solar system objects.
 #'

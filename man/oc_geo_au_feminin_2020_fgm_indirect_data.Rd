@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_2020_fgm_indirect_data}
 \alias{oc_geo_au_feminin_2020_fgm_indirect_data}
-\title{OC Géo au féminin: Excision données indirectes}
+\title{Excision données indirectes}
 \format{
 Un tibble avec 4 colonnes et 31 lignes
 \describe{

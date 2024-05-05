@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_suisse_suffrage_feminin}
 \alias{oc_suisse_suffrage_feminin}
-\title{OC Suisse: Suffrage féminin}
+\title{Suffrage féminin en suisse}
 \format{
 Un tibble avec 2 colonnes et 26 lignes
 \describe{

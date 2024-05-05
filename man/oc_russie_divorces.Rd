@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_divorces}
 \alias{oc_russie_divorces}
-\title{OC Russie: Divorces}
+\title{Divorces en Russie}
 \format{
 Un tibble avec 5 colonnes et 84 lignes
 \describe{

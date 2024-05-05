@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_mariages}
 \alias{oc_russie_mariages}
-\title{OC Russie: Mariages}
+\title{Mariages en Russie}
 \format{
 Un tibble avec 5 colonnes et 1636 lignes
 \describe{

@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_2019_natalite_mortalite}
 \alias{oc_russie_2019_natalite_mortalite}
-\title{OC Russie: Mortalité et natalité}
+\title{Mortalité et natalité}
 \format{
 Un tibble avec 5 colonnes et 174 lignes
 \describe{

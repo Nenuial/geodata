@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_israel_palestine_immigration_juive_avant_1948}
 \alias{oc_israel_palestine_immigration_juive_avant_1948}
-\title{OC Israël-Palestine: Immigration juive en Palestine avant 1948}
+\title{Immigration juive en Palestine avant 1948}
 \format{
 Un tibble avec 2 colonnes et 6 lignes
 \describe{

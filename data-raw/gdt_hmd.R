@@ -6,15 +6,15 @@ clean_summary <- function(data, type) {
     dplyr::mutate(Year = as.numeric(Year)) |>
     dplyr::select(-Age) |>
     dplyr::group_by(Year) |>
-    dplyr::summarise_all(~sum(., na.rm = TRUE)) |>
-    dplyr::rename_at(dplyr::vars(-Year), ~glue::glue("{.}_{type}"))
+    dplyr::summarise_all(~ sum(., na.rm = TRUE)) |>
+    dplyr::rename_at(dplyr::vars(-Year), ~ glue::glue("{.}_{type}"))
 }
 
 # Fetch data from HDM website and cleanup
 cleanup <- function(code) {
   geodata::gdt_hmd_birth_raw(code) |>
     dplyr::mutate(Year = as.numeric(Year)) |>
-    dplyr::rename_at(dplyr::vars(-Year), ~glue::glue("{.}_birth")) -> birth
+    dplyr::rename_at(dplyr::vars(-Year), ~ glue::glue("{.}_birth")) -> birth
 
   geodata::gdt_hmd_death_raw(code) |>
     clean_summary("death") -> death

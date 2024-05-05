@@ -3,13 +3,13 @@
 \docType{data}
 \name{oc_russie_2020_evolution_population}
 \alias{oc_russie_2020_evolution_population}
-\title{OC Russie: Évolution de la population}
+\title{Évolution de la population en Russie}
 \format{
-Un tibble avec 2 colonnes et 30 lignes
+Un tibble avec 6 colonnes et 85 lignes
 \describe{
 \item{region}{Nom de la région en anglais}
 \item{oktmo}{OKTMO Code}
-\item{adm1_code}{Identifian ADM1 (pour NaturalEarth)}
+\item{adm1_code}{ADM1 ID (for NaturalEarth)}
 \item{\code{2020}}{Population en 2020}
 \item{\code{1990}}{Population en 1990}
 \item{solde}{Pourcentage d'évolution sur ces 30 dernières anneés}
@@ -23,6 +23,6 @@ oc_russie_2020_evolution_population
 }
 \description{
 Un tableau de l'évolution de la population en Russie
-par régions à 2019.avec un comparaison 1990 - 2020
+par régions avec une comparaison entre 1990 et 2020.
 }
 \keyword{datasets}

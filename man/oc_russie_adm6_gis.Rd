@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_adm6_gis}
 \alias{oc_russie_adm6_gis}
-\title{OC Russie: ADM6 GIS data}
+\title{ADM6 GIS}
 \format{
 Un tibble avec 27 colonnes et 2338 lignes
 \describe{

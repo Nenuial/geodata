@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_votations_avortement}
 \alias{oc_geo_au_feminin_votations_avortement}
-\title{OC Géo au féminin: Votations sur l'avortement}
+\title{Votations sur l'avortement}
 \format{
 Un tibble avec 3 colonnes et 6 lignes
 \describe{

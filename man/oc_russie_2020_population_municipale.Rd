@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_2020_population_municipale}
 \alias{oc_russie_2020_population_municipale}
-\title{OC Russie: population municipale en 2020}
+\title{Population municipale en Russie}
 \format{
 Un tibble avec 4 colonnes et 2539 lignes
 \describe{

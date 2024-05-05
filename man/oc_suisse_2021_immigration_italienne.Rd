@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_suisse_2021_immigration_italienne}
 \alias{oc_suisse_2021_immigration_italienne}
-\title{OC Suisse: Immigration italienne}
+\title{Immigration italienne}
 \format{
 Un tibble avec 3 colonnes et 39 lignes
 \describe{

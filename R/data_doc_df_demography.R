@@ -1,4 +1,4 @@
-#' DF Demography: Population growth
+#' Population growth
 #'
 #' A table with population growth.
 #' Data was manually scraped…
@@ -11,7 +11,7 @@
 #' @source <https://www.census.gov/data-tools/demo/idb/>
 "df_demography_population_growth"
 
-#' DF Demography: Historical world population
+#' Historical world population
 #'
 #' A table with historical world population numbers.
 #'
@@ -23,7 +23,7 @@
 #' @source <https://www.census.gov/data/tables/time-series/demo/international-programs/historical-est-worldpop.html>
 "df_demography_population_historical"
 
-#' DF Demography: World population projections
+#' World population projections
 #'
 #' A table with the UN World Population Projections
 #'
@@ -36,7 +36,7 @@
 #' @source wpp2019 rstat package
 "df_demography_population_estimates"
 
-#' DF Demography: World population period estimates 2019
+#' World population period estimates 2019
 #'
 #' A table with the UN World Population Projections
 #'

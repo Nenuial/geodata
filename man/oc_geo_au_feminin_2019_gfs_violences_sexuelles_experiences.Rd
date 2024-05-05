@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_2019_gfs_violences_sexuelles_experiences}
 \alias{oc_geo_au_feminin_2019_gfs_violences_sexuelles_experiences}
-\title{OC Géo au féminin: Violences sexuelles expériences}
+\title{Violences sexuelles expériences}
 \format{
 Un tibble avec 5 colonnes et 10 lignes
 \describe{

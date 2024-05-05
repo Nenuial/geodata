@@ -71,10 +71,10 @@ gdt_hmd_lex <- function(countries, age, type = c("male", "female", "total")) {
 
   countries |>
     purrr::map(
-      .f = ~gdt_hmd_lex_clean(.x, age, type)
+      .f = ~ gdt_hmd_lex_clean(.x, age, type)
     ) |>
     purrr::reduce(
-      .f = ~dplyr::inner_join(.x, .y, by = "year")
+      .f = ~ dplyr::inner_join(.x, .y, by = "year")
     ) |>
     tidyr::pivot_longer(-year, names_to = "country", values_to = "lex")
 }
@@ -157,16 +157,22 @@ gdt_hmd_death_raw <- function(country) {
 #'
 #' @keywords internal
 gdt_hmd_download <- function(country, indicator) {
-  url <- paste0("https://www.mortality.org/hmd/",
-                country, "/STATS/", indicator, ".txt")
-  credentials <- paste0(keyring::key_list('mortality.org')[['username']],
-                        ":", keyring::key_get('mortality.org'))
+  url <- paste0(
+    "https://www.mortality.org/hmd/",
+    country, "/STATS/", indicator, ".txt"
+  )
+  credentials <- paste0(
+    keyring::key_list("mortality.org")[["username"]],
+    ":", keyring::key_get("mortality.org")
+  )
 
   RCurl::getURL(
     url = url,
     userpwd = credentials
   ) |>
     textConnection() |>
-    utils::read.table(skip = 2, header = TRUE,
-                      na.strings = ".")
+    utils::read.table(
+      skip = 2, header = TRUE,
+      na.strings = "."
+    )
 }

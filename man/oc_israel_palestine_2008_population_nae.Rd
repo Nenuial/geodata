@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_israel_palestine_2008_population_nae}
 \alias{oc_israel_palestine_2008_population_nae}
-\title{OC Israël-Palestine: Population née à l'étranger}
+\title{Population israélienne née à l'étranger}
 \format{
 Un tibble avec 3 colonnes et 5 lignes
 \describe{

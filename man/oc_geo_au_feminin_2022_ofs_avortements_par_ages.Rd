@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_2022_ofs_avortements_par_ages}
 \alias{oc_geo_au_feminin_2022_ofs_avortements_par_ages}
-\title{OC Géo au féminin: Avortements par canton}
+\title{Avortements suisse par tranche d'age}
 \format{
 Un tibble avec 3 colonnes et 18 lignes
 \describe{

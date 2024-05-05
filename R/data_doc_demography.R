@@ -1,4 +1,4 @@
-#' Geodata: HMD Demography indicators
+#' HMD Demography indicators
 #'
 #' A table with demography indicators
 #' for all HDM countries (see `geotools::gtl_hmd_codes()`)

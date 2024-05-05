@@ -1,4 +1,4 @@
-#' OC Israël-Palestine: Immigration en Israël
+#' Immigration en Israël
 #'
 #' Un tableau avec l'immigration en Israël par année
 #' en chiffre absolus de 1949 à 2017.
@@ -11,7 +11,7 @@
 #' @source <https://www.cbs.gov.il/he/publications/doclib/2018/4.%20shnatonimmigration/st04_02.pdf>
 "oc_israel_palestine_immigration_israel"
 
-#' OC Israël-Palestine: Population née à l'étranger
+#' Population israélienne née à l'étranger
 #'
 #' Un tableau avec l'origine pour la population
 #' née à l'étranger en Israël en 2008.
@@ -25,7 +25,7 @@
 #' @source <https://www.cbs.gov.il/en/Statistics/Pages/Generators/Generator-of-the-2008-Census.aspx>
 "oc_israel_palestine_2008_population_nae"
 
-#' OC Israël-Palestine: Immigration juive en Palestine avant 1948
+#' Immigration juive en Palestine avant 1948
 #'
 #' Un tableau avec l'immigration **approximative**
 #' en Palestine avant 1948. Montre les cinq premières

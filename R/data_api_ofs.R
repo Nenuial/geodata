@@ -14,22 +14,21 @@ gdt_ofs_vote_list <- function() {
 
   data <- geotools::gtl_dwnl_api_json(api_call)
 
-  data %>%
-    purrr::pluck("result", "resources") %>%
+  data |>
+    purrr::pluck("result", "resources") |>
     purrr::map_df(
       .f = function(x) {
         lang <- geotools::gtl_opt_short_language(valid = c("fr", "de", "it"))
         id <- purrr::pluck(x, "id")
         title <- purrr::pluck(x, "title", lang)
-        date <- purrr::pluck(x, "coverage") %>% lubridate::ymd()
+        date <- purrr::pluck(x, "coverage") |> lubridate::ymd()
         desc <- purrr::pluck(x, "description", lang)
         url <- purrr::pluck(x, "url")
 
         tibble::tribble(
-          ~title,  ~date,  ~description,  ~url,
-           title,   date,          desc,   url
+          ~title, ~date, ~description, ~url,
+          title, date, desc, url
         )
       }
     )
 }
-

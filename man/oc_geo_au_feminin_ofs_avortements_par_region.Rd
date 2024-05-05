@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_ofs_avortements_par_region}
 \alias{oc_geo_au_feminin_ofs_avortements_par_region}
-\title{OC Géo au féminin: Avortements par région}
+\title{Avortements par région}
 \format{
 Un tibble avec 3 colonnes et 18 lignes
 \describe{

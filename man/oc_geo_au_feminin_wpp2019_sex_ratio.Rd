@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_wpp2019_sex_ratio}
 \alias{oc_geo_au_feminin_wpp2019_sex_ratio}
-\title{OC Géo au féminin: Rapport des sexes}
+\title{Sex-ratio}
 \format{
 Un tibble avec 7 colonnes et 78435 lignes
 \describe{

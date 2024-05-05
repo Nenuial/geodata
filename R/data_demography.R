@@ -43,11 +43,15 @@ gdt_table_demography <- function(country, years) {
     dplyr::mutate("4-rni" = `2-cbr` - `3-cdr`) |>
     dplyr::select(-c(iso2c, iso3c, country)) |>
     tidyr::pivot_longer(-date, names_to = "indicator", values_to = "data") |>
-    tidyr::pivot_wider(id_cols = tidyselect::everything(),
-                       names_from = "date", values_from = "data") |>
+    tidyr::pivot_wider(
+      id_cols = tidyselect::everything(),
+      names_from = "date", values_from = "data"
+    ) |>
     dplyr::arrange(indicator) |>
     dplyr::mutate(indicator = stringr::str_remove(indicator, "\\d-")) |>
-    dplyr::mutate(indicator = stringr::str_replace_all(indicator, pattern = names(indicator_values),
-                                                       replacement = indicator_values)) |>
+    dplyr::mutate(indicator = stringr::str_replace_all(indicator,
+      pattern = names(indicator_values),
+      replacement = indicator_values
+    )) |>
     dplyr::rename({{ indicator_name }} := indicator)
 }

@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_chine_2018_sex_ratio_par_region}
 \alias{oc_chine_2018_sex_ratio_par_region}
-\title{OC Chine: Population 2018 par sexe et régions}
+\title{Population chinoise 2018 par sexe et régions}
 \format{
 Un tibble avec 6 colonnes et 31 lignes
 \describe{

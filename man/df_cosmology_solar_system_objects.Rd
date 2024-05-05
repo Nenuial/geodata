@@ -3,7 +3,7 @@
 \docType{data}
 \name{df_cosmology_solar_system_objects}
 \alias{df_cosmology_solar_system_objects}
-\title{DF Cosmology: Solar System Objects}
+\title{Solar System Objects}
 \format{
 A tibble with 10 columns and 10 rows
 \describe{

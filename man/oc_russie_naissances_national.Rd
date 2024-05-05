@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_naissances_national}
 \alias{oc_russie_naissances_national}
-\title{OC Russie: naissances national}
+\title{Naissances en Russie}
 \format{
 Un tibble avec 2 colonnes et 21 lignes
 \describe{

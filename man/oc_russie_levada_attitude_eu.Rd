@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_russie_levada_attitude_eu}
 \alias{oc_russie_levada_attitude_eu}
-\title{OC Russie: Attitude de la Russie vis-à-vis de l'Europe}
+\title{Attitude de la Russie vis-à-vis de l'Europe}
 \format{
 Un tibble avec 3 colonnes et 363 lignes
 \describe{

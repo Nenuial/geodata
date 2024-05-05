@@ -3,7 +3,7 @@
 \docType{data}
 \name{oc_geo_au_feminin_wpp2012_lex}
 \alias{oc_geo_au_feminin_wpp2012_lex}
-\title{OC Géo au féminin: Espérance de vie WPP2012}
+\title{Espérance de vie WPP2012}
 \format{
 Un tibble avec 5 colonnes et 236 lignes
 \describe{

@@ -3,7 +3,7 @@
 \docType{data}
 \name{df_demography_population_historical}
 \alias{df_demography_population_historical}
-\title{DF Demography: Historical world population}
+\title{Historical world population}
 \format{
 A tibble with 2 columns and 105 rows
 \describe{
