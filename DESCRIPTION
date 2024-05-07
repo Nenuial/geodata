@@ -1,5 +1,5 @@
-Package: geodata
 Type: Package
+Package: geodata
 Title: Data for Geography Vizualisations
 Version: 1.0.0
 Authors@R: 
@@ -7,47 +7,46 @@ Authors@R:
            comment = c(ORCID = "0009-0001-5504-5084"))
 Maintainer: Pascal Burkhard <pascal.burkhard@gmail.com>
 Description: Provide a repository of data for geography vizualisations.
+License: MIT + file LICENSE
 URL: https://geodata.nenuial.org
 BugReports: http://github.com/nenuial/geodata/issues/
-License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
-LazyDataCompression: bzip2
+Depends: 
+    R (>= 4.1)
 Imports: 
     countrycode,
-    dplyr,
     demography,
+    dplyr,
+    fs,
     geojsonsf,
+    geotools,
+    glue,
     httr2,
     idbr,
     keyring,
     lubridate,
     memoise,
     purrr,
+    rappdirs,
     RCurl,
     readr,
+    rlang,
+    rnoaa,
+    sf,
     stringr,
     tibble,
-    tidyselect,
+    tidygeocoder,
     tidyr,
-    wbstats,
-    rlang,
-    geotools,
-    sf,
-    fs,
-    glue,
-    rappdirs,
-    rnoaa,
-    tidygeocoder
+    tidyselect,
+    wbstats
 Suggests:
     lifecycle
 Remotes:
-    piersyork/owidR,
     Nenuial/geotools,
+    piersyork/owidR,
     ropensci/rnoaa
-RoxygenNote: 7.3.1
-Depends: 
-    R (>= 4.1)
+Config/Needs/website: pkgdown, nenuial/geopkg
+Encoding: UTF-8
+LazyData: true
+LazyDataCompression: bzip2
 Roxygen: list(markdown = TRUE)
-Config/Needs/website: pkgdown,
-  nenuial/geopkg
+RoxygenNote: 7.3.1
