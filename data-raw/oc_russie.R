@@ -33,7 +33,7 @@ readr::read_csv(
   skip = 4L,
   col_names = c("region", "codes", 2016:2022),
   locale = readr::locale(decimal_mark = ",")
-) |> 
+) |>
   dplyr::select(-region) |>
   dplyr::mutate(
     adm1_code = geotools::gtl_admin_code(
@@ -50,8 +50,8 @@ readr::read_csv(
       warn = FALSE,
       country = "Russia"
     )
-  ) |> 
-  tidyr::drop_na(region) |> 
+  ) |>
+  tidyr::drop_na(region) |>
   tidyr::pivot_longer(
     tidyselect::num_range("", 2016:2022),
     names_to = "year",
@@ -104,7 +104,7 @@ readr::read_csv(
   skip = 4L,
   col_names = c("region", "codes", 2017:2023),
   locale = readr::locale(decimal_mark = ",")
-) |> 
+) |>
   dplyr::select(-region) |>
   dplyr::mutate(
     adm1_code = geotools::gtl_admin_code(
@@ -121,8 +121,8 @@ readr::read_csv(
       warn = FALSE,
       country = "Russia"
     )
-  ) |> 
-  tidyr::drop_na(region) |> 
+  ) |>
+  tidyr::drop_na(region) |>
   tidyr::pivot_longer(
     tidyselect::num_range("", 2017:2023),
     names_to = "year",
@@ -184,7 +184,7 @@ readr::read_csv(
   skip = 4L,
   col_names = c("region", "codes", 2017:2023),
   locale = readr::locale(decimal_mark = ",")
-) |> 
+) |>
   dplyr::select(-region) |>
   dplyr::mutate(
     adm1_code = geotools::gtl_admin_code(
@@ -201,13 +201,13 @@ readr::read_csv(
       warn = FALSE,
       country = "Russia"
     )
-  ) |> 
-  tidyr::drop_na(region) |> 
+  ) |>
+  tidyr::drop_na(region) |>
   tidyr::pivot_longer(
     tidyselect::num_range("", 2017:2023),
     names_to = "year",
     values_to = "rni"
-  ) |> 
+  ) |>
   tidyr::drop_na(rni) -> oc_russie_2023_accroissement
 
 usethis::use_data(oc_russie_2023_accroissement, overwrite = TRUE)
