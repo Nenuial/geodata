@@ -97,9 +97,9 @@ reference:
   contents:
   - starts_with("oc_israel_palestine")
 
-- title: OC Géo au féminin
+- title: OC Russie
   description: |
-    Datasets for the *OC Géo au féminin* chapter.
+    Datasets for the *OC Russie* chapter.
   contents:
   - starts_with("oc_russie")
 
