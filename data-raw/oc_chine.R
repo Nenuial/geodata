@@ -10,7 +10,7 @@ readxl::read_excel(
 ) |>
   dplyr::mutate(ratio = male / female) |>
   dplyr::mutate(
-    adm1_code = geotools::admincode(
+    adm1_code = geotools::gtl_admin_code(
       region,
       origin = "region.name.en.regex",
       origin_regex = TRUE,

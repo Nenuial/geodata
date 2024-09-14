@@ -11,7 +11,7 @@ License: MIT + file LICENSE
 URL: https://geodata.nenuial.org
 BugReports: http://github.com/nenuial/geodata/issues/
 Depends: 
-    R (>= 4.1)
+    R (>= 3.5)
 Imports: 
     countrycode,
     demography,
