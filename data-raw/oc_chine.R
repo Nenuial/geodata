@@ -25,7 +25,7 @@ usethis::use_data(oc_chine_2018_sex_ratio_par_region, overwrite = TRUE)
 
 readxl::read_excel(here::here("inst/extdata/oc_chine/nbs/population/2018_china_nbs_sex_ratio_by_region.xlsx")) |>
   dplyr::mutate(
-    adm1_code = geotools::admincode(
+    adm1_code = geotools::gtl_admin_code(
       region,
       origin = "region.name.en.regex",
       origin_regex = TRUE,

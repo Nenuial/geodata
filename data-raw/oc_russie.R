@@ -15,7 +15,7 @@ lex |>
   # IMPORTANT : remove Arkhangelsk Oblast and Tyumen Oblast because they agregate nearby autonomous regions
   dplyr::filter(region != "Архангельская область" & region != "Тюменская область") |>
   dplyr::mutate(
-    adm1_code = geotools::admincode(
+    adm1_code = geotools::gtl_admin_code(
       region,
       origin = "region.name.ru.regex",
       origin_regex = TRUE,
@@ -27,6 +27,39 @@ lex |>
   tidyr::drop_na() -> oc_russie_2019_esperance_vie
 
 usethis::use_data(oc_russie_2019_esperance_vie, overwrite = TRUE)
+
+readr::read_csv(
+  here::here("inst/extdata/oc_russie/rosstat/population/2024_life_expectancy.csv"),
+  skip = 4L,
+  col_names = c("region", "codes", 2016:2022),
+  locale = readr::locale(decimal_mark = ",")
+) |> 
+  dplyr::select(-region) |>
+  dplyr::mutate(
+    adm1_code = geotools::gtl_admin_code(
+      codes,
+      origin = "oktmo",
+      destination = "adm1",
+      warn = FALSE,
+      country = "Russia"
+    ),
+    region = geotools::gtl_admin_code(
+      codes,
+      origin = "oktmo",
+      destination = "region.name.en",
+      warn = FALSE,
+      country = "Russia"
+    )
+  ) |> 
+  tidyr::drop_na(region) |> 
+  tidyr::pivot_longer(
+    tidyselect::num_range("", 2016:2022),
+    names_to = "year",
+    values_to = "lex"
+  ) |>
+  tidyr::drop_na(lex) -> oc_russie_2022_esperance_vie
+
+usethis::use_data(oc_russie_2022_esperance_vie, overwrite = TRUE)
 
 
 # Regional fertility rates ------------------------------------------------
@@ -53,7 +86,7 @@ tfr |>
   # IMPORTANT : remove Arkhangelsk Oblast and Tyumen Oblast because they agregate nearby autonomous regions
   dplyr::filter(region != "Архангельская область" & region != "Тюменская область") |>
   dplyr::mutate(
-    adm1_code = geotools::admincode(
+    adm1_code = geotools::gtl_admin_code(
       region,
       origin = "region.name.ru.regex",
       origin_regex = TRUE,
@@ -65,6 +98,39 @@ tfr |>
   tidyr::drop_na() -> oc_russie_2019_fecondite
 
 usethis::use_data(oc_russie_2019_fecondite, overwrite = TRUE)
+
+readr::read_csv(
+  here::here("inst/extdata/oc_russie/rosstat/population/2024_fertility_rates.csv"),
+  skip = 4L,
+  col_names = c("region", "codes", 2017:2023),
+  locale = readr::locale(decimal_mark = ",")
+) |> 
+  dplyr::select(-region) |>
+  dplyr::mutate(
+    adm1_code = geotools::gtl_admin_code(
+      codes,
+      origin = "oktmo",
+      destination = "adm1",
+      warn = FALSE,
+      country = "Russia"
+    ),
+    region = geotools::gtl_admin_code(
+      codes,
+      origin = "oktmo",
+      destination = "region.name.en",
+      warn = FALSE,
+      country = "Russia"
+    )
+  ) |> 
+  tidyr::drop_na(region) |> 
+  tidyr::pivot_longer(
+    tidyselect::num_range("", 2017:2023),
+    names_to = "year",
+    values_to = "tfr"
+  ) |>
+  tidyr::drop_na(tfr) -> oc_russie_2023_fecondite
+
+usethis::use_data(oc_russie_2023_fecondite, overwrite = TRUE)
 
 
 # Regional CBR and CDR ----------------------------------------------------
@@ -99,7 +165,7 @@ nat_chg |>
   dplyr::filter(region != "Архангельская область" & region != "Тюменская область") |>
   tidyr::fill(type, .direction = "down") |>
   dplyr::mutate(
-    adm1_code = geotools::admincode(
+    adm1_code = geotools::gtl_admin_code(
       region,
       origin = "region.name.ru.regex",
       origin_regex = TRUE,
@@ -111,6 +177,40 @@ nat_chg |>
 
 usethis::use_data(oc_russie_2019_natalite_mortalite, overwrite = TRUE)
 
+# Regional RNI ------------------------------------------------------------
+
+readr::read_csv(
+  here::here("inst/extdata/oc_russie/rosstat/population/2024_natural_increase.csv"),
+  skip = 4L,
+  col_names = c("region", "codes", 2017:2023),
+  locale = readr::locale(decimal_mark = ",")
+) |> 
+  dplyr::select(-region) |>
+  dplyr::mutate(
+    adm1_code = geotools::gtl_admin_code(
+      codes,
+      origin = "oktmo",
+      destination = "adm1",
+      warn = FALSE,
+      country = "Russia"
+    ),
+    region = geotools::gtl_admin_code(
+      codes,
+      origin = "oktmo",
+      destination = "region.name.en",
+      warn = FALSE,
+      country = "Russia"
+    )
+  ) |> 
+  tidyr::drop_na(region) |> 
+  tidyr::pivot_longer(
+    tidyselect::num_range("", 2017:2023),
+    names_to = "year",
+    values_to = "rni"
+  ) |> 
+  tidyr::drop_na(rni) -> oc_russie_2023_accroissement
+
+usethis::use_data(oc_russie_2023_accroissement, overwrite = TRUE)
 
 # Regional suicide rates --------------------------------------------------
 
@@ -121,14 +221,14 @@ readr::read_csv(
 ) |>
   dplyr::select(-region) |>
   dplyr::mutate(
-    adm1_code = geotools::admincode(
+    adm1_code = geotools::gtl_admin_code(
       codes,
       origin = "oktmo",
       destination = "adm1",
       warn = FALSE,
       country = "Russia"
     ),
-    region = geotools::admincode(
+    region = geotools::gtl_admin_code(
       codes,
       origin = "oktmo",
       destination = "region.name.en",
@@ -273,14 +373,14 @@ pop_evol_interm |>
     )
   ) |>
   dplyr::mutate(
-    adm1_code = geotools::admincode(
+    adm1_code = geotools::gtl_admin_code(
       oktmo,
       origin = "oktmo",
       destination = "adm1",
       warn = FALSE,
       country = "Russia"
     ),
-    region = geotools::admincode(
+    region = geotools::gtl_admin_code(
       oktmo,
       origin = "oktmo",
       destination = "region.name.en",
@@ -308,14 +408,14 @@ readr::read_csv(
     values_to = "mariages"
   ) |>
   dplyr::mutate(
-    adm1_code = geotools::admincode(
+    adm1_code = geotools::gtl_admin_code(
       oktmo,
       origin = "oktmo",
       destination = "adm1",
       warn = FALSE,
       country = "Russia"
     ),
-    region = geotools::admincode(
+    region = geotools::gtl_admin_code(
       oktmo,
       origin = "oktmo",
       destination = "region.name.en",
@@ -341,14 +441,14 @@ readr::read_csv(
     values_to = "divorces"
   ) |>
   dplyr::mutate(
-    adm1_code = geotools::admincode(
+    adm1_code = geotools::gtl_admin_code(
       oktmo,
       origin = "oktmo",
       destination = "adm1",
       warn = FALSE,
       country = "Russia"
     ),
-    region = geotools::admincode(
+    region = geotools::gtl_admin_code(
       oktmo,
       origin = "oktmo",
       destination = "region.name.en",
@@ -376,14 +476,14 @@ readr::read_csv(
   ) |>
   dplyr::filter(region != "все население") |>
   dplyr::mutate(
-    adm1_code = geotools::admincode(
+    adm1_code = geotools::gtl_admin_code(
       oktmo,
       origin = "oktmo",
       destination = "adm1",
       warn = FALSE,
       country = "Russia"
     ),
-    region = geotools::admincode(
+    region = geotools::gtl_admin_code(
       oktmo,
       origin = "oktmo",
       destination = "region.name.en",
@@ -405,14 +505,14 @@ readr::read_csv(
   ) |>
   dplyr::filter(region != "все население") |>
   dplyr::mutate(
-    adm1_code = geotools::admincode(
+    adm1_code = geotools::gtl_admin_code(
       oktmo,
       origin = "oktmo",
       destination = "adm1",
       warn = FALSE,
       country = "Russia"
     ),
-    region = geotools::admincode(
+    region = geotools::gtl_admin_code(
       oktmo,
       origin = "oktmo",
       destination = "region.name.en",

@@ -12,6 +12,20 @@
 #' @source <https://rosstat.gov.ru/storage/mediabank/IeUTMwMW/prodolzhitelnost.xlsx>
 "oc_russie_2019_esperance_vie"
 
+#' Espérance de vie en Russie
+#'
+#' Un tableau de l'espérance de vie en Russie
+#' par régions pour 2022.
+#'
+#' @format Un tibble avec 5 colonnes et 595 lignes
+#' \describe{
+#'   \item{region}{Nom de la région en russe}
+#'   \item{lex}{Espérance de vie}
+#'   \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+#' }
+#' @source <https://showdata.gks.ru/report/276796>
+"oc_russie_2022_esperance_vie"
+
 #' Indice de fécondité en Russie
 #'
 #' Un tableau de l'indice de fécondité en Russie
@@ -26,6 +40,38 @@
 #' }
 #' @source <https://rosstat.gov.ru/storage/mediabank/7-1(2).xlsx>
 "oc_russie_2019_fecondite"
+
+#' Indice de fécondité en Russie
+#'
+#' Un tableau de l'indice de fécondité en Russie
+#' par régions.
+#'
+#' @format Un tibble avec 5 colonnes et 595 lignes
+#' \describe{
+#'   \item{codes}{OKTMO Codes}
+#'   \item{region}{Nom de la région en russe}
+#'   \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+#'   \item{year}{Année}
+#'   \item{tfr}{Indice de fécondité}
+#' }
+#' @source <https://showdata.gks.ru/report/278974>
+"oc_russie_2023_fecondite"
+
+#' Taux d'accroissement naturel en Russie
+#'
+#' Un tableau du taux d'accroissement naturel en Russie
+#' par régions.
+#'
+#' @format Un tibble avec 5 colonnes et 591 lignes
+#' \describe{
+#'   \item{codes}{OKTMO Codes}
+#'   \item{region}{Nom de la région en russe}
+#'   \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+#'   \item{year}{Année}
+#'   \item{rni}{Taux d'accroissement naturel}
+#' }
+#' @source <https://showdata.gks.ru/report/297732>
+"oc_russie_2023_accroissement"
 
 #' Mortalité et natalité
 #'
