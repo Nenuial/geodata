@@ -37,6 +37,7 @@ Imports:
     tidygeocoder,
     tidyr,
     tidyselect,
+    tidywikidatar,
     wbstats
 Suggests:
     lifecycle
