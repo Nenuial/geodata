@@ -1,7 +1,7 @@
 Type: Package
 Package: geodata
 Title: Data for Geography Vizualisations
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: 
     person("Pascal", "Burkhard", , "pascal.burkhard@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0001-5504-5084"))
