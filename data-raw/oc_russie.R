@@ -414,7 +414,7 @@ readxl::read_excel(
       warn = FALSE,
       country = "Russia"
     )
-  ) |> 
+  ) |>
   tidyr::drop_na(region) |>
   tidyr::pivot_longer(
     tidyselect::num_range("", 1990:2023),
