@@ -207,6 +207,22 @@
 #' @source <https://showdata.gks.ru/>
 "oc_russie_2020_population_municipale"
 
+#' Population municipale en Russie
+#'
+#' Un tableau de la population municipale en Russie
+#' de 1990 à 2023.
+#'
+#' @format Un tibble avec 5 colonnes et 2806 lignes
+#' \describe{
+#'   \item{codes}{OKTMO Codes}
+#'   \item{region}{Nom de la région en russe}
+#'   \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+#'   \item{year}{Année}
+#'   \item{pop}{Population}
+#' }
+#' @source <https://showdata.gks.ru/report/278930>
+"oc_russie_2023_population"
+
 #' Évolution de la population en Russie
 #'
 #' Un tableau de l'évolution de la population en Russie

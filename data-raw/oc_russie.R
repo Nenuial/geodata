@@ -393,6 +393,37 @@ pop_evol_interm |>
 
 usethis::use_data(oc_russie_2020_evolution_population, overwrite = TRUE)
 
+readxl::read_excel(
+  here::here("inst/extdata/oc_russie/rosstat/population/2024_population.xlsx"),
+  skip = 4L,
+  col_names = c("region", "codes", 1990:2023),
+) |>
+  dplyr::select(-region) |>
+  dplyr::mutate(
+    adm1_code = geotools::gtl_admin_code(
+      codes,
+      origin = "oktmo",
+      destination = "adm1",
+      warn = FALSE,
+      country = "Russia"
+    ),
+    region = geotools::gtl_admin_code(
+      codes,
+      origin = "oktmo",
+      destination = "region.name.en",
+      warn = FALSE,
+      country = "Russia"
+    )
+  ) |> 
+  tidyr::drop_na(region) |>
+  tidyr::pivot_longer(
+    tidyselect::num_range("", 1990:2023),
+    names_to = "year",
+    values_to = "pop"
+  ) |>
+  tidyr::drop_na(pop) -> oc_russie_2023_population
+
+usethis::use_data(oc_russie_2023_population, overwrite = TRUE)
 
 # Mariages ----------------------------------------------------------------
 
