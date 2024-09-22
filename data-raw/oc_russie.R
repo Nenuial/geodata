@@ -1,6 +1,6 @@
 stop("This file should not be sourced!")
 
-# Regional life expectancy ------------------------------------------------
+# Regional life expectancy -----------------------------------------------
 
 xls <- here::here("inst/extdata/oc_russie/rosstat/population/2021_life_expectancy.xlsx")
 lex <- tidyxl::xlsx_cells(xls)
@@ -62,7 +62,7 @@ readr::read_csv(
 usethis::use_data(oc_russie_2022_esperance_vie, overwrite = TRUE)
 
 
-# Regional fertility rates ------------------------------------------------
+# Regional fertility rates -----------------------------------------------
 
 # The Main databank is missing Kemerovo Oblast (for whatever fucked up reason…)
 # Source: https://showdata.gks.ru/report/278974
@@ -133,7 +133,7 @@ readr::read_csv(
 usethis::use_data(oc_russie_2023_fecondite, overwrite = TRUE)
 
 
-# Regional CBR and CDR ----------------------------------------------------
+# Regional CBR and CDR ---------------------------------------------------
 
 xls <- here::here("inst/extdata/oc_russie/rosstat/population/2021_cbr_cdr.xlsx")
 nat_chg <- tidyxl::xlsx_cells(xls)
@@ -177,7 +177,7 @@ nat_chg |>
 
 usethis::use_data(oc_russie_2019_natalite_mortalite, overwrite = TRUE)
 
-# Regional RNI ------------------------------------------------------------
+# Regional RNI -----------------------------------------------------------
 
 readr::read_csv(
   here::here("inst/extdata/oc_russie/rosstat/population/2024_natural_increase.csv"),
@@ -212,7 +212,7 @@ readr::read_csv(
 
 usethis::use_data(oc_russie_2023_accroissement, overwrite = TRUE)
 
-# Regional suicide rates --------------------------------------------------
+# Regional suicide rates -------------------------------------------------
 
 readr::read_csv(
   here::here("inst/extdata/oc_russie/rosstat/population/2021_suicides.csv"),
@@ -263,7 +263,7 @@ readr::read_csv(
 usethis::use_data(oc_russie_suicides_national, overwrite = TRUE)
 
 
-# Abortions ---------------------------------------------------------------
+# Abortions --------------------------------------------------------------
 
 readr::read_csv(
   here::here("inst/extdata/oc_russie/rosstat/population/2021_avortements.csv"),
@@ -288,7 +288,7 @@ readr::read_csv(
 usethis::use_data(oc_russie_avortements_national, overwrite = TRUE)
 
 
-# Births ------------------------------------------------------------------
+# Births -----------------------------------------------------------------
 
 readr::read_csv(
   here::here("inst/extdata/oc_russie/rosstat/population/2021_births.csv"),
@@ -306,7 +306,7 @@ readr::read_csv(
 usethis::use_data(oc_russie_naissances_national, overwrite = TRUE)
 
 
-# Municipality population -------------------------------------------------
+# Municipality population ------------------------------------------------
 
 fs::dir_ls("inst/extdata/oc_russie/rosstat/population_mun/") |>
   purrr::map_dfr(
@@ -323,7 +323,7 @@ fs::dir_ls("inst/extdata/oc_russie/rosstat/population_mun/") |>
 
 usethis::use_data(oc_russie_2020_population_municipale, overwrite = TRUE)
 
-# Population evolution ----------------------------------------------------
+# Population evolution ---------------------------------------------------
 
 xls <- here::here("inst/extdata/oc_russie/rosstat/population/2021_pop_evolution.xlsx")
 pop_evol <- tidyxl::xlsx_cells(xls)
@@ -425,7 +425,7 @@ readxl::read_excel(
 
 usethis::use_data(oc_russie_2023_population, overwrite = TRUE)
 
-# Mariages ----------------------------------------------------------------
+# Mariages ---------------------------------------------------------------
 
 readr::read_csv(
   here::here("inst/extdata/oc_russie/rosstat/population/2021_mariages.csv"),
@@ -458,7 +458,7 @@ readr::read_csv(
 
 usethis::use_data(oc_russie_mariages, overwrite = TRUE)
 
-# Divorces ----------------------------------------------------------------
+# Divorces ---------------------------------------------------------------
 
 readr::read_csv(
   here::here("inst/extdata/oc_russie/rosstat/population/2021_divorces.csv"),
@@ -492,7 +492,7 @@ readr::read_csv(
 usethis::use_data(oc_russie_divorces, overwrite = TRUE)
 
 
-# Divorces et mariages (absolu) -------------------------------------------
+# Divorces et mariages (absolu) ------------------------------------------
 
 readr::read_csv(
   here::here("inst/extdata/oc_russie/rosstat/population/2021_divorces_absolu.csv"),
@@ -576,7 +576,7 @@ mariages_divorces |>
 usethis::use_data(oc_russie_mariages_divorces_national, overwrite = TRUE)
 
 
-# Ethnic groups -----------------------------------------------------------
+# Ethnic groups ----------------------------------------------------------
 # ICOMPLETE Work…
 # xml2::read_html("inst/extdata/oc_russie/rosstat/population/2021_ethnies.htm") |>
 #   rvest::html_table(fill = T) |>
@@ -585,7 +585,7 @@ usethis::use_data(oc_russie_mariages_divorces_national, overwrite = TRUE)
 #   unpivotr::behead(direction = "up", name = "Bla bla")
 
 
-# Migration arrivals ------------------------------------------------------
+# Migration arrivals -----------------------------------------------------
 
 xml2::read_html("inst/extdata/oc_russie/rosstat/population/2021_migration.html") |>
   rvest::html_table() |>
@@ -630,7 +630,7 @@ xml2::read_html("inst/extdata/oc_russie/rosstat/population/2021_migration.html")
 usethis::use_data(oc_russie_2019_migration, overwrite = TRUE)
 
 
-# Levada : attitude toward countries --------------------------------------
+# Levada : attitude toward countries -------------------------------------
 
 rvest::read_html("https://www.levada.ru/en/ratings/attitudes-towards-countries/") |>
   rvest::html_table(header = TRUE) -> levada_attitudes_tables
@@ -662,7 +662,7 @@ usethis::use_data(oc_russie_levada_attitude_us, overwrite = TRUE)
 usethis::use_data(oc_russie_levada_attitude_eu, overwrite = TRUE)
 
 
-# SIPRI Military expenditure ----------------------------------------------
+# SIPRI Military expenditure ---------------------------------------------
 
 sipri_milexpd_excel <- here::here("inst/extdata/oc_russie/sipri/SIPRI-Milex-data-2000-2022.xlsx")
 cells <- tidyxl::xlsx_cells(sipri_milexpd_excel)
@@ -689,6 +689,34 @@ cells |>
 usethis::use_data(oc_russie_depenses_militaires, overwrite = TRUE)
 
 
-# Open documentation file -------------------------------------------------
+# Religion ---------------------------------------------------------------
+
+arena_religion <- here::here("inst/extdata/oc_russie/arena/religion.xlsx")
+cells <- tidyxl::xlsx_cells(arena_religion)
+formats <- tidyxl::xlsx_formats(arena_religion)
+
+cells |>
+  unpivotr::behead(direction = "up", name = "region") |>
+  unpivotr::behead(direction = "left", name = "religion") |>
+  dplyr::select(region, religion, percent = numeric) |>
+  tidyr::drop_na(religion, region) |>
+  dplyr::mutate(
+    adm1_code = geotools::gtl_admin_code(
+      region,
+      origin = "region.name.en.regex",
+      destination = "adm1",
+      country = "Russia",
+      origin_regex = TRUE,
+      custom_match = c(
+        "Udmurt Republic" = "RUS-2387",
+        "Yaroslavl region" = "RUS-2360"
+      )
+    )
+  ) |>
+  tidyr::drop_na(adm1_code) -> oc_russie_2012_religion
+
+usethis::use_data(oc_russie_2012_religion, overwrite = TRUE)
+
+# Open documentation file ------------------------------------------------
 
 usethis::edit_file(here::here("R/data_doc_oc_russie.R"))

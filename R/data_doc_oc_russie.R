@@ -333,3 +333,30 @@
 #' }
 #' @source Open Street Map and WikiData
 "oc_russie_adm6_gis"
+
+#' Religion par région
+#'
+#' Un tableau de la religion par région en 2012.
+#'
+#' @format Un tibble avec 4 colonnes et 1422 lignes
+#' \describe{
+#'   \item{region}{Nom de la région en anglais}
+#'   \item{religion}{\describe{
+#'     \item{Athee}{Athéistes}
+#'     \item{Orthodoxe}{Orthodoxe pratique (membre de l'Eglise)}
+#'     \item{Deiste}{Crois en Dieu mais sans appartenance}
+#'     \item{Christianisme}{Christianisme}
+#'     \item{Hindouisme}{Hindouisme}
+#'     \item{Judaisme}{Judaïsme}
+#'     \item{Islam}{Islam}
+#'     \item{Traditionnel}{Croyances traditionnelles}
+#'     \item{Bouddhisme}{Bouddhisme}
+#'     \item{Pentecotisme}{Pentecôtisme}
+#'     \item{Autre}{Autre}
+#'     \item{Pas de réponse}{Pas de réponse}
+#'   }}
+#'   \item{percent}{Pourcentage}
+#'   \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+#' }
+#' @source <https://sreda.org/arena>
+"oc_russie_2012_religion"
