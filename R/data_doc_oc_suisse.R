@@ -38,3 +38,19 @@
 #' }
 #' @source <https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-0103010000_151/-/px-x-0103010000_151.px/>
 "oc_suisse_2021_immigration_italienne"
+
+#' Religion par commune
+#'
+#' Un tableau avec le pourcentage des religions par commune
+#' en Suisse en 2000. Oui c'est vieux, mais visiblement l'OFS
+#' n'a pas de données après le dernier recensement...
+#'
+#' @format Un tibble avec 4 colonnes et 55024 lignes
+#' \describe{
+#'   \item{ID}{Identifiant de la commune}
+#'   \item{Commune}{Nom de la commune}
+#'   \item{Religion}{Religion}
+#'   \item{Pourcentage}{Pourcentage}
+#' }
+#' @source <https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-0103010000_151/-/px-x-0103010000_151.px/>
+"oc_suisse_2000_religion"
