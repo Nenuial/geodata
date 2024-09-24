@@ -360,3 +360,18 @@
 #' }
 #' @source <https://sreda.org/arena>
 "oc_russie_2012_religion"
+
+#' Religion par région
+#'
+#' Un tableau de la religion par région en 2012.
+#'
+#' @format Un tibble avec 4 colonnes et 1422 lignes
+#' \describe{
+#'   \item{type_pop}{Population urbaine ou rurale}
+#'   \item{sexe}{Homme, femme ou les deux}
+#'   \item{ethnie}{Nom de l'ethnie}
+#'   \item{ethnie_detail}{Détail concernant de l'ethnie}
+#'   \item{population}{Population}
+#' }
+#' @source <https://rosstat.gov.ru/storage/mediabank/Tom5_tab1_VPN-2020.xlsx>
+"oc_russie_2020_population_composition"

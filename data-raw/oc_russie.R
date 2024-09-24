@@ -717,6 +717,30 @@ cells |>
 
 usethis::use_data(oc_russie_2012_religion, overwrite = TRUE)
 
+
+# Population composition (ethnicity) -------------------------------------
+
+pop_composition <- here::here("inst/extdata/oc_russie/rosstat/population/2020_population_composition.xlsx")
+cells <- tidyxl::xlsx_cells(pop_composition)
+formats <- tidyxl::xlsx_formats(pop_composition)
+
+cells |>
+  dplyr::filter(row > 4 & row < 203) |>
+  dplyr::filter(sheet == " Fédération de Russie") |>
+  unpivotr::behead(direction = "up-left", name = "type_pop") |>
+  unpivotr::behead(direction = "up", name = "sexe") |>
+  unpivotr::behead(direction = "left", name = "ethnie") |>
+  dplyr::select(type_pop, sexe, ethnie, population = numeric) |>
+  tidyr::drop_na(population) |>
+  dplyr::mutate(ethnie = stringr::str_trim(ethnie)) |>
+  tidyr::extract(
+    ethnie,
+    into = c("ethnie", "ethnie_detail"),
+    regex = r"{(.*?)\s?\((.*)\)}"
+  ) -> oc_russie_2020_population_composition
+
+usethis::use_data(oc_russie_2020_population_composition, overwrite = TRUE)
+
 # Open documentation file ------------------------------------------------
 
 usethis::edit_file(here::here("R/data_doc_oc_russie.R"))

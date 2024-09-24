@@ -54,3 +54,16 @@
 #' }
 #' @source <https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-0103010000_151/-/px-x-0103010000_151.px/>
 "oc_suisse_2000_religion"
+
+#' Nationalite en Suisse
+#'
+#' Un tableau avec le nombre de personnes par nationalité
+#' en Suisse en 2023.
+#'
+#' @format Un tibble avec 2 colonnes et 210 lignes
+#' \describe{
+#'   \item{Nationalite}{La nationalité}
+#'   \item{Population}{Population (chiffre absolu)}
+#' }
+#' @source <https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-0103010000_151/-/px-x-0103010000_151.px/>
+"oc_suisse_2023_nationalite"
