@@ -51,6 +51,17 @@ readr::read_csv("inst/extdata/oc_suisse/ofs/religion/religion_2000.csv") |>
 
 usethis::use_data(oc_suisse_2000_religion, overwrite = TRUE)
 
+
+# Nationalité ------------------------------------------------------------
+
+readr::read_csv("inst/extdata/oc_suisse/ofs/population/nationalite.csv") |>
+  dplyr::rename(Annee = 1) |>
+  dplyr::rename(Nationalite = 2) |>
+  dplyr::rename(Population = 3) |>
+  dplyr::select(-Annee) -> oc_suisse_2023_nationalite
+
+usethis::use_data(oc_suisse_2023_nationalite, overwrite = TRUE)
+
 # Open documentation file ------------------------------------------------
 
 usethis::edit_file(here::here("R/data_doc_oc_suisse.R"))
