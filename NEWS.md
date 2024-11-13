@@ -1,3 +1,7 @@
+# geodata 1.2.0
+
+* Update data for Russia
+
 # geodata 1.1.0
 
 * Update demographic data for Russia

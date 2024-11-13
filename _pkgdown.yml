@@ -59,7 +59,14 @@ reference:
     Datasets with data related to demography.
   contents:
   - gdt_hmd_demography
+  - gdt_un_hdr_composite
   - un_wpp_2019_period_estimates
+
+- title: Geopolitics data
+  description: |
+    Datasets with data related to geopolitics.
+  contents:
+  - gdt_nato_membership
 
 - title: DF Cosmology
   description: |

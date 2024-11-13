@@ -741,6 +741,16 @@ cells |>
 
 usethis::use_data(oc_russie_2020_population_composition, overwrite = TRUE)
 
+
+# NATO Membership --------------------------------------------------------
+
+oc_russie_otan <- readr::read_csv(
+  here::here("inst/extdata/nato/nato_members.csv"),
+  col_types = "cci"
+)
+
+usethis::use_data(oc_russie_otan, overwrite = TRUE)
+
 # Open documentation file ------------------------------------------------
 
 usethis::edit_file(here::here("R/data_doc_oc_russie.R"))
