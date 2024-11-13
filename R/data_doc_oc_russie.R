@@ -375,3 +375,16 @@
 #' }
 #' @source <https://rosstat.gov.ru/storage/mediabank/Tom5_tab1_VPN-2020.xlsx>
 "oc_russie_2020_population_composition"
+
+#' OTAN
+#'
+#' Un tableau de l'année d'adhésion à l'OTAN
+#'
+#' @format Un tibble avec 3 colonnes et 33 lignes
+#' \describe{
+#'   \item{country}{Pays}
+#'   \item{iso3}{Code ISO3c}
+#'   \item{year}{Année d'adhésion}
+#' }
+#' @source <https://www.nato.int/cps/en/natohq/topics_52044.htm>
+"oc_russie_otan"
