@@ -3,7 +3,7 @@
 #' A table with demography indicators
 #' for all HDM countries (see `geotools::gtl_hmd_codes()`)
 #'
-#' @format A tibble with 5 columns and 4729 rows
+#' @format A tibble with 5 columns and 4709 rows
 #' \describe{
 #'   \item{Code}{The HMD country code}
 #'   \item{Year}{The year}
