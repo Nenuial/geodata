@@ -16,7 +16,7 @@ gdt_nato_membership <- function() {
         1955 ~ geotools::gtl_translate_enfr("Second (1955)", "Deuxi\u00e8me (1955)"),
         1982 ~ geotools::gtl_translate_enfr("Third (1982", "Troisi\u00e8me (1982)"),
         1990 ~ geotools::gtl_translate_enfr(
-          "Germand reunification (1990)",
+          "German reunification (1990)",
           "R\u00e9unification de l'Allemagne (1990)"
         ),
         1999 ~ geotools::gtl_translate_enfr("Fourth (1999)", "Quatri\u00e8me (1999)"),
@@ -24,9 +24,8 @@ gdt_nato_membership <- function() {
         2009 ~ geotools::gtl_translate_enfr("Sixth (2009)", "Sixi\u00e8me (2009)"),
         2017 ~ geotools::gtl_translate_enfr("Seventh (2017)", "Septi\u00e8me (2017)"),
         2020 ~ geotools::gtl_translate_enfr("Eigth (2020)", "Huiti\u00e8me (2020)"),
-        2022 ~ geotools::gtl_translate_enfr("Ninth (2022)", "Neuvi\u00e8me (2022)"),
-        2023 ~ geotools::gtl_translate_enfr("Tenth (2023)", "Dixi\u00e8me (2023)"),
-        2024 ~ geotools::gtl_translate_enfr("Eleventh (2024)", "Onzi\u00e8me (2024)")
+        2023 ~ geotools::gtl_translate_enfr("Ninth (2023)", "Neuvi\u00e8me (2023)"),
+        2024 ~ geotools::gtl_translate_enfr("Tenth (2024)", "Dixi\u00e8me (2024)")
       )
     ) |>
     dplyr::mutate(
