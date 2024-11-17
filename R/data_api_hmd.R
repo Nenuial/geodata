@@ -157,22 +157,10 @@ gdt_hmd_death_raw <- function(country) {
 #'
 #' @keywords internal
 gdt_hmd_download <- function(country, indicator) {
-  url <- paste0(
-    "https://www.mortality.org/hmd/",
-    country, "/STATS/", indicator, ".txt"
-  )
-  credentials <- paste0(
+  HMDHFDplus::readHMDweb(
+    country,
+    indicator,
     keyring::key_list("mortality.org")[["username"]],
-    ":", keyring::key_get("mortality.org")
+    keyring::key_get("mortality.org")
   )
-
-  RCurl::getURL(
-    url = url,
-    userpwd = credentials
-  ) |>
-    textConnection() |>
-    utils::read.table(
-      skip = 2, header = TRUE,
-      na.strings = "."
-    )
 }
