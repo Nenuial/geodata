@@ -27,13 +27,13 @@ cleanup <- function(code) {
     dplyr::full_join(death, by = "Year") |>
     dplyr::mutate_at(dplyr::vars(-c("Year")), floor) |>
     dplyr::select(Year, contains("Total")) |>
-    tidyr::drop_na(Year, Total_population) |>
+    tidyr::drop_na(Year, Total1_population) |>
     dplyr::mutate(
-      CBR = round(Total_birth / Total_population * 1000, digits = 2),
-      CDR = round(Total_death / Total_population * 1000, digits = 2)
+      CBR = round(Total_birth / Total1_population * 1000, digits = 2),
+      CDR = round(Total_death / Total1_population * 1000, digits = 2)
     ) |>
     dplyr::mutate(Code = code) |>
-    dplyr::select(Code, Year, Population = Total_population, CBR, CDR)
+    dplyr::select(Code, Year, Population = Total1_population, CBR, CDR)
 }
 
 geotools::gtl_hmd_codes() |>
