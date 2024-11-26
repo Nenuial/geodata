@@ -388,3 +388,45 @@
 #' }
 #' @source <https://www.nato.int/cps/en/natohq/topics_52044.htm>
 "oc_russie_otan"
+
+#' Élection présidentielle d'Ukraine en 2010
+#'
+#' Un tableau du résultat des élections présidentielle
+#' en Ukraine en 2010.
+#'
+#' @format Un tibble avec 4 colonnes et 27 lignes
+#' \describe{
+#'   \item{CODE}{Code adm_1}
+#'   \item{REGION}{Nom de la région}
+#'   \item{CANDIDATE}{Candidat remportant la région}
+#'   \item{PERCENT}{Pourcentage des voix}
+#' }
+"oc_russie_2010_elections_ukraine"
+
+#' Élection présidentielle d'Ukraine en 2014
+#'
+#' Un tableau du résultat des élections présidentielle
+#' en Ukraine en 2014.
+#'
+#' @format Un tibble avec 4 colonnes et 25 lignes
+#' \describe{
+#'   \item{CODE}{Code adm_1}
+#'   \item{REGION}{Nom de la région}
+#'   \item{CANDIDATE}{Candidat remportant la région}
+#'   \item{PERCENT}{Pourcentage des voix}
+#' }
+"oc_russie_2014_elections_ukraine"
+
+#' Élection présidentielle d'Ukraine en 2019
+#'
+#' Un tableau du résultat des élections présidentielle
+#' en Ukraine en 2019.
+#'
+#' @format Un tibble avec 4 colonnes et 25 lignes
+#' \describe{
+#'   \item{CODE}{Code adm_1}
+#'   \item{REGION}{Nom de la région}
+#'   \item{CANDIDATE}{Candidat remportant la région}
+#'   \item{PERCENT}{Pourcentage des voix}
+#' }
+"oc_russie_2019_elections_ukraine"
