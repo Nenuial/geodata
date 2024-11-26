@@ -5,7 +5,7 @@
 \alias{gdt_hmd_demography}
 \title{HMD Demography indicators}
 \format{
-A tibble with 5 columns and 4729 rows
+A tibble with 5 columns and 4709 rows
 \describe{
 \item{Code}{The HMD country code}
 \item{Year}{The year}
