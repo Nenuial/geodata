@@ -751,6 +751,29 @@ oc_russie_otan <- readr::read_csv(
 
 usethis::use_data(oc_russie_otan, overwrite = TRUE)
 
+
+# Ukraine elections ------------------------------------------------------
+
+readxl::read_excel(
+  "inst/extdata/oc_russie/ukraine/ukraine_elections.xlsx",
+  sheet = "2010"
+) -> oc_russie_2010_elections_ukraine
+
+readxl::read_excel(
+  "inst/extdata/oc_russie/ukraine/ukraine_elections.xlsx",
+  sheet = "2014"
+) -> oc_russie_2014_elections_ukraine
+
+readxl::read_excel(
+  "inst/extdata/oc_russie/ukraine/ukraine_elections.xlsx",
+  sheet = "2019"
+) -> oc_russie_2019_elections_ukraine
+
+usethis::use_data(oc_russie_2010_elections_ukraine, overwrite = TRUE)
+usethis::use_data(oc_russie_2014_elections_ukraine, overwrite = TRUE)
+usethis::use_data(oc_russie_2019_elections_ukraine, overwrite = TRUE)
+
+
 # Open documentation file ------------------------------------------------
 
 usethis::edit_file(here::here("R/data_doc_oc_russie.R"))
