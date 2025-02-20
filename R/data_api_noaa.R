@@ -44,7 +44,7 @@ gdt_noaa_climate_data <- function(location_id, data_type = c("temperature", "pre
     dplyr::summarise(value = mean(value)) |>
     dplyr::mutate(value = round(value / 10, digits = 1)) -> clean_data
 
-  return(clean_data)
+  clean_data
 }
 
 #' Read NCDC city list from cachedir
@@ -66,7 +66,7 @@ gdt_ncdc_city_list <- function() {
   )
   if (lubridate::day(lubridate::as.period(fileage)) > 200) gdt_update_ncdc_city_list()
 
-  return(readRDS(filename))
+  readRDS(filename)
 }
 
 #' Update NCDC city list
@@ -117,5 +117,5 @@ gdt_update_ncdc_city_list <- function() {
 
   saveRDS(cities, file = filename)
 
-  return(NULL)
+  NULL
 }
