@@ -27,6 +27,7 @@ Imports:
     HMDHFDplus,
     httr2,
     idbr,
+    katex,
     keyring,
     lubridate,
     memoise,
