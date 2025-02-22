@@ -2,6 +2,7 @@
 
 export(":=")
 export(gdt_crr_get_data)
+export(gdt_df_cosmology_revolution_speed_solution)
 export(gdt_gutt_get_abortion_rates)
 export(gdt_hmd_birth_raw)
 export(gdt_hmd_death_raw)

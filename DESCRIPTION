@@ -21,6 +21,8 @@ Imports:
     geojsonsf,
     geotools,
     glue,
+    gt,
+    gtExtras,
     HMDHFDplus,
     httr2,
     idbr,
