@@ -21,7 +21,7 @@ utils::globalVariables(c(
 #   All declared Imports should be used.
 ignore_unused_imports <- function() {
   # katex is necessary for rendering math
-  # expressions in md columns in gt tables
+  # expressions (md columns) in gt tables
   katex::katex_html
 }
 
