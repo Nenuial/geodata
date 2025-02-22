@@ -20,6 +20,7 @@ Imports:
     fs,
     geojsonsf,
     geotools,
+    ggeo,
     glue,
     gt,
     gtExtras,
@@ -47,6 +48,7 @@ Suggests:
     lifecycle
 Remotes:
     Nenuial/geotools,
+    Nenuial/ggeo,
     piersyork/owidR,
     ropensci/rnoaa
 Config/Needs/website: pkgdown, nenuial/geopkg
