@@ -43,7 +43,7 @@ gdt_df_cosmology_revolution_speed_solution <- function(name, au, time) {
     ) |>
     gt::fmt_markdown(columns = gt::everything()) |>
     gt::tab_options(
-      #column_labels.hidden = TRUE,
+      # column_labels.hidden = TRUE,
       latex.use_longtable = TRUE,
       table.width = gt::pct(100)
     )
