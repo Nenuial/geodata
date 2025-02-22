@@ -16,6 +16,15 @@ utils::globalVariables(c(
   "extension", "tw_filter_first"
 ))
 
+# Suppress R CMD check note
+# Namespace in Imports field not imported from: PKG
+#   All declared Imports should be used.
+ignore_unused_imports <- function() {
+  # katex is necessary for rendering math
+  # expressions in md columns in gt tables
+  katex::katex_html
+}
+
 #' @importFrom rlang :=
 #' @export
 rlang::`:=`
