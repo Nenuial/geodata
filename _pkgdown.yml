@@ -73,6 +73,7 @@ reference:
     Dataset for the *DF Cosmology* chapter.
   contents:
   - starts_with("df_cosmology")
+  - starts_with("gdt_df_cosmology")
 
 - title: DF Demography
   description: |
