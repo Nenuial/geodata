@@ -11,7 +11,7 @@ This updates the list of cities available for climate data, and computes the
 corresponding country column and store the data locally.
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 # Not run: computationally intensive
 gdt_update_ncdc_city_list()
 \dontshow{\}) # examplesIf}

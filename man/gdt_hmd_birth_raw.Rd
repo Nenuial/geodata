@@ -16,7 +16,7 @@ A dataframe
 HMD raw births data
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 # This example isn't run because it
 # would need HMD credentials
 gdt_hmd_birth_raw("CHE") |>
