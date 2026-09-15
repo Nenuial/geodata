@@ -18,7 +18,7 @@ A dataframe with age, female, and male population
 One year population pyramid data (legacy function)
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 # Not run: needn a valid IDB API key
 
 gdt_idb_pyramid_1y("Switzerland", 2020)

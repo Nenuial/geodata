@@ -20,7 +20,7 @@ A tibble with 3 columns: \code{year}, \code{country} and \code{lex}
 Get life expectancy from the Human Mortality Database
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 # This example isn't run because it
 # would need HMD credentials
 c("Switzerland", "France") |>
