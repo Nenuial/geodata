@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_api_guttmacher.R
 \name{gdt_gutt_get_abortion_rates}
 \alias{gdt_gutt_get_abortion_rates}
-\title{Get abortion rate from the Guttmacher API}
+\title{Get abortion rate from the Guttmacher Institute}
 \usage{
 gdt_gutt_get_abortion_rates()
 }
@@ -10,7 +10,10 @@ gdt_gutt_get_abortion_rates()
 A tibble
 }
 \description{
-Get abortion rate from the Guttmacher API
+Average annual number of abortions per 1,000 women aged 15-49 for the
+period 2015-2019. The Guttmacher API and Data Center were retired in
+July 2025, the data now comes from the archived snapshot in
+\link{oc_geo_au_feminin_gutt_abortion_rates}.
 }
 \examples{
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}

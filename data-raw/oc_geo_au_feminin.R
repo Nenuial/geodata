@@ -304,6 +304,47 @@ tibble::tribble(
 
 usethis::use_data(oc_geo_au_feminin_votations_avortement, overwrite = TRUE)
 
+# Taux d'avortement Guttmacher ----------------------------------------------------------------
+
+# The Guttmacher API and Data Center (data.guttmacher.org) were retired in
+# July 2025. The country table "Average annual no. of abortions per 1,000
+# women aged 15-49, 2015-2019" (topic 405) is recovered from the Wayback
+# Machine snapshot of 2023-02-04 (identical to the one of 2025-01-28).
+
+snapshot_timestamp <- "20230204050249"
+
+httr2::request("https://web.archive.org/cdx/search/cdx") |>
+  httr2::req_url_query(
+    url = "data.guttmacher.org/countries/table",
+    matchType = "prefix",
+    filter = "statuscode:200",
+    from = snapshot_timestamp,
+    to = snapshot_timestamp,
+    output = "json"
+  ) |>
+  httr2::req_perform() |>
+  httr2::resp_body_json() |>
+  purrr::map_chr(3) |>
+  stringr::str_subset("topics=405&dataset=data$") -> snapshot_url
+
+glue::glue("https://web.archive.org/web/{snapshot_timestamp}id_/{snapshot_url}") |>
+  rvest::read_html() |>
+  rvest::html_table() |>
+  purrr::pluck(1) |>
+  dplyr::rename(country = 1, abortion_rate = 2) |>
+  dplyr::filter(country != "Sources", abortion_rate != "u") |>
+  dplyr::mutate(
+    abortion_rate = as.numeric(abortion_rate),
+    country_id = countrycode::countrycode(
+      country, "country.name", "iso2c",
+      custom_match = c("Micronesia" = "FM")
+    ),
+    iso3 = countrycode::countrycode(country_id, "iso2c", "iso3c")
+  ) |>
+  dplyr::select(country, country_id, iso3, abortion_rate) -> oc_geo_au_feminin_gutt_abortion_rates
+
+usethis::use_data(oc_geo_au_feminin_gutt_abortion_rates, overwrite = TRUE)
+
 
 # Open documentation file ---------------------------------------------------------------------
 
