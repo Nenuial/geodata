@@ -228,7 +228,6 @@ readr::read_csv("inst/extdata/unwpp/WPP2022_Demographic_Indicators_Medium.csv") 
 usethis::use_data(oc_geo_au_feminin_sex_ratio, overwrite = TRUE)
 
 
-
 # Avortement par cantons ----------------------------------------------------------------------
 
 xls <- here::here("inst/extdata/ofs/14_Health/je-f-14.03.07.02.23.xlsx")
@@ -250,7 +249,6 @@ ofs_abortion |>
 usethis::use_data(oc_geo_au_feminin_2022_ofs_avortements_par_canton, overwrite = TRUE)
 
 
-
 # Avortement par tranche d'âges ---------------------------------------------------------------
 
 xls <- here::here("inst/extdata/ofs/14_Health/je-f-14.03.07.02.23.xlsx")
@@ -269,7 +267,6 @@ ofs_abortion |>
 usethis::use_data(oc_geo_au_feminin_2022_ofs_avortements_par_ages, overwrite = TRUE)
 
 
-
 # Avortement par régions ----------------------------------------------------------------------
 
 xls <- here::here("inst/extdata/ofs/14_Health/je-f-14.03.07.02.20.xlsx")
@@ -286,7 +283,6 @@ ofs_abortion |>
   dplyr::filter(region != "Total ") -> oc_geo_au_feminin_ofs_avortements_par_region
 
 usethis::use_data(oc_geo_au_feminin_ofs_avortements_par_region, overwrite = TRUE)
-
 
 
 # Votations sur l'avortement ------------------------------------------------------------------
