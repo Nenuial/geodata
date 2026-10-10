@@ -318,3 +318,20 @@
 #'   \item{Non}{Pourcentage de voix pour le non}
 #' }
 "oc_geo_au_feminin_votations_avortement"
+
+#' Taux d'avortement Guttmacher
+#'
+#' Un tableau du nombre annuel moyen d'avortements pour 1000 femmes
+#' âgées de 15 à 49 ans par pays, sur la période 2015-2019. Le Data Center
+#' du Guttmacher Institute ayant été fermé en juillet 2025, les données
+#' proviennent d'une copie archivée (Wayback Machine, 2023-02-04).
+#'
+#' @format Un tibble avec 4 colonnes et 150 lignes
+#' \describe{
+#'   \item{country}{Nom du pays}
+#'   \item{country_id}{Code pays ISO2}
+#'   \item{iso3}{Code pays ISO3}
+#'   \item{abortion_rate}{Taux d'avortement}
+#' }
+#' @source <https://www.guttmacher.org/data-center>
+"oc_geo_au_feminin_gutt_abortion_rates"
