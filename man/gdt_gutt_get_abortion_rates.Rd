@@ -16,7 +16,8 @@ July 2025, the data now comes from the archived snapshot in
 \link{oc_geo_au_feminin_gutt_abortion_rates}.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 gdt_gutt_get_abortion_rates() |>
   head(5)
-
+\dontshow{\}) # examplesIf}
 }

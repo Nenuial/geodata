@@ -13,7 +13,7 @@ A dataframe of NCDC locations (cities)
 Read NCDC city list from cachedir
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 # Not run: needs local data
 ncdc_city_list <- gdt_ncdc_city_list()
 \dontshow{\}) # examplesIf}

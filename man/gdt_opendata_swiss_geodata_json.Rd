@@ -8,7 +8,7 @@ gdt_opendata_swiss_geodata_json(...)
 }
 \arguments{
 \item{...}{
-  Arguments passed on to \code{\link[=gdt_opendata_swiss_geodata]{gdt_opendata_swiss_geodata}}
+  Arguments passed on to \code{\link{gdt_opendata_swiss_geodata}}
   \describe{
     \item{\code{geolevel}}{One of "national", "canton", "district", "municipality", "zh_counting_districts" or "lakes"}
     \item{\code{latest}}{Latest geo data (otherwise beginning of the year data)}

@@ -23,7 +23,7 @@ Retrieve climate data from the rnoaa::ncdc NOAA API and compute averages over th
 time period 1990-2019.
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 # Not run: needs a valid NOAA API key
 gdt_noaa_climate_data("CITY:SZ000003")
 \dontshow{\}) # examplesIf}
