@@ -13,7 +13,7 @@ Un tibble avec 3 colonnes et 189 lignes
 }
 }
 \source{
-\url{https://datacatalog.worldbank.org/search/dataset/0038462}
+\url{https://databank.worldbank.org/source/wdi-database-archives}
 }
 \usage{
 oc_geo_au_feminin_wbl_2022
