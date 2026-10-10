@@ -98,8 +98,7 @@ gdt_opendata_swiss_geodata <- function(geolevel = c("national", "canton", "distr
 
   sf::st_crs(gd) <- sf::st_crs("EPSG:21781")
 
-  # Return
-  return(gd)
+  gd
 }
 
 #' Get swiss geodata in geojson format
