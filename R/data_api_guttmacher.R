@@ -2,7 +2,7 @@
 #'
 #' @return A tibble
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' gdt_gutt_get_abortion_rates() |>
 #'   head(5)
 #'

@@ -13,7 +13,8 @@ A tibble
 Get abortion rate from the Guttmacher API
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 gdt_gutt_get_abortion_rates() |>
   head(5)
-
+\dontshow{\}) # examplesIf}
 }
