@@ -349,5 +349,5 @@
 #'   \item{country}{Nom du pays}
 #'   \item{value}{Indice WBL (échelle 1-100)}
 #' }
-#' @source <https://datacatalog.worldbank.org/search/dataset/0038462>
+#' @source <https://databank.worldbank.org/source/wdi-database-archives>
 "oc_geo_au_feminin_wbl_2022"
