@@ -335,3 +335,19 @@
 #' }
 #' @source <https://www.guttmacher.org/data-center>
 "oc_geo_au_feminin_gutt_abortion_rates"
+
+#' Women, Business and the Law 2022
+#'
+#' Un tableau de l'indice Women, Business and the Law (WBL) de la
+#' Banque mondiale par pays pour 2022. L'indicateur SG.LAW.INDX ayant été
+#' déplacé dans les archives du WDI, les données proviennent de la dernière
+#' version archivée (février 2026).
+#'
+#' @format Un tibble avec 3 colonnes et 189 lignes
+#' \describe{
+#'   \item{iso3c}{Code pays ISO3}
+#'   \item{country}{Nom du pays}
+#'   \item{value}{Indice WBL (échelle 1-100)}
+#' }
+#' @source <https://datacatalog.worldbank.org/search/dataset/0038462>
+"oc_geo_au_feminin_wbl_2022"

@@ -345,6 +345,40 @@ glue::glue("https://web.archive.org/web/{snapshot_timestamp}id_/{snapshot_url}")
 
 usethis::use_data(oc_geo_au_feminin_gutt_abortion_rates, overwrite = TRUE)
 
+# Women, Business and the Law 2022 ------------------------------------------------------------
+
+# The World Bank moved the WBL index (SG.LAW.INDX) from WDI to the
+# "WDI Database Archives" source (57), which wbstats can't query. The 2022
+# values are taken from the latest archived WDI release (2026 Feb).
+
+wbl_version <- "202602"
+
+wbstats::wb_countries() |>
+  dplyr::filter(region != "Aggregates") |>
+  dplyr::pull(iso3c) -> wb_country_codes
+
+httr2::request("https://api.worldbank.org/v2/sources/57") |>
+  httr2::req_url_path_append(
+    "country", "all", "series", "SG.LAW.INDX",
+    "version", wbl_version, "time", "YR2022"
+  ) |>
+  httr2::req_url_query(format = "json", per_page = 500) |>
+  httr2::req_perform() |>
+  httr2::resp_body_json() |>
+  purrr::pluck("source", "data") |>
+  purrr::map(\(row) {
+    country <- purrr::detect(row$variable, \(v) v$concept == "Country")
+    tibble::tibble(
+      iso3c = country$id,
+      country = country$value,
+      value = row$value %||% NA_real_
+    )
+  }) |>
+  purrr::list_rbind() |>
+  dplyr::filter(iso3c %in% wb_country_codes, !is.na(value)) -> oc_geo_au_feminin_wbl_2022
+
+usethis::use_data(oc_geo_au_feminin_wbl_2022, overwrite = TRUE)
+
 
 # Open documentation file ---------------------------------------------------------------------
 
