@@ -492,10 +492,14 @@ readxl::read_excel(
   .name_repair = "minimal"
 ) -> abortions_raw
 
+# years with footnotes: "20221)" (without the annexed regions of Ukraine)
+abortions_raw[3, ] |>
+  unlist() |>
+  stringr::str_sub(1L, 4L) -> abortions_years
+
 abortions_raw[4, ] |>
   unlist() |>
-  # years with footnotes: "20221)" (without the annexed regions of Ukraine)
-  purrr::set_names(abortions_raw[3, ] |> unlist() |> stringr::str_sub(1L, 4L)) |>
+  purrr::set_names(abortions_years) |>
   utils::tail(-1) |>
   tibble::enframe(name = "year", value = "total") |>
   dplyr::mutate(year = as.numeric(year), total = as.numeric(total)) -> abortions_total

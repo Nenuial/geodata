@@ -5,7 +5,7 @@
 #'
 #' @return A tibble
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' gdt_table_demography("Switzerland", 2020)
 #'
 gdt_table_demography <- function(country, years) {

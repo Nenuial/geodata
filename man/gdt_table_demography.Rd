@@ -18,6 +18,7 @@ A tibble
 General demographic informations
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 gdt_table_demography("Switzerland", 2020)
-
+\dontshow{\}) # examplesIf}
 }
