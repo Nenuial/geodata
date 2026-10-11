@@ -5,20 +5,21 @@
 \alias{oc_russie_naissances_national}
 \title{Naissances en Russie}
 \format{
-Un tibble avec 2 colonnes et 21 lignes
+Un tibble avec 2 colonnes et 35 lignes
 \describe{
 \item{year}{Année}
 \item{births}{Nombre de naissances}
 }
 }
 \source{
-\url{https://showdata.gks.ru/olap2/descr/report/297822/}
+\url{https://showdata.rosstat.gov.ru/olap2/descr/report/297696/},
+\url{https://rosstat.gov.ru/storage/mediabank/Edn_12-2024_t1_2.xlsx}
 }
 \usage{
 oc_russie_naissances_national
 }
 \description{
 Un tableau des naissances en Russie
-de 1999 à 2019.
+de 1990 à 2024 (2024: données provisoires).
 }
 \keyword{datasets}

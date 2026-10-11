@@ -5,20 +5,23 @@
 \alias{oc_russie_avortements_national}
 \title{Avortements en Russie}
 \format{
-Un tibble avec 2 colonnes et 25 lignes
+Un tibble avec 2 colonnes et 33 lignes
 \describe{
 \item{year}{Année}
 \item{abortions}{Nombre d'avortements pour 100 naissances}
 }
 }
 \source{
-\url{https://showdata.gks.ru/olap2/descr/report/297822/}
+\url{https://showdata.gks.ru/olap2/descr/report/297822/},
+\url{https://rosstat.gov.ru/storage/mediabank/chislo_prer_beremen_2024.xlsx}
 }
 \usage{
 oc_russie_avortements_national
 }
 \description{
 Un tableau des avortements en Russie
-de 1992 à 2017 pour 100 naissances.
+de 1992 à 2024 pour 100 naissances. Valeurs officielles jusqu'en 2017
+(pour 100 accouchements); 2016 et dès 2018: nombre d'interruptions de
+grossesse rapporté au nombre de naissances vivantes.
 }
 \keyword{datasets}

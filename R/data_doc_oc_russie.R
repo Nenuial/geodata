@@ -57,6 +57,22 @@
 #' @source <https://showdata.gks.ru/report/278974>
 "oc_russie_2023_fecondite"
 
+#' Indice de fécondité en Russie (2012-2024)
+#'
+#' Un tableau de l'indice de fécondité en Russie
+#' par régions de 2012 à 2024.
+#'
+#' @format Un tibble avec 5 colonnes et 1105 lignes
+#' \describe{
+#'   \item{codes}{OKTMO Codes}
+#'   \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+#'   \item{region}{Nom de la région en anglais}
+#'   \item{year}{Année}
+#'   \item{tfr}{Indice de fécondité}
+#' }
+#' @source <https://showdata.rosstat.gov.ru/report/273532>
+"oc_russie_2024_fecondite"
+
 #' Taux d'accroissement naturel en Russie
 #'
 #' Un tableau du taux d'accroissement naturel en Russie
@@ -72,6 +88,25 @@
 #' }
 #' @source <https://showdata.gks.ru/report/297732>
 "oc_russie_2023_accroissement"
+
+#' Taux d'accroissement naturel en Russie (2017-2024)
+#'
+#' Un tableau du taux d'accroissement naturel en Russie
+#' par régions de 2017 à 2024. 2017-2023: `oc_russie_2023_accroissement`;
+#' 2024: accroissement naturel rapporté à la population moyenne de l'année
+#' (estimation de la population au 1er janvier 2025).
+#'
+#' @format Un tibble avec 5 colonnes et 676 lignes
+#' \describe{
+#'   \item{codes}{OKTMO Codes}
+#'   \item{adm1_code}{Identifiant ADM1 (pour NaturalEarth)}
+#'   \item{region}{Nom de la région en anglais}
+#'   \item{year}{Année}
+#'   \item{rni}{Taux d'accroissement naturel (pour 1000 habitants)}
+#' }
+#' @source <https://showdata.gks.ru/report/297732>,
+#'   <https://rosstat.gov.ru/storage/mediabank/OkPopul_Comp2025_Site.xlsx>
+"oc_russie_2024_accroissement"
 
 #' Mortalité et natalité
 #'
@@ -169,27 +204,31 @@
 #' Avortements en Russie
 #'
 #' Un tableau des avortements en Russie
-#' de 1992 à 2017 pour 100 naissances.
+#' de 1992 à 2024 pour 100 naissances. Valeurs officielles jusqu'en 2017
+#' (pour 100 accouchements); 2016 et dès 2018: nombre d'interruptions de
+#' grossesse rapporté au nombre de naissances vivantes.
 #'
-#' @format Un tibble avec 2 colonnes et 25 lignes
+#' @format Un tibble avec 2 colonnes et 33 lignes
 #' \describe{
 #'   \item{year}{Année}
 #'   \item{abortions}{Nombre d'avortements pour 100 naissances}
 #' }
-#' @source <https://showdata.gks.ru/olap2/descr/report/297822/>
+#' @source <https://showdata.gks.ru/olap2/descr/report/297822/>,
+#'   <https://rosstat.gov.ru/storage/mediabank/chislo_prer_beremen_2024.xlsx>
 "oc_russie_avortements_national"
 
 #' Naissances en Russie
 #'
 #' Un tableau des naissances en Russie
-#' de 1999 à 2019.
+#' de 1990 à 2024 (2024: données provisoires).
 #'
-#' @format Un tibble avec 2 colonnes et 21 lignes
+#' @format Un tibble avec 2 colonnes et 35 lignes
 #' \describe{
 #'   \item{year}{Année}
 #'   \item{births}{Nombre de naissances}
 #' }
-#' @source <https://showdata.gks.ru/olap2/descr/report/297822/>
+#' @source <https://showdata.rosstat.gov.ru/olap2/descr/report/297696/>,
+#'   <https://rosstat.gov.ru/storage/mediabank/Edn_12-2024_t1_2.xlsx>
 "oc_russie_naissances_national"
 
 #' Population municipale en Russie

@@ -1,6 +1,7 @@
 # geodata (development version)
 
 * Fix HMD function to work with the latest version of the HMD data using the `HMDHFDplus` package
+* Update demographic data for Russia: regional fertility and natural increase until 2024 (`oc_russie_2024_fecondite`, `oc_russie_2024_accroissement`), births and abortions until 2024
 
 # geodata 1.2.0
 
