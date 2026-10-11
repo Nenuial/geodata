@@ -21,6 +21,7 @@ A tibble with the requested data:
 This function downloads the data for \emph{population}, \emph{crude birth rate} and \emph{crude death rate}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 gdt_wb_demo("Switzerland")
-
+\dontshow{\}) # examplesIf}
 }

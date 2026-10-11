@@ -1,5 +1,84 @@
 stop("This file should not be sourced!")
 
+# Rosstat showdata -------------------------------------------------------
+
+# The CSV export of showdata is assembled in the browser, so the original data
+# is the answer of the OLAP preview (report, headers and data), saved as JSON.
+# Rosstat uses the Russian state root certificate: no certificate check.
+# Some tables are broken: report 278974 (TFR 2019-2025) has up to three
+# values per cell without any way to tell them apart, use 273532 instead.
+
+showdata_download <- function(descr, years, path) {
+  base <- "https://showdata.rosstat.gov.ru"
+  cookies <- tempfile()
+  request <- function(url) {
+    httr2::request(base) |>
+      httr2::req_url_path(url) |>
+      httr2::req_options(ssl_verifypeer = 0) |>
+      httr2::req_cookie_preserve(cookies) |>
+      httr2::req_headers(
+        `X-Requested-With` = "XMLHttpRequest",
+        Referer = paste0(base, "/olap2/")
+      )
+  }
+
+  report <- request(paste0("/olap2/olap2-descriptor-report/", descr, "/")) |>
+    httr2::req_perform() |>
+    httr2::resp_body_json()
+  report$col_header[[1]]$children <- report$col_header[[1]]$children |>
+    purrr::map(\(x) {
+      if (x$descriptor == -64) x$values <- as.list(paste0(years, "-01-01 00:00:00|-52"))
+      x
+    })
+
+  token <- readLines(cookies) |>
+    stringr::str_subset("csrftoken") |>
+    stringr::str_extract("[^\t]+$")
+  preview <- function(url) {
+    request(url) |>
+      httr2::req_headers(`X-CSRFToken` = token) |>
+      httr2::req_body_form(
+        jkwargs = jsonlite::toJSON(report, auto_unbox = TRUE, null = "null"),
+        user_conf = "{}"
+      ) |>
+      httr2::req_perform() |>
+      httr2::resp_body_string() |>
+      jsonlite::parse_json()
+  }
+
+  list(
+    report = report,
+    headers = preview("/olap2/olap2-preview/headers"),
+    data = preview("/olap2/olap2-preview/data")
+  ) |>
+    jsonlite::write_json(path, auto_unbox = TRUE, null = "null", digits = NA)
+}
+
+# A tibble (codes, year, value) from a saved showdata preview
+showdata_read <- function(path) {
+  x <- jsonlite::read_json(path)
+  # rows: the leaves of the row headers (regions under sex, settlement…)
+  leaves <- function(rows) {
+    purrr::map(rows, \(r) if (is.null(r$children)) r$extra_row_attrs$code else leaves(r$children)) |>
+      unlist()
+  }
+  codes <- leaves(x$headers$reportHeaders$row_header)
+  # column filters: "-64#eq#2024-01-01 00:00:00|-52" (the period)
+  years <- x$headers$colFilters |>
+    purrr::map_chr(\(f) stringr::str_subset(unlist(f), "^-64#")) |>
+    stringr::str_extract("(?<=#eq#)\\d{4}") |>
+    as.numeric()
+  x$data$reportData$data |>
+    purrr::imap(\(row, i) {
+      tibble::tibble(
+        codes = codes[i],
+        year = years,
+        value = purrr::map_dbl(row, \(cell) cell$db_value %||% NA_real_)
+      )
+    }) |>
+    purrr::list_rbind()
+}
+
 # Regional life expectancy -----------------------------------------------
 
 xls <- here::here("inst/extdata/oc_russie/rosstat/population/2021_life_expectancy.xlsx")
@@ -132,6 +211,36 @@ readr::read_csv(
 
 usethis::use_data(oc_russie_2023_fecondite, overwrite = TRUE)
 
+# Source: https://showdata.rosstat.gov.ru/report/273532
+showdata_download(
+  273532, 2012:2024,
+  here::here("inst/extdata/oc_russie/rosstat/population/2026_fertility_rates.json")
+)
+
+showdata_read(here::here("inst/extdata/oc_russie/rosstat/population/2026_fertility_rates.json")) |>
+  dplyr::mutate(
+    adm1_code = geotools::gtl_admin_code(
+      codes,
+      origin = "oktmo",
+      destination = "adm1",
+      warn = FALSE,
+      country = "Russia"
+    ),
+    region = geotools::gtl_admin_code(
+      codes,
+      origin = "oktmo",
+      destination = "region.name.en",
+      warn = FALSE,
+      country = "Russia"
+    )
+  ) |>
+  tidyr::drop_na(region) |>
+  dplyr::mutate(year = as.character(year)) |>
+  dplyr::select(codes, adm1_code, region, year, tfr = value) |>
+  tidyr::drop_na(tfr) -> oc_russie_2024_fecondite
+
+usethis::use_data(oc_russie_2024_fecondite, overwrite = TRUE)
+
 
 # Regional CBR and CDR ---------------------------------------------------
 
@@ -212,6 +321,57 @@ readr::read_csv(
 
 usethis::use_data(oc_russie_2023_accroissement, overwrite = TRUE)
 
+# showdata stops in 2023 (report 297732). 2024: natural increase and mean
+# population of the population estimate (rate = increase / mean population,
+# the definition of Rosstat).
+# Source: https://rosstat.gov.ru/storage/mediabank/OkPopul_Comp2025_Site.xlsx
+# (https://rosstat.gov.ru/folder/12781)
+
+readxl::read_excel(
+  here::here("inst/extdata/oc_russie/rosstat/population/2026_population_components.xlsx"),
+  sheet = "Всего",
+  skip = 7L,
+  col_names = c("region_ru", "pop_2024", "change", "natural", "migration", "mtp", "pop_2025", "pop_mean"),
+  col_types = c("text", rep("numeric", 7))
+) |>
+  tidyr::drop_na(pop_mean) |>
+  # IMPORTANT : remove Arkhangelsk Oblast and Tyumen Oblast because they agregate nearby autonomous regions
+  dplyr::filter(region_ru != "Архангельская область" & region_ru != "Тюменская область") |>
+  dplyr::mutate(
+    adm1_code = geotools::gtl_admin_code(
+      region_ru,
+      origin = "region.name.ru.regex",
+      origin_regex = TRUE,
+      destination = "adm1",
+      warn = FALSE,
+      country = "Russia"
+    ),
+    region = geotools::gtl_admin_code(
+      adm1_code,
+      origin = "adm1",
+      destination = "region.name.en",
+      warn = FALSE,
+      country = "Russia"
+    ),
+    codes = geotools::gtl_admin_code(
+      adm1_code,
+      origin = "adm1",
+      destination = "oktmo",
+      warn = FALSE,
+      country = "Russia"
+    ),
+    year = "2024",
+    rni = round(natural / pop_mean * 1000, 1)
+  ) |>
+  tidyr::drop_na(adm1_code) |>
+  dplyr::select(codes, adm1_code, region, year, rni) -> rni_2024
+
+oc_russie_2023_accroissement |>
+  dplyr::bind_rows(rni_2024) |>
+  dplyr::arrange(codes, year) -> oc_russie_2024_accroissement
+
+usethis::use_data(oc_russie_2024_accroissement, overwrite = TRUE)
+
 # Regional suicide rates -------------------------------------------------
 
 readr::read_csv(
@@ -269,7 +429,7 @@ readr::read_csv(
   here::here("inst/extdata/oc_russie/rosstat/population/2021_avortements.csv"),
   skip = 1L, locale = readr::locale(encoding = "windows-1251", decimal_mark = ",")
 ) |>
-  dplyr::select(-c(X1, X2)) |>
+  dplyr::select(-c(1, 2)) |>
   tidyr::pivot_longer(
     tidyselect::everything(),
     names_to = "year",
@@ -283,27 +443,77 @@ readr::read_csv(
       year == 2003 ~ 121,
       TRUE ~ abortions
     )
-  ) -> oc_russie_avortements_national
-
-usethis::use_data(oc_russie_avortements_national, overwrite = TRUE)
+  ) -> avortements_officiel
 
 
 # Births -----------------------------------------------------------------
 
-readr::read_csv(
-  here::here("inst/extdata/oc_russie/rosstat/population/2021_births.csv"),
-  skip = 1L, locale = readr::locale(encoding = "windows-1251", decimal_mark = ",")
+# showdata: births until 2023 (both sexes, whole population: the default of
+# report 297696). 2024: operational data (January-December 2024, table 1.2)
+# Source: https://showdata.rosstat.gov.ru/olap2/descr/report/297696/
+# Source: https://rosstat.gov.ru/storage/mediabank/Edn_12-2024_t1_2.xlsx
+
+showdata_download(
+  297696, 1990:2023,
+  here::here("inst/extdata/oc_russie/rosstat/population/2026_births.json")
+)
+
+readxl::read_excel(
+  here::here("inst/extdata/oc_russie/rosstat/population/2026_vital_events_2024.xlsx"),
+  skip = 6L,
+  col_names = FALSE,
+  .name_repair = "minimal"
 ) |>
-  dplyr::filter(...1 == "Российская Федерация") |>
-  dplyr::select(-c(...1, ...2)) |>
-  tidyr::pivot_longer(
-    tidyselect::everything(),
-    names_to = "year",
-    names_transform = list("year" = readr::parse_number),
-    values_to = "births"
-  ) -> oc_russie_naissances_national
+  dplyr::select(region = 1, births = 2) |>
+  dplyr::filter(region == "Российская Федерация") |>
+  dplyr::transmute(year = 2024, births) -> births_2024
+
+showdata_read(here::here("inst/extdata/oc_russie/rosstat/population/2026_births.json")) |>
+  dplyr::filter(codes == "643") |>
+  dplyr::select(year, births = value) |>
+  tidyr::drop_na(births) |>
+  dplyr::bind_rows(births_2024) -> oc_russie_naissances_national
 
 usethis::use_data(oc_russie_naissances_national, overwrite = TRUE)
+
+
+# Abortions (2) ----------------------------------------------------------
+
+# Abortions per 100 births are no longer published after 2017 (missing for
+# 2016). They are computed from the number of abortions (pregnancy
+# terminations) and the number of births; official values are kept when they
+# exist (per 100 deliveries: a few tenths lower than this computation).
+# Source: https://rosstat.gov.ru/storage/mediabank/chislo_prer_beremen_2024.xlsx
+# (https://rosstat.gov.ru/folder/13721)
+
+readxl::read_excel(
+  here::here("inst/extdata/oc_russie/rosstat/population/2026_abortions.xlsx"),
+  col_names = FALSE,
+  .name_repair = "minimal"
+) -> abortions_raw
+
+# years with footnotes: "20221)" (without the annexed regions of Ukraine)
+abortions_raw[3, ] |>
+  unlist() |>
+  stringr::str_sub(1L, 4L) -> abortions_years
+
+abortions_raw[4, ] |>
+  unlist() |>
+  purrr::set_names(abortions_years) |>
+  utils::tail(-1) |>
+  tibble::enframe(name = "year", value = "total") |>
+  dplyr::mutate(year = as.numeric(year), total = as.numeric(total)) -> abortions_total
+
+abortions_total |>
+  dplyr::inner_join(oc_russie_naissances_national, by = "year") |>
+  dplyr::mutate(computed = round(total / births * 100, 1)) |>
+  dplyr::select(year, computed) |>
+  dplyr::full_join(avortements_officiel, by = "year") |>
+  dplyr::mutate(abortions = dplyr::coalesce(abortions, computed)) |>
+  dplyr::select(year, abortions) |>
+  dplyr::arrange(year) -> oc_russie_avortements_national
+
+usethis::use_data(oc_russie_avortements_national, overwrite = TRUE)
 
 
 # Municipality population ------------------------------------------------
