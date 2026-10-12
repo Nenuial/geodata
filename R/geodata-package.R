@@ -13,7 +13,7 @@ utils::globalVariables(c(
   "district_id", "kantId", "kantName", "canton_id", "name", "2-cbr",
   "3-cdr", "iso2c", "iso3", "iso3c", "indicator", "address", "datacoverage",
   "iso", "maxdate", "mindate", "month", "util_dwnl_api_json", "value",
-  "extension", "tw_filter_first"
+  "extension", "tw_filter_first", "population", "date"
 ))
 
 # Suppress R CMD check note
