@@ -38,6 +38,9 @@ reference:
   - gdt_table_demography
   - gdt_wb_demo
   - gdt_wb_lex
+  - gdt_wb_tfr
+  - gdt_wb_working_age
+  - gdt_world_population_history
 
 - title: Climate data
   description: |
