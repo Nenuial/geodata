@@ -85,6 +85,12 @@ reference:
   contents:
   - starts_with("df_demography")
 
+- title: DF Geology
+  description: |
+    Datasets for the *DF Geology* chapter.
+  contents:
+  - starts_with("df_geology")
+
 - title: OC Chine
   description: |
     Dataset for the *OC Chine* chapter.
