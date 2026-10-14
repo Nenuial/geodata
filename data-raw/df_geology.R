@@ -316,10 +316,10 @@ usethis::use_data(df_geology_vesuvius_municipalities, overwrite = TRUE)
 # Approximate coordinates
 
 tibble::tribble(
-  ~name,          ~type,          ~lat,    ~lon,
-  "Vesuvius",     "crater",       40.821, 14.426,
-  "Pompeii",      "ancient site", 40.749, 14.487,
-  "Herculaneum",  "ancient site", 40.806, 14.348
+  ~name, ~type, ~lat, ~lon,
+  "Vesuvius", "crater", 40.821, 14.426,
+  "Pompeii", "ancient site", 40.749, 14.487,
+  "Herculaneum", "ancient site", 40.806, 14.348
 ) -> df_geology_vesuvius_sites
 
 usethis::use_data(df_geology_vesuvius_sites, overwrite = TRUE)
