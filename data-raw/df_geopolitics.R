@@ -74,19 +74,19 @@ usethis::use_data(df_geopolitics_chokepoints_daily, overwrite = TRUE)
 # Coordinates (P625) of the Wikidata items of the sites shown on the maps
 
 conflict_sites <- tibble::tribble(
-  ~map,           ~name,                  ~type,         ~qid,
-  "preah_vihear", "Preah Vihear",         "temple",      "Q45949",
-  "preah_vihear", "Ta Muen Thom",         "temple",      "Q3401369",
-  "preah_vihear", "Ta Krabey (Ta Kwai)",  "temple",      "Q1511068",
-  "iran_war",     "Tehran",               "capital",     "Q3616",
-  "iran_war",     "Fordow",               "nuclear site", "Q757565",
-  "iran_war",     "Natanz",               "nuclear site", "Q6012307",
-  "iran_war",     "Isfahan",              "nuclear site", "Q5684976",
-  "iran_war",     "Strait of Hormuz",     "strait",      "Q79883",
-  "iran_war",     "Al Udeid air base",    "air base",    "Q542588",
-  "iran_war",     "Doha",                 "capital",     "Q3861",
-  "iran_war",     "Islamabad",            "capital",     "Q1362",
-  "iran_war",     "Muscat",               "capital",     "Q3826"
+  ~map, ~name, ~type, ~qid,
+  "preah_vihear", "Preah Vihear", "temple", "Q45949",
+  "preah_vihear", "Ta Muen Thom", "temple", "Q3401369",
+  "preah_vihear", "Ta Krabey (Ta Kwai)", "temple", "Q1511068",
+  "iran_war", "Tehran", "capital", "Q3616",
+  "iran_war", "Fordow", "nuclear site", "Q757565",
+  "iran_war", "Natanz", "nuclear site", "Q6012307",
+  "iran_war", "Isfahan", "nuclear site", "Q5684976",
+  "iran_war", "Strait of Hormuz", "strait", "Q79883",
+  "iran_war", "Al Udeid air base", "air base", "Q542588",
+  "iran_war", "Doha", "capital", "Q3861",
+  "iran_war", "Islamabad", "capital", "Q1362",
+  "iran_war", "Muscat", "capital", "Q3826"
 )
 
 httr2::request("https://query.wikidata.org/sparql") |>
