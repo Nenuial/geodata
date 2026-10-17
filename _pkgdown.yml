@@ -31,6 +31,7 @@ reference:
   - gdt_hmd_lex
   - gdt_hmd_mortality
   - gdt_hmd_population_raw
+  - gdt_idb_clear_cache
   - gdt_idb_pyramid
   - gdt_idb_pyramid_1y
   - gdt_idb_pyramid_5y
