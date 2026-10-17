@@ -19,7 +19,7 @@ One year population pyramid data (tidy)
 }
 \examples{
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
-# Not run: needn a valid IDB API key
+# Not run: needs a valid IDB API key
 
 gdt_idb_pyramid("Switzerland", 2020)
 \dontshow{\}) # examplesIf}
