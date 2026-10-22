@@ -8,23 +8,29 @@ gdt_opendata_swiss_geodata(
   geolevel = c("national", "canton", "district", "municipality", "zh_counting_districts",
     "lakes"),
   latest = TRUE,
+  date = NULL,
   verbose = FALSE
 )
 }
 \arguments{
 \item{geolevel}{One of "national", "canton", "district", "municipality", "zh_counting_districts" or "lakes"}
 
-\item{latest}{Latest geo data (otherwise beginning of the year data)}
+\item{latest}{Unused: the newest geometries are used unless \code{date} is given. Kept for compatibility.}
+
+\item{date}{A date (or a string such as "2020-06-01"): the geometries in force at that date}
 
 \item{verbose}{Boolean}
 }
 \value{
-An sf object
+An sf object in the Swiss LV03 coordinates (EPSG:21781)
 }
 \description{
-Get swiss geodata
+The geometries of the Federal Statistical Office for the federal votes, from
+opendata.swiss. Each file holds the communes as they stood at a date; the
+newest is used unless \code{date} is given.
 }
 \examples{
 gdt_opendata_swiss_geodata("national")
+gdt_opendata_swiss_geodata("canton", date = "2020-06-01")
 
 }
