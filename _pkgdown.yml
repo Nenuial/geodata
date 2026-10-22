@@ -41,6 +41,8 @@ reference:
   - gdt_wb_lex
   - gdt_wb_tfr
   - gdt_wb_working_age
+  - gdt_wpp_indicators
+  - gdt_wpp_single_age
   - gdt_world_population_history
 
 - title: Climate data
