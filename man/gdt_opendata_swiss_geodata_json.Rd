@@ -11,7 +11,8 @@ gdt_opendata_swiss_geodata_json(...)
   Arguments passed on to \code{\link{gdt_opendata_swiss_geodata}}
   \describe{
     \item{\code{geolevel}}{One of "national", "canton", "district", "municipality", "zh_counting_districts" or "lakes"}
-    \item{\code{latest}}{Latest geo data (otherwise beginning of the year data)}
+    \item{\code{latest}}{Unused: the newest geometries are used unless \code{date} is given. Kept for compatibility.}
+    \item{\code{date}}{A date (or a string such as "2020-06-01"): the geometries in force at that date}
     \item{\code{verbose}}{Boolean}
   }}
 }
