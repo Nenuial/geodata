@@ -13,9 +13,10 @@ gdt_idb_get(...)
 The data frame returned by \code{\link[idbr:get_idb]{idbr::get_idb()}}
 }
 \description{
-Calls \code{\link[idbr:get_idb]{idbr::get_idb()}} and keeps the result in the user cache folder of
-geodata, so a query is sent once per machine. When the API is temporarily
-unavailable (maintenance, busy, timeout), the call is retried after 5, 15 and
-45 seconds; any other error is raised at once.
+Calls \code{\link[idbr:get_idb]{idbr::get_idb()}}, or \code{\link[=gdt_idb_get_1y]{gdt_idb_get_1y()}} for the queries by sex and
+age, and keeps the result in the user cache folder of geodata, so a query is
+sent once per machine. When the API is temporarily unavailable (maintenance,
+busy, timeout), the call is retried after 5, 15 and 45 seconds; any other
+error is raised at once.
 }
 \keyword{internal}
